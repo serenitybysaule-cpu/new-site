@@ -100,6 +100,19 @@ router.patch('/collaborateurs/:id/statut', authAdmin, (req, res) => {
   res.json({ message: 'Statut mis à jour.' });
 });
 
+// PATCH /api/admin/collaborateurs/:id/taux — modifier les taux
+router.patch('/collaborateurs/:id/taux', authAdmin, (req, res) => {
+  const { taux_commission, reduction_client } = req.body;
+  const taux  = parseFloat(taux_commission);
+  const reduc = parseFloat(reduction_client);
+  if (isNaN(taux) || isNaN(reduc) || taux < 0 || taux > 1 || reduc < 0 || reduc > 1)
+    return res.status(400).json({ error: 'Taux invalides.' });
+
+  db.prepare('UPDATE collaborateurs SET taux_commission = ?, reduction_client = ? WHERE id = ?')
+    .run(taux, reduc, req.params.id);
+  res.json({ message: 'Taux mis à jour.' });
+});
+
 // ── Commandes ───────────────────────────────────────────────────────────────
 
 // GET /api/admin/commandes-en-attente

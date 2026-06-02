@@ -13,9 +13,10 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '..')));
 
 // Routes API
-app.use('/api/auth',  require('./routes/auth'));
+app.use('/api/auth',   require('./routes/auth'));
 app.use('/api/collab', require('./routes/collab'));
 app.use('/api/admin',  require('./routes/admin'));
+app.use('/api/public', require('./routes/public'));
 
 // Fallback 404 pour les routes inconnues
 app.use((req, res, next) => {

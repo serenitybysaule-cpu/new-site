@@ -270,6 +270,43 @@
     </div>
   </div>
 
+  <!-- ═══════════════════ MODAL : Modifier les taux ═══════════════════ -->
+  <div class="modal-overlay" id="modal-taux">
+    <div class="modal">
+      <h3>Modifier les taux</h3>
+      <input type="hidden" id="taux-id">
+      <div class="field"><label>Collaboratrice</label><input id="taux-nom" readonly style="background:#f5f5f5;"></div>
+      <div class="grid2">
+        <div class="field">
+          <label>Commission collab *</label>
+          <select id="taux-commission">
+            <option value="0.05">5 %</option>
+            <option value="0.10">10 %</option>
+            <option value="0.15">15 %</option>
+            <option value="0.20">20 %</option>
+            <option value="0.25">25 %</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Réduction client *</label>
+          <select id="taux-reduc">
+            <option value="0.05">5 %</option>
+            <option value="0.08">8 %</option>
+            <option value="0.10">10 %</option>
+            <option value="0.15">15 %</option>
+            <option value="0.20">20 %</option>
+          </select>
+        </div>
+      </div>
+      <p class="err" id="err-taux"></p>
+      <p class="ok" id="ok-taux"></p>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('modal-taux')">Annuler</button>
+        <button class="btn-rose" onclick="sauvegarderTaux()">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══════════════════ MODAL : Enregistrer une commande ═══════════════════ -->
   <div class="modal-overlay" id="modal-commande">
     <div class="modal">
@@ -430,9 +467,13 @@
           <td>${c.statut === 'actif' ? '<span class="badge badge-actif">Actif</span>' : '<span class="badge badge-suspendu">Suspendu</span>'}</td>
           <td>${fmt(c.gains_en_attente)}</td>
           <td>${fmt(c.gains_confirmes)}</td>
-          <td>
+          <td style="white-space:nowrap">
             <button class="btn-outline" onclick="toggleStatut(${c.id},'${c.statut === 'actif' ? 'suspendu' : 'actif'}')">
               ${c.statut === 'actif' ? 'Suspendre' : 'Réactiver'}
+            </button>
+            &nbsp;
+            <button class="btn-outline" onclick="openModifierTaux(${c.id},'${c.prenom} ${c.nom}',${c.taux_commission},${c.reduction_client})">
+              Modifier taux
             </button>
           </td>
         </tr>
@@ -469,6 +510,39 @@
     async function toggleStatut(id, newStatut) {
       await fetch(API_BASE + `/api/admin/collaborateurs/${id}/statut`, { method: 'PATCH', headers: H, body: JSON.stringify({ statut: newStatut }) });
       loadCollabs();
+    }
+
+    function openModifierTaux(id, nom, taux, reduc) {
+      document.getElementById('taux-id').value = id;
+      document.getElementById('taux-nom').value = nom;
+      document.getElementById('err-taux').style.display = 'none';
+      document.getElementById('ok-taux').style.display = 'none';
+      const selTaux = document.getElementById('taux-commission');
+      const selReduc = document.getElementById('taux-reduc');
+      const tauxStr = taux.toFixed(2);
+      const reducStr = reduc.toFixed(2);
+      [...selTaux.options].forEach(o => { o.selected = o.value === tauxStr; });
+      [...selReduc.options].forEach(o => { o.selected = o.value === reducStr; });
+      openModal('modal-taux');
+    }
+
+    async function sauvegarderTaux() {
+      const id = document.getElementById('taux-id').value;
+      const err = document.getElementById('err-taux');
+      const ok = document.getElementById('ok-taux');
+      err.style.display = ok.style.display = 'none';
+      const body = {
+        taux_commission: parseFloat(document.getElementById('taux-commission').value),
+        reduction_client: parseFloat(document.getElementById('taux-reduc').value),
+      };
+      try {
+        const res = await fetch(API_BASE + `/api/admin/collaborateurs/${id}/taux`, { method: 'PATCH', headers: H, body: JSON.stringify(body) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error);
+        ok.textContent = 'Taux mis à jour avec succès !'; ok.style.display = 'block';
+        loadCollabs();
+        setTimeout(() => closeModal('modal-taux'), 1200);
+      } catch (e) { err.textContent = e.message; err.style.display = 'block'; }
     }
 
     // ── Commandes ──
@@ -609,6 +683,7 @@
 
     function openModal(id) { document.getElementById(id).classList.add('open'); }
     function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+    function openModalCollab() { openModal('modal-collab'); }
 
     function fmt(v) { return parseFloat(v || 0).toFixed(2) + ' €'; }
     function pct(v) { return Math.round(parseFloat(v || 0) * 100) + ' %'; }

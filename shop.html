@@ -1692,6 +1692,20 @@
             .then(function(r) { return r.json(); })
             .then(function(res) {
                 if (res.success) {
+                    if (codePromoValide) {
+                        fetch(API_BASE + '/api/public/commande', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                code_promo:     codePromoValide,
+                                commande_ref:   'CMD-' + Date.now(),
+                                client_email:   payload.email,
+                                client_prenom:  payload.prenom,
+                                produit:        productNames[currentProduct] || currentProduct,
+                                prix_catalogue: currentQty * unitPrice.eur
+                            })
+                        }).catch(function() {});
+                    }
                     document.getElementById('shop-form').style.display = 'none';
                     document.querySelector('.product-recap').style.display = 'none';
                     document.querySelector('.prod-picker').style.display = 'none';
