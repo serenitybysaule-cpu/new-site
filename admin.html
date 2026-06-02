@@ -602,7 +602,7 @@
 
     // ── Helpers ──
     async function apiFetch(url) {
-      const res = await fetch(url, { headers: H });
+      const res = await fetch(API_BASE + url, { headers: H });
       if (res.status === 401) { logout(); return []; }
       return res.json();
     }
