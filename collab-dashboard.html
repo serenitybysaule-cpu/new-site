@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Espace — Serenity by Saule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root {
+      --rose: #D4537E;
+      --rose-light: #FBEAF0;
+      --text-primary: #1a1a1a;
+      --text-secondary: #6b6b6b;
+      --border: rgba(0,0,0,0.10);
+      --cream: #FAF8F5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Jost', sans-serif; font-weight: 300; background: var(--cream); color: var(--text-primary); min-height: 100vh; display: flex; flex-direction: column; }
+
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2.5rem; border-bottom: 0.5px solid var(--border); background: #fff; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; color: var(--text-primary); }
+    .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links .logout { cursor: pointer; color: var(--rose); }
+
+    .main { flex: 1; max-width: 960px; margin: 0 auto; padding: 2.5rem 1.5rem; width: 100%; }
+
+    /* Header */
+    .dash-header { margin-bottom: 2rem; }
+    .dash-header h1 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; font-style: italic; }
+    .dash-header p { font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.3rem; }
+    .code-badge { display: inline-block; background: var(--rose-light); color: var(--rose); font-weight: 500; padding: 0.25rem 0.8rem; font-size: 0.85rem; letter-spacing: 0.1em; margin-top: 0.6rem; border: 0.5px solid #f0b6ca; }
+
+    /* Métriques */
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .metric-card { background: #fff; border: 0.5px solid var(--border); padding: 1.4rem 1.5rem; }
+    .metric-card .label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 0.5rem; }
+    .metric-card .value { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--text-primary); }
+    .metric-card .value.rose { color: var(--rose); }
+
+    /* Lien de parrainage */
+    .promo-box { background: #fff; border: 0.5px solid var(--border); padding: 1.5rem; margin-bottom: 2rem; }
+    .promo-box h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 0.8rem; }
+    .promo-row { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
+    .promo-code { font-size: 1.4rem; font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--rose); flex: 1; }
+    .btn-sm { padding: 0.5rem 1.2rem; font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border: 0.5px solid var(--border); background: #fff; color: var(--text-primary); transition: all 0.2s; }
+    .btn-sm:hover { background: var(--rose-light); border-color: var(--rose); color: var(--rose); }
+    .btn-rose-sm { background: var(--rose); color: #fff; border-color: var(--rose); }
+    .btn-rose-sm:hover { opacity: 0.85; }
+    .copied-msg { font-size: 0.72rem; color: #2d6a4f; display: none; }
+
+    /* Comment ça marche */
+    .how-box { background: var(--rose-light); border: 0.5px solid #f0b6ca; padding: 1.5rem; margin-bottom: 2rem; font-size: 0.85rem; line-height: 1.6; color: var(--text-primary); }
+    .how-box strong { font-weight: 500; }
+
+    /* Tableau */
+    .section-title { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 1rem; }
+    .table-wrap { background: #fff; border: 0.5px solid var(--border); overflow-x: auto; margin-bottom: 2rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+    thead th { padding: 0.75rem 1rem; text-align: left; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); border-bottom: 0.5px solid var(--border); font-weight: 400; }
+    tbody td { padding: 0.75rem 1rem; border-bottom: 0.5px solid var(--border); color: var(--text-primary); }
+    tbody tr:last-child td { border-bottom: none; }
+    .badge { display: inline-block; padding: 0.2rem 0.7rem; font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .badge-grey  { background: #f1f1f1; color: #888; }
+    .badge-green { background: #eaf5ef; color: #2d6a4f; }
+    .badge-rose  { background: var(--rose-light); color: var(--rose); }
+    .empty-row { text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.82rem; font-style: italic; }
+
+    footer.footer { border-top: 0.5px solid var(--border); background: #fff; padding: 1.5rem 2.5rem; text-align: center; font-size: 0.72rem; color: var(--text-secondary); letter-spacing: 0.05em; }
+    @media (max-width: 600px) { .navbar { padding: 1rem 1rem; } .nav-links { gap: 1rem; } .main { padding: 1.5rem 1rem; } }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Serenity</a>
+    <ul class="nav-links">
+      <li><a href="index.html#produits">Nos créations</a></li>
+      <li><a href="shop.html">Votre commande</a></li>
+      <li><a href="pricing.html">Nos tarifs</a></li>
+      <li><a class="logout" onclick="logout()">Déconnexion</a></li>
+    </ul>
+  </nav>
+
+  <div class="main">
+    <!-- Header -->
+    <div class="dash-header">
+      <h1 id="welcome-title">Bonjour ✦</h1>
+      <p id="welcome-sub">Votre espace collaborateur Serenity</p>
+      <div id="code-badge" class="code-badge" style="display:none;"></div>
+    </div>
+
+    <!-- Métriques -->
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="label">Utilisations totales</div>
+        <div class="value" id="m-total">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Ce mois</div>
+        <div class="value" id="m-mois">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Gains en attente</div>
+        <div class="value rose" id="m-attente">— €</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Gains confirmés</div>
+        <div class="value rose" id="m-confirmes">— €</div>
+      </div>
+    </div>
+
+    <!-- Code promo -->
+    <div class="promo-box">
+      <h3>Votre code promo</h3>
+      <div class="promo-row">
+        <span class="promo-code" id="promo-code-display">—</span>
+        <button class="btn-sm btn-rose-sm" onclick="copierCode()">Copier le code</button>
+        <button class="btn-sm" onclick="partagerWhatsApp()">Partager via WhatsApp</button>
+        <span class="copied-msg" id="copied-msg">Copié ✓</span>
+      </div>
+    </div>
+
+    <!-- Comment ça marche -->
+    <div class="how-box" id="how-box" style="display:none;"></div>
+
+    <!-- Historique -->
+    <p class="section-title">Historique des utilisations</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Réf. commande</th>
+            <th>Produit</th>
+            <th>Prix payé</th>
+            <th>Votre commission</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr><td colspan="6" class="empty-row">Chargement...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="footer">&copy; 2026 Serenity by Saule. Tous droits réservés.</footer>
+
+  <script src="collab-config.js"></script>
+  <script>
+    const token = localStorage.getItem('collab_token');
+    if (!token) location.href = 'collab-login.html';
+
+    let meData = null;
+
+    async function load() {
+      try {
+        const headers = { 'Authorization': 'Bearer ' + token };
+
+        const [meRes, histRes] = await Promise.all([
+          fetch(API_BASE + '/api/collab/me', { headers }),
+          fetch(API_BASE + '/api/collab/utilisations?limit=50', { headers }),
+        ]);
+
+        if (meRes.status === 401) { logout(); return; }
+
+        meData = await meRes.json();
+        const hist = await histRes.json();
+
+        renderHeader(meData);
+        renderMetrics(meData.stats);
+        renderTable(hist.data || []);
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function renderHeader(d) {
+      document.getElementById('welcome-title').textContent = `Bonjour, ${d.prenom} ✦`;
+      document.getElementById('welcome-sub').textContent =
+        `Code promo : ${d.code_promo} — Réduction offerte : ${Math.round(d.reduction_client * 100)}% — Commission : ${Math.round(d.taux_commission * 100)}%`;
+
+      const badge = document.getElementById('code-badge');
+      badge.textContent = d.code_promo;
+      badge.style.display = 'inline-block';
+
+      document.getElementById('promo-code-display').textContent = d.code_promo;
+
+      const how = document.getElementById('how-box');
+      const pct_red = Math.round(d.reduction_client * 100);
+      const pct_comm = Math.round(d.taux_commission * 100);
+      how.innerHTML = `Communiquez votre code <strong>${d.code_promo}</strong> à vos contacts. À chaque commande passée avec ce code, votre client bénéficie d'une réduction de <strong>${pct_red}%</strong>, et vous percevez <strong>${pct_comm}%</strong> de commission sur le montant payé. Vos gains sont confirmés par Serenity et virés chaque mois.`;
+      how.style.display = 'block';
+    }
+
+    function renderMetrics(s) {
+      document.getElementById('m-total').textContent    = s.utilisations_total;
+      document.getElementById('m-mois').textContent     = s.utilisations_mois;
+      document.getElementById('m-attente').textContent  = fmt(s.gains_en_attente);
+      document.getElementById('m-confirmes').textContent = fmt(s.gains_confirmes);
+    }
+
+    function renderTable(rows) {
+      const tbody = document.getElementById('table-body');
+      if (!rows.length) {
+        tbody.innerHTML = '<tr><td colspan="6" class="empty-row">Aucune utilisation pour le moment.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = rows.map(r => `
+        <tr>
+          <td>${fmtDate(r.date_utilisation)}</td>
+          <td>${r.commande_ref}</td>
+          <td>${r.produit}</td>
+          <td>${fmt(r.prix_paye)}</td>
+          <td>${fmt(r.montant_commission)}</td>
+          <td>${badge(r.statut)}</td>
+        </tr>
+      `).join('');
+    }
+
+    function badge(s) {
+      if (s === 'en_attente') return '<span class="badge badge-grey">En attente</span>';
+      if (s === 'confirmee')  return '<span class="badge badge-green">Confirmée</span>';
+      if (s === 'payee')      return '<span class="badge badge-rose">Payée</span>';
+      return s;
+    }
+
+    function fmt(v) { return parseFloat(v || 0).toFixed(2) + ' €'; }
+
+    function fmtDate(iso) {
+      if (!iso) return '—';
+      const d = new Date(iso);
+      return d.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    }
+
+    function copierCode() {
+      if (!meData) return;
+      navigator.clipboard.writeText(meData.code_promo).then(() => {
+        const msg = document.getElementById('copied-msg');
+        msg.style.display = 'inline';
+        setTimeout(() => msg.style.display = 'none', 2000);
+      });
+    }
+
+    function partagerWhatsApp() {
+      if (!meData) return;
+      const pct = Math.round(meData.reduction_client * 100);
+      const texte = encodeURIComponent(
+        `Découvrez Serenity Lingerie, lingerie de luxe sur mesure. Profitez de ${pct}% de réduction avec mon code : ${meData.code_promo} sur https://serenity-lingerie.com`
+      );
+      window.open(`https://wa.me/?text=${texte}`, '_blank');
+    }
+
+    function logout() {
+      localStorage.removeItem('collab_token');
+      localStorage.removeItem('collab_user');
+      location.href = 'collab-login.html';
+    }
+
+    load();
+  </script>
+</body>
+</html>

@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity by Saule | Lingerie sur mesure &mdash; Antananarivo</title>
+    <meta name="description" content="Serenity by Saule : lingerie de luxe sur mesure. Sport Bra &amp; Slip en coton jersey premium, st&eacute;rilis&eacute;s UV, con&ccedil;us uniquement pour vous. Antananarivo, Madagascar.">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '953611460562954');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=953611460562954&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* ================================================
+           INDEX — Serenity by Saule
+           Design : Luxe · Minimaliste · Editorial
+        ================================================ */
+
+        :root {
+            --cream:      #FAF7F4;
+            --cream-alt:  #F2ECE7;
+            --rose:       #C9A99A;
+            --rose-light: #EEE0DA;
+            --gold:       #B8935A;
+            --charcoal:   #2C2C2A;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+        }
+
+        /* ---- NAVBAR ---- */
+        .navbar {
+            position: fixed;
+            background-color: rgba(250, 247, 244, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 169, 154, 0.2);
+            padding: 1.1rem 3rem;
+        }
+
+        .logo {
+            color: var(--charcoal);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+
+        .nav-links a {
+            background-color: transparent;
+            color: var(--charcoal);
+            border: 1px solid transparent;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.13em;
+            padding: 0.4rem 0.75rem;
+            border-radius: 0;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: transparent;
+            color: var(--gold);
+            border-color: transparent;
+        }
+
+        /* Boutons d'action dans la navbar */
+        .nav-links a.nav-cta-primary {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+            padding: 0.45rem 1.1rem;
+        }
+
+        .nav-links a.nav-cta-primary:hover {
+            background: var(--gold);
+            color: var(--cream);
+            border-color: var(--gold);
+        }
+
+        .nav-links a.nav-cta-secondary {
+            border: 1px solid rgba(44, 44, 42, 0.3);
+            color: var(--charcoal);
+            padding: 0.45rem 1.1rem;
+        }
+
+        .nav-links a.nav-cta-secondary:hover {
+            background: transparent;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        /* ---- BANNIERE LIVRAISON ---- */
+        .delivery-banner {
+            background-color: var(--cream-alt);
+            border-bottom: 1px solid rgba(201, 169, 154, 0.25);
+            text-align: center;
+            padding: 0.55rem 1rem;
+            position: fixed;
+            top: 61px; /* hauteur navbar */
+            width: 100%;
+            z-index: 99;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            opacity: 0.75;
+        }
+
+        /* ---- PAGE HEADER ---- */
+        .prod-page-header {
+            padding-top: calc(61px + 34px + 4.5rem); /* navbar + banniere + espace */
+            padding-bottom: 3.5rem;
+            text-align: center;
+            background-color: var(--cream);
+        }
+
+        .prod-page-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            letter-spacing: 0.05em;
+            line-height: 1;
+        }
+
+        .prod-page-sub {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 300;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--rose);
+            margin-top: 0.7rem;
+        }
+
+        /* ---- PRODUCT SECTION ---- */
+        .prod-section {
+            padding: 5rem 0 6.5rem;
+        }
+
+        .prod-section--alt {
+            background-color: var(--cream-alt);
+        }
+
+        .prod-layout {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        /* ---- CAROUSEL ---- */
+        .carousel-col {
+            position: sticky;
+            top: calc(61px + 34px + 16px);
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .carousel-slide.is-active {
+            display: flex;
+            animation: carFadeIn 0.45s ease-out;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @keyframes carFadeIn {
+            from { opacity: 0; transform: scale(1.015); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+
+        .slide-icon {
+            opacity: 0.18;
+            margin-bottom: 1.2rem;
+        }
+
+        .slide-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--charcoal);
+            letter-spacing: 0.08em;
+            opacity: 0.45;
+        }
+
+        .slide-caption {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            opacity: 0.25;
+            margin-top: 0.4rem;
+        }
+
+        .car-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(250, 247, 244, 0.88);
+            border: 1px solid rgba(44, 44, 42, 0.14);
+            color: var(--charcoal);
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            z-index: 5;
+        }
+
+        .car-arrow:hover {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+        }
+
+        .car-arrow--prev { left: 1rem; }
+        .car-arrow--next { right: 1rem; }
+
+        .car-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.9rem 0 0.6rem;
+        }
+
+        .car-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(44, 44, 42, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .car-dot.is-active {
+            background: var(--gold);
+            width: 20px;
+            border-radius: 3px;
+        }
+
+        /* ---- VARIANT SELECTOR ---- */
+        .variant-selector {
+            display: flex;
+            gap: 0.45rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .var-btn {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.1rem;
+            border: 1px solid rgba(44, 44, 42, 0.22);
+            background: transparent;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .var-btn:hover {
+            border-color: var(--rose);
+            color: var(--rose);
+        }
+
+        .var-btn.is-active {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+        }
+
+        /* ---- PRODUCT INFO ---- */
+        .prod-info {
+            padding-top: 0.5rem;
+        }
+
+        .prod-eyebrow {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.9rem;
+        }
+
+        .prod-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.4rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            line-height: 1.05;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.01em;
+        }
+
+        .prod-brand-line {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--rose);
+            margin-bottom: 0.75rem;
+        }
+
+        .prod-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            font-weight: 300;
+            color: rgba(44, 44, 42, 0.55);
+            margin-bottom: 2.2rem;
+            padding-bottom: 2.2rem;
+            border-bottom: 1px solid rgba(201, 169, 154, 0.3);
+        }
+
+        .prod-desc {
+            margin-bottom: 2rem;
+        }
+
+        .prod-desc > p {
+            font-size: 0.9rem;
+            line-height: 1.95;
+            color: rgba(44, 44, 42, 0.78);
+            margin-bottom: 1.4rem;
+        }
+
+        .prod-feature {
+            margin-bottom: 1.1rem;
+        }
+
+        .prod-feature-title {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.2rem;
+        }
+
+        .prod-feature-text {
+            font-size: 0.86rem;
+            line-height: 1.75;
+            color: rgba(44, 44, 42, 0.65);
+        }
+
+        .prod-closing {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-style: italic;
+            color: rgba(44, 44, 42, 0.5);
+            line-height: 1.7;
+            margin-top: 1.6rem;
+            padding-top: 1.4rem;
+            border-top: 1px solid rgba(201, 169, 154, 0.2);
+        }
+
+        .variant-tag {
+            display: inline-block;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.85rem;
+            background: var(--rose-light);
+            color: var(--charcoal);
+            margin-bottom: 0.8rem;
+        }
+
+        .variant-desc {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.08rem;
+            font-style: italic;
+            color: rgba(44, 44, 42, 0.68);
+            line-height: 1.65;
+            margin-bottom: 1.8rem;
+            padding: 1rem 1.3rem;
+            border-left: 2px solid var(--rose);
+            background: rgba(201, 169, 154, 0.06);
+        }
+
+        .prod-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .badge {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.63rem;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            padding: 0.32rem 0.85rem;
+            border: 1px solid rgba(184, 147, 90, 0.38);
+            color: var(--gold);
+        }
+
+        .prod-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .prod-btn-primary {
+            display: block;
+            text-align: center;
+            padding: 1.05rem 2rem;
+            background: var(--charcoal);
+            color: var(--cream);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.35s ease, color 0.35s ease;
+        }
+
+        .prod-btn-primary:hover {
+            background: var(--gold);
+            color: var(--cream);
+        }
+
+        .prod-btn-secondary {
+            display: block;
+            text-align: center;
+            padding: 1.05rem 2rem;
+            background: transparent;
+            color: var(--charcoal);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid rgba(44, 44, 42, 0.32);
+            transition: all 0.35s ease;
+        }
+
+        .prod-btn-secondary:hover {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+        }
+
+        .prod-hint-link {
+            display: block;
+            text-align: center;
+            margin-top: 0.9rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            font-style: italic;
+            color: rgba(44, 44, 42, 0.4);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: color 0.2s ease;
+        }
+
+        .prod-hint-link:hover {
+            color: var(--rose);
+            text-decoration: underline;
+        }
+
+        /* ---- SEPARATEUR ---- */
+        .prod-separator {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .sep-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(201, 169, 154, 0.3);
+        }
+
+        .sep-ornament {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            opacity: 0.55;
+            line-height: 1;
+        }
+
+        /* ---- BLOC TARIFS ---- */
+        .tarifs-cta {
+            padding: 5rem 2.5rem;
+            text-align: center;
+            background-color: var(--cream);
+        }
+
+        .tarifs-cta-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--rose);
+            margin-bottom: 0.8rem;
+        }
+
+        .tarifs-cta-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .tarifs-cta-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-style: italic;
+            color: rgba(44, 44, 42, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        .tarifs-btn {
+            display: inline-block;
+            padding: 0.95rem 2.8rem;
+            background: transparent;
+            color: var(--charcoal);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid rgba(44, 44, 42, 0.32);
+            transition: all 0.35s ease;
+        }
+
+        .tarifs-btn:hover {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+        }
+
+        /* ---- EXPERIENCE SECTION ---- */
+        .experience-intro {
+            padding-top: calc(61px + 34px + 4rem);
+            padding-bottom: 2rem;
+            text-align: center;
+            background-color: var(--cream);
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+
+        .experience-intro-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin: 2rem 0 0.5rem;
+            line-height: 1.2;
+        }
+
+        .experience-intro-sub {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 300;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(44, 44, 42, 0.4);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--cream);
+            padding-bottom: 5rem;
+        }
+
+        .exp-col {
+            padding: 3.5rem 3.5rem;
+        }
+
+        .exp-col--bespoke {
+            background: var(--cream);
+            border-right: 1px solid rgba(184, 147, 90, 0.18);
+        }
+
+        .exp-col--standard {
+            background: var(--cream-alt);
+        }
+
+        .exp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.28rem 0.8rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .exp-badge--bespoke {
+            background: #F0E6D3;
+            color: #8B5E52;
+        }
+
+        .exp-badge--stock {
+            background: #E8F4EC;
+            color: #2D6A3F;
+        }
+
+        .exp-col-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.1rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+        }
+
+        .exp-col-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-style: italic;
+            color: rgba(44, 44, 42, 0.5);
+            margin-bottom: 1.6rem;
+            padding-bottom: 1.6rem;
+            border-bottom: 1px solid rgba(201, 169, 154, 0.25);
+        }
+
+        .exp-points {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem;
+        }
+
+        .exp-points li {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 300;
+            color: rgba(44, 44, 42, 0.68);
+            padding: 0.3rem 0 0.3rem 1rem;
+            position: relative;
+            line-height: 1.55;
+        }
+
+        .exp-col--bespoke .exp-points li::before {
+            content: '\00b7';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        .exp-col--standard .exp-points li::before {
+            content: '\00b7';
+            position: absolute;
+            left: 0;
+            color: #2D6A3F;
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        /* ---- SIZE PILLS ---- */
+        .size-selector {
+            margin-bottom: 1.5rem;
+        }
+
+        .size-selector-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(44, 44, 42, 0.45);
+            margin-bottom: 0.65rem;
+        }
+
+        .size-pills {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .size-pill {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            padding: 0.5rem 1.1rem;
+            border: 1px solid var(--rose);
+            background: transparent;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .size-pill:hover {
+            border-color: #2D6A3F;
+            color: #2D6A3F;
+        }
+
+        .size-pill.is-active {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+        }
+
+        /* ---- SECTION CHOIX SUR MESURE / STANDARD ---- */
+        .prod-choice-section {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: start;
+            margin-top: 1.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid rgba(201, 169, 154, 0.22);
+        }
+
+        .prod-choice-option {
+            padding: 0 0.9rem;
+        }
+
+        .prod-choice-option:first-child { padding-left: 0; }
+        .prod-choice-option:last-child  { padding-right: 0; }
+
+        .prod-choice-divider {
+            width: 1px;
+            background: rgba(201, 169, 154, 0.25);
+            align-self: stretch;
+        }
+
+        .prod-choice-type {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.63rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 0.35rem;
+        }
+
+        .prod-choice-type--bespoke  { color: #8B5E52; }
+        .prod-choice-type--standard { color: #2D6A3F; }
+
+        .prod-choice-desc {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            color: rgba(44, 44, 42, 0.42);
+            margin-bottom: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .prod-choice-btn-bespoke {
+            display: block;
+            padding: 0.72rem 0.9rem;
+            background: var(--charcoal);
+            color: var(--cream);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .prod-choice-btn-bespoke:hover {
+            background: var(--gold);
+            color: var(--cream);
+        }
+
+        .prod-choice-btn-standard {
+            display: block;
+            width: 100%;
+            padding: 0.72rem 0.9rem;
+            background: var(--charcoal);
+            color: var(--cream);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: center;
+            margin-top: 0.65rem;
+        }
+
+        .prod-choice-btn-standard:hover:not([disabled]) { background: #2D6A3F; }
+        .prod-choice-btn-standard[disabled] { opacity: 0.4; cursor: not-allowed; }
+
+        /* ---- SIZE PILLS COMPACTS ---- */
+        .size-pills-sm {
+            display: flex;
+            gap: 0.35rem;
+            flex-wrap: wrap;
+        }
+
+        .size-pill-sm {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 0.38rem 0.75rem;
+            border: 1px solid var(--rose);
+            background: transparent;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .size-pill-sm:hover {
+            border-color: #2D6A3F;
+            color: #2D6A3F;
+        }
+
+        .size-pill-sm.is-active {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+        }
+
+        /* ---- VARIANTE SLIP (mini info) ---- */
+        .slip-variant-info {
+            margin-bottom: 1.2rem;
+        }
+
+        .slip-variant-tag-sm {
+            display: inline-block;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 0.22rem 0.7rem;
+            background: var(--rose-light);
+            color: var(--charcoal);
+            margin-bottom: 0.35rem;
+        }
+
+        .slip-variant-text-sm {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: rgba(44, 44, 42, 0.55);
+            line-height: 1.6;
+        }
+
+        /* ---- BOUTON COMMANDER ---- */
+        .prod-order-btn {
+            display: block;
+            text-align: center;
+            padding: 1rem 2rem;
+            background: var(--charcoal);
+            color: var(--cream);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            margin-top: 2rem;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+        .prod-order-btn:hover { background: var(--gold); }
+        .prod-order-btn.is-open { background: var(--gold); }
+
+        /* ---- SECTION COMMANDE INLINE ---- */
+        .order-inline-section {
+            background: var(--cream-alt);
+            border-top: 2px solid rgba(184,147,90,0.25);
+            padding: 4rem 2.5rem;
+            display: none;
+        }
+        .order-inline-section.is-open { display: block; animation: fadeInPanel 0.3s ease; }
+        @keyframes fadeInPanel {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .order-inline-inner {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .order-inline-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .order-inline-eyebrow {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        .order-inline-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--charcoal);
+        }
+        /* Step 0 : choix parcours */
+        .step0-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .step0-card {
+            padding: 1.5rem 1.3rem;
+            border: 1px solid rgba(201,169,154,0.35);
+            background: #fff;
+            cursor: pointer;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            user-select: none;
+        }
+        .step0-card:hover { border-color: rgba(184,147,90,0.5); box-shadow: 0 4px 20px rgba(44,44,42,0.05); }
+        .step0-card.is-active-bespoke { border-color: var(--gold); border-width: 2px; background: #FFFDF8; }
+        .step0-card.is-active-std     { border-color: #2D6A3F; border-width: 2px; background: #F0FAF2; }
+        .step0-card-icon { font-size: 1.2rem; margin-bottom: 0.3rem; }
+        .step0-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--charcoal); }
+        .step0-card-sub { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: rgba(44,44,42,0.5); font-weight: 300; margin-top: 0.2rem; }
+
+        /* Panneaux de formulaire inline */
+        .order-form-panel { display: none; }
+        .order-form-panel.is-visible { display: block; animation: fadeInPanel 0.25s ease; }
+
+        /* Champs inline */
+        .oi-section { margin-bottom: 2rem; }
+        .oi-section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 0.9rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(201,169,154,0.15);
+        }
+        .oi-meas-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.63rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(44,44,42,0.38);
+            margin-bottom: 0.8rem;
+        }
+        .oi-measure-field { margin-bottom: 1rem; display: flex; gap: 0.85rem; align-items: flex-start; }
+        .oi-measure-img { width: 68px; height: 68px; object-fit: cover; border-radius: 6px; flex-shrink: 0; border: 1px solid rgba(184,147,90,0.22); }
+        .oi-measure-content { flex: 1; min-width: 0; }
+        .tape-dl { display: flex; align-items: center; gap: 0.85rem; background: rgba(184,147,90,0.07); border: 1px solid rgba(184,147,90,0.3); border-radius: 7px; padding: 0.85rem 1rem; margin-bottom: 1.2rem; text-decoration: none; }
+        .tape-dl-icon { flex-shrink: 0; color: var(--gold); }
+        .tape-dl-label { font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; color: var(--charcoal); display: block; }
+        .tape-dl-sub { font-family: 'Jost', sans-serif; font-size: 0.7rem; color: var(--gold); display: block; margin-top: 0.1rem; }
+        .oi-measure-label-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem; }
+        .oi-measure-label { font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 500; color: var(--charcoal); }
+        .oi-measure-input-row { display: flex; align-items: center; gap: 0.5rem; }
+        .oi-measure-input {
+            width: 100px; padding: 0.6rem 0.85rem;
+            border: 1px solid rgba(201,169,154,0.5);
+            background: #fff; font-family: 'Jost', sans-serif; font-size: 0.88rem; color: var(--charcoal);
+            outline: none; transition: border-color 0.2s; -moz-appearance: textfield;
+        }
+        .oi-measure-input::-webkit-outer-spin-button,
+        .oi-measure-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+        .oi-measure-input:focus { border-color: var(--gold); }
+        .oi-measure-input.is-error { border-color: #C0392B; }
+        .oi-measure-unit { font-family: 'Jost', sans-serif; font-size: 0.72rem; color: rgba(44,44,42,0.38); }
+        .oi-measure-error { display: none; font-family: 'Jost', sans-serif; font-size: 0.68rem; color: #C0392B; font-style: italic; margin-top: 0.2rem; }
+        .oi-measure-error.is-visible { display: block; }
+
+        .oi-size-pills { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.5rem; }
+        .oi-size-pill {
+            font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500;
+            padding: 0.5rem 1.1rem; border: 1px solid var(--rose);
+            background: transparent; color: var(--charcoal); cursor: pointer; transition: all 0.2s;
+        }
+        .oi-size-pill:hover { border-color: #2D6A3F; color: #2D6A3F; }
+        .oi-size-pill.is-active { background: var(--charcoal); color: var(--cream); border-color: var(--charcoal); }
+
+        .oi-model-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; margin: 0.5rem 0 0.3rem; }
+        .oi-model-check { display: flex; align-items: center; gap: 0.45rem; cursor: pointer; }
+        .oi-model-check input { width: 14px; height: 14px; accent-color: var(--charcoal); flex-shrink: 0; }
+        .oi-model-check span { font-family: 'Jost', sans-serif; font-size: 0.82rem; color: rgba(44,44,42,0.75); }
+
+        .oi-couleur-row { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 0.5rem; }
+        .oi-couleur-btn {
+            display: flex; align-items: center; gap: 0.45rem;
+            padding: 0.5rem 0.9rem; border: 1px solid rgba(201,169,154,0.4);
+            background: transparent; cursor: pointer; transition: border-color 0.2s;
+            font-family: 'Jost', sans-serif; font-size: 0.78rem; color: var(--charcoal);
+        }
+        .oi-couleur-btn.is-active { border-color: var(--charcoal); box-shadow: inset 0 0 0 1px var(--charcoal); }
+        .oi-couleur-swatch { width: 17px; height: 17px; border-radius: 50%; flex-shrink: 0; }
+
+        .oi-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+        .oi-field-row.full { grid-template-columns: 1fr; }
+        .oi-field-group { display: flex; flex-direction: column; gap: 0.25rem; }
+        .oi-field-label { font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--charcoal); letter-spacing: 0.04em; }
+        .oi-field-label .opt { font-weight: 300; color: rgba(44,44,42,0.38); font-size: 0.66rem; }
+        .oi-field-input, .oi-field-select, .oi-field-textarea {
+            font-family: 'Jost', sans-serif; font-size: 0.88rem; color: var(--charcoal);
+            padding: 0.65rem 0.85rem; border: 1px solid rgba(201,169,154,0.5);
+            background: #fff; outline: none; transition: border-color 0.2s; width: 100%; box-sizing: border-box;
+        }
+        .oi-field-input:focus, .oi-field-select:focus, .oi-field-textarea:focus { border-color: var(--gold); }
+        .oi-field-input.is-error, .oi-field-select.is-error { border-color: #C0392B; }
+        .oi-field-textarea { resize: vertical; min-height: 60px; }
+        .oi-field-select {
+            -webkit-appearance: none; appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%232C2C2A' opacity='.35'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 0.85rem center;
+            padding-right: 2rem; cursor: pointer;
+        }
+        .oi-field-error { display: none; font-family: 'Jost', sans-serif; font-size: 0.68rem; color: #C0392B; font-style: italic; }
+        .oi-field-error.is-visible { display: block; }
+
+        .oi-submit-btn {
+            display: block; width: 100%; text-align: center;
+            padding: 1.05rem 2rem;
+            background: var(--charcoal); color: var(--cream);
+            font-family: 'Jost', sans-serif; font-size: 0.75rem;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            border: none; cursor: pointer; transition: background 0.3s; margin-top: 0.5rem;
+        }
+        .oi-submit-btn:hover { background: var(--gold); }
+        .oi-submit-btn:disabled { opacity: 0.45; cursor: not-allowed; background: var(--charcoal); }
+
+        .oi-confirm-block {
+            text-align: center; padding: 3rem 2rem;
+            border: 1px solid rgba(184,147,90,0.22);
+            background: rgba(184,147,90,0.04);
+        }
+
+        /* ---- PAIEMENT MOBILE MONEY ---- */
+        .pmt-block { background: white; border: 1px solid rgba(184,147,90,0.28); border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.4rem auto 0; text-align: left; max-width: 380px; }
+        .pmt-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.5rem; }
+        .pmt-desc { font-family: 'Jost', sans-serif; font-size: 0.76rem; color: rgba(44,44,42,0.55); margin-bottom: 0.75rem; line-height: 1.6; }
+        .pmt-operator { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.45rem; padding: 0.45rem 0.65rem; background: var(--cream-alt); border-radius: 5px; }
+        .pmt-op-tag { font-family: 'Jost', sans-serif; font-size: 0.62rem; font-weight: 600; color: white; padding: 0.15rem 0.45rem; border-radius: 3px; letter-spacing: 0.02em; white-space: nowrap; }
+        .pmt-op-num { font-family: 'Jost', sans-serif; font-size: 0.79rem; color: var(--charcoal); font-weight: 500; }
+        .pmt-note { font-family: 'Jost', sans-serif; font-size: 0.69rem; color: rgba(44,44,42,0.42); font-style: italic; margin-top: 0.5rem; }
+        .pmt-eu-btns { display: flex; gap: 0.75rem; margin-top: 0.4rem; flex-wrap: wrap; }
+        .pmt-eu-btn { font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; color: var(--cream); background: var(--charcoal); padding: 0.6rem 1.1rem; border-radius: 4px; text-decoration: none; flex: 1; text-align: center; }
+        .pmt-track-btn { display: inline-block; margin-top: 1.1rem; font-family: 'Jost', sans-serif; font-size: 0.71rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,147,90,0.45); padding-bottom: 0.15rem; }
+
+        /* ---- FOOTER ---- */
+        .footer {
+            background-color: var(--charcoal);
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 900px) {
+            .experience-grid {
+                grid-template-columns: 1fr;
+                padding-bottom: 3rem;
+            }
+
+            .exp-col--bespoke {
+                border-right: none;
+                border-top: 1px solid rgba(201, 169, 154, 0.2);
+                order: 2;
+            }
+
+            .exp-col--standard {
+                order: 1;
+            }
+
+            .exp-col {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .prod-choice-section {
+                grid-template-columns: 1fr;
+            }
+
+            .prod-choice-divider {
+                height: 1px;
+                width: 100%;
+            }
+
+            .prod-choice-option {
+                padding: 0;
+                padding-top: 1rem;
+            }
+
+            .prod-choice-option:first-child { padding-top: 0; }
+
+            .experience-intro {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                padding-top: calc(58px + 30px + 2.5rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem 1.2rem; }
+            .delivery-banner {
+                top: 58px; font-size: 0.6rem;
+                letter-spacing: 0.12em; padding: 0.5rem 0.8rem;
+            }
+            .prod-btn-primary, .prod-btn-secondary { width: 100%; }
+            .var-btn { flex: 1; min-width: 70px; text-align: center; }
+            .tarifs-cta { padding: 3.5rem 1.3rem; }
+            .tarifs-btn { width: 100%; text-align: center; }
+            .step0-grid { grid-template-columns: 1fr; }
+            .oi-field-row { grid-template-columns: 1fr; }
+            .oi-model-grid { grid-template-columns: 1fr; }
+            .order-inline-section { padding: 2.5rem 1.3rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Serenity</a>
+        <ul class="nav-links">
+            <li><a href="#produits">Nos cr&eacute;ations</a></li>
+            <li><a href="order.html" class="nav-cta-secondary">Sur mesure</a></li>
+            <li><a href="shop.html">Votre commande</a></li>
+            <li><a href="measurement.html">Mes mesures</a></li>
+            <li><a href="pricing.html">Nos tarifs</a></li>
+            <li><a href="collab-login.html">Espace Collab</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">&#9776;</div>
+    </nav>
+
+    <!-- Banniere livraison -->
+    <div class="delivery-banner">
+        &#10022;&nbsp; Livraison gratuite Madagascar &nbsp;&bull;&nbsp; Offerte d&egrave;s 29&euro; en Europe &nbsp;&#10022;
+    </div>
+
+    <!-- En-tête expérience -->
+    <div class="experience-intro" id="produits">
+        <div class="prod-page-brand">Serenity by Saule</div>
+        <div class="prod-page-sub">Lingerie &middot; Antananarivo</div>
+        <h1 class="experience-intro-title">Nos cr&eacute;ations</h1>
+        <p class="experience-intro-sub">Sur mesure ou taille standard &nbsp;&middot;&nbsp; M&ecirc;me qualit&eacute; &nbsp;&middot;&nbsp; M&ecirc;me st&eacute;rilisation UV</p>
+    </div>
+
+    <!-- Grille deux colonnes -->
+    <div class="experience-grid">
+
+        <!-- ===== GAUCHE : Sur mesure ===== -->
+        <div class="exp-col exp-col--bespoke">
+
+            <div class="prod-eyebrow">Collection Signature</div>
+
+            <!-- Carousel Sport Bra & Slip -->
+            <div class="carousel" id="bra-carousel" style="margin-bottom: 2rem;">
+                <div class="carousel-slide is-active">
+                    <img src="assets/images/bra-creme.jpg" alt="Sport Bra &amp; Slip &mdash; Coloris cr&egrave;me" class="carousel-img">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/images/bra-prune.jpg" alt="Sport Bra &amp; Slip &mdash; Coloris prune" class="carousel-img">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/images/bra-marine.jpg" alt="Sport Bra &amp; Slip &mdash; Coloris marine" class="carousel-img">
+                </div>
+                <button class="car-arrow car-arrow--prev" data-car="bra">&#8592;</button>
+                <button class="car-arrow car-arrow--next" data-car="bra">&#8594;</button>
+                <div class="car-dots" id="bra-dots">
+                    <button class="car-dot is-active" data-car="bra" data-idx="0"></button>
+                    <button class="car-dot"           data-car="bra" data-idx="1"></button>
+                    <button class="car-dot"           data-car="bra" data-idx="2"></button>
+                </div>
+            </div>
+
+            <h2 class="exp-col-title">Sport Bra &amp; Slip</h2>
+            <p class="exp-col-sub">L&rsquo;ensemble deux pi&egrave;ces, con&ccedil;u pour vous</p>
+
+            <button class="prod-order-btn" id="btn-bra" onclick="location.href='shop.html'">
+                Commander l&rsquo;ensemble &rarr;
+            </button>
+
+        </div>
+
+        <!-- ===== DROITE : Taille standard ===== -->
+        <div class="exp-col exp-col--standard">
+
+            <div class="prod-eyebrow">Collection Signature</div>
+
+            <!-- S&eacute;lecteur variante + Carousel Slip -->
+            <div style="margin-bottom: 2rem;">
+                <div class="variant-selector">
+                    <button class="var-btn is-active" data-variant="full-brief">Full Brief</button>
+                    <button class="var-btn"           data-variant="mid-brief">Mid Brief</button>
+                    <button class="var-btn"           data-variant="cheeky">Cheeky</button>
+                    <button class="var-btn"           data-variant="thong">Thong</button>
+                </div>
+
+                <div class="carousel" id="slip-carousel">
+                    <!-- FULL BRIEF -->
+                    <div class="carousel-slide is-active" data-variant="full-brief">
+                        <img src="assets/images/slip-fullbrief-creme.jpg" alt="Slip Full Brief &mdash; Cr&egrave;me" class="carousel-img">
+                    </div>
+                    <div class="carousel-slide" data-variant="full-brief">
+                        <img src="assets/images/slip-fullbrief-prune.jpg" alt="Slip Full Brief &mdash; Prune" class="carousel-img">
+                    </div>
+                    <div class="carousel-slide" data-variant="full-brief">
+                        <img src="assets/images/slip-fullbrief-marine.jpg" alt="Slip Full Brief &mdash; Marine" class="carousel-img">
+                    </div>
+                    <!-- MID BRIEF -->
+                    <div class="carousel-slide" data-variant="mid-brief">
+                        <img src="assets/images/slip-midbrief-creme.jpg" alt="Slip Mid Brief &mdash; Cr&egrave;me" class="carousel-img">
+                    </div>
+                    <div class="carousel-slide" data-variant="mid-brief">
+                        <img src="assets/images/slip-midbrief-prune.jpg" alt="Slip Mid Brief &mdash; Prune" class="carousel-img">
+                    </div>
+                    <div class="carousel-slide" data-variant="mid-brief">
+                        <img src="assets/images/slip-midbrief-marine.jpg" alt="Slip Mid Brief &mdash; Marine" class="carousel-img">
+                    </div>
+                    <!-- CHEEKY -->
+                    <div class="carousel-slide" data-variant="cheeky">
+                        <img src="assets/images/slip-cheeky-creme.jpg" alt="Slip Cheeky &mdash; Cr&egrave;me" class="carousel-img">
+                    </div>
+                    <div class="carousel-slide" data-variant="cheeky">
+                        <img src="assets/images/slip-cheeky-prune.jpg" alt="Slip Cheeky &mdash; Prune" class="carousel-img">
+                    </div>
+                    <div class="carousel-slide" data-variant="cheeky">
+                        <img src="assets/images/slip-cheeky-marine.jpg" alt="Slip Cheeky &mdash; Marine" class="carousel-img">
+                    </div>
+                    <!-- THONG -->
+                    <div class="carousel-slide" data-variant="thong">
+                        <img src="assets/images/slip-thong-creme.jpg" alt="Slip Thong &mdash; Cr&egrave;me" class="carousel-img">
+                    </div>
+                    <div class="carousel-slide" data-variant="thong">
+                        <img src="assets/images/slip-thong-prune.jpg" alt="Slip Thong &mdash; Prune" class="carousel-img">
+                    </div>
+                    <div class="carousel-slide" data-variant="thong">
+                        <img src="assets/images/slip-thong-marine.jpg" alt="Slip Thong &mdash; Marine" class="carousel-img">
+                    </div>
+                    <button class="car-arrow car-arrow--prev" data-car="slip">&#8592;</button>
+                    <button class="car-arrow car-arrow--next" data-car="slip">&#8594;</button>
+                    <div class="car-dots" id="slip-dots">
+                        <button class="car-dot is-active" data-car="slip" data-idx="0"></button>
+                        <button class="car-dot"           data-car="slip" data-idx="1"></button>
+                        <button class="car-dot"           data-car="slip" data-idx="2"></button>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="exp-col-title">Slip</h2>
+            <p class="exp-col-sub">Sur mesure ou taille standard, &agrave; votre image</p>
+
+            <!-- Description variante active -->
+            <div class="slip-variant-info">
+                <span class="slip-variant-tag-sm" id="slip-variant-tag">Full Brief</span>
+                <div class="slip-variant-text-sm" id="slip-variant-text">Coupe haute et enveloppante. Confort maximal, maintien parfait toute la journ&eacute;e.</div>
+            </div>
+
+            <button class="prod-order-btn" id="btn-slip" onclick="location.href='shop.html'">
+                Commander mon slip &rarr;
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ============================================================
+         SECTION COMMANDE INLINE — Sport Bra & Slip
+    ============================================================ -->
+    <div class="order-inline-section" id="order-bra">
+        <div class="order-inline-inner">
+
+            <div class="order-inline-header">
+                <div class="order-inline-eyebrow">Collection Signature</div>
+                <div class="order-inline-title">Commander l&rsquo;ensemble &mdash; Sport Bra &amp; Slip</div>
+            </div>
+
+            <!-- Step 0 -->
+            <div class="step0-grid">
+                <div class="step0-card" id="bra-card-bespoke" onclick="selectBraPath('bespoke')">
+                    <div class="step0-card-icon" style="color:var(--gold);">&#10022;</div>
+                    <div class="step0-card-title">Sur mesure</div>
+                    <div class="step0-card-sub">Vos mesures exactes &middot; 5&ndash;7 jours ouvr&eacute;s</div>
+                </div>
+                <div class="step0-card" id="bra-card-std" onclick="selectBraPath('std')">
+                    <div class="step0-card-icon" style="color:#2D6A3F;">&#10003;</div>
+                    <div class="step0-card-title">Taille standard</div>
+                    <div class="step0-card-sub">En stock &middot; Exp&eacute;di&eacute; sous 2&ndash;3 jours</div>
+                </div>
+            </div>
+
+            <!-- Parcours Sur Mesure -->
+            <div class="order-form-panel" id="bra-panel-bespoke">
+                <!-- Mètre ruban -->
+                <a href="assets/downloads/metre-ruban-serenity.pdf" download target="_blank" class="tape-dl">
+                    <svg class="tape-dl-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="1" y="7.5" width="22" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><line x1="5" y1="7.5" x2="5" y2="16.5" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="7.5" x2="9" y2="12" stroke="currentColor" stroke-width="1.2"/><line x1="13" y1="7.5" x2="13" y2="16.5" stroke="currentColor" stroke-width="1.5"/><line x1="17" y1="7.5" x2="17" y2="12" stroke="currentColor" stroke-width="1.2"/></svg>
+                    <div><span class="tape-dl-label">Pas de m&egrave;tre ruban&nbsp;?</span><span class="tape-dl-sub">T&eacute;l&eacute;charger &amp; imprimer le n&ocirc;tre &darr;</span></div>
+                </a>
+                <!-- Mesures Sport Bra -->
+                <div class="oi-section">
+                    <div class="oi-section-title">Vos mesures Sport Bra (cm)</div>
+                    <div class="oi-measure-field">
+                        <div class="oi-measure-label-row"><span class="oi-measure-label">Overbust</span><div class="tooltip-wrap"><div class="tooltip-icon">i</div><div class="tooltip-text">Tour de poitrine au-dessus des seins</div></div></div>
+                        <div class="oi-measure-input-row"><input type="number" class="oi-measure-input" id="bi-overbust" placeholder="ex. 82" min="40" max="200"><span class="oi-measure-unit">cm</span></div>
+                        <div class="oi-measure-error" id="err-bi-overbust">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+                    <div class="oi-measure-field">
+                        <div class="oi-measure-label-row"><span class="oi-measure-label">Bust</span><div class="tooltip-wrap"><div class="tooltip-icon">i</div><div class="tooltip-text">Tour de poitrine au niveau des seins</div></div></div>
+                        <div class="oi-measure-input-row"><input type="number" class="oi-measure-input" id="bi-bust" placeholder="ex. 88" min="40" max="200"><span class="oi-measure-unit">cm</span></div>
+                        <div class="oi-measure-error" id="err-bi-bust">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+                    <div class="oi-measure-field">
+                        <div class="oi-measure-label-row"><span class="oi-measure-label">Underbust</span><div class="tooltip-wrap"><div class="tooltip-icon">i</div><div class="tooltip-text">Tour de poitrine sous les seins</div></div></div>
+                        <div class="oi-measure-input-row"><input type="number" class="oi-measure-input" id="bi-underbust" placeholder="ex. 74" min="40" max="200"><span class="oi-measure-unit">cm</span></div>
+                        <div class="oi-measure-error" id="err-bi-underbust">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+                </div>
+                <!-- Mesures Slip -->
+                <div class="oi-section">
+                    <div class="oi-section-title">Vos mesures Slip (cm)</div>
+                    <div class="oi-measure-field">
+                        <div class="oi-measure-label-row"><span class="oi-measure-label">Hanches</span><div class="tooltip-wrap"><div class="tooltip-icon">i</div><div class="tooltip-text">Contour le plus large</div></div></div>
+                        <div class="oi-measure-input-row"><input type="number" class="oi-measure-input" id="bi-hanches" placeholder="ex. 96" min="40" max="200"><span class="oi-measure-unit">cm</span></div>
+                        <div class="oi-measure-error" id="err-bi-hanches">Valeur invalide</div>
+                    </div>
+                    <div class="oi-measure-field">
+                        <div class="oi-measure-label-row"><span class="oi-measure-label">Taille</span><div class="tooltip-wrap"><div class="tooltip-icon">i</div><div class="tooltip-text">Contour le plus &eacute;troit</div></div></div>
+                        <div class="oi-measure-input-row"><input type="number" class="oi-measure-input" id="bi-taille" placeholder="ex. 72" min="40" max="200"><span class="oi-measure-unit">cm</span></div>
+                        <div class="oi-measure-error" id="err-bi-taille">Valeur invalide</div>
+                    </div>
+                    <div class="oi-measure-field">
+                        <div class="oi-measure-label-row"><span class="oi-measure-label">Cuisse</span><div class="tooltip-wrap"><div class="tooltip-icon">i</div><div class="tooltip-text">Contour &agrave; mi-cuisse</div></div></div>
+                        <div class="oi-measure-input-row"><input type="number" class="oi-measure-input" id="bi-cuisse" placeholder="ex. 58" min="40" max="200"><span class="oi-measure-unit">cm</span></div>
+                        <div class="oi-measure-error" id="err-bi-cuisse">Valeur invalide</div>
+                    </div>
+                    <p style="margin-top:0.8rem;"><a href="measurement.html" style="font-family:'Jost',sans-serif; font-size:0.72rem; font-style:italic; color:rgba(44,44,42,0.38); text-decoration:none;" target="_blank">Besoin d&rsquo;aide pour vous mesurer&nbsp;? &rarr;</a></p>
+                </div>
+                <!-- Modèles -->
+                <div class="oi-section">
+                    <div class="oi-section-title">Mod&egrave;le de slip</div>
+                    <div class="oi-model-grid">
+                        <label class="oi-model-check"><input type="checkbox" name="bi-model" value="Full Brief"><span>Full Brief</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="bi-model" value="Mid Brief"><span>Mid Brief</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="bi-model" value="Cheeky"><span>Cheeky</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="bi-model" value="Thong"><span>Thong</span></label>
+                    </div>
+                    <span class="oi-field-error" id="err-bi-models">Veuillez s&eacute;lectionner au moins un mod&egrave;le.</span>
+                </div>
+                <!-- Couleur -->
+                <div class="oi-section">
+                    <div class="oi-section-title">Couleur</div>
+                    <div class="oi-couleur-row">
+                        <button type="button" class="oi-couleur-btn" data-grp="bi" data-couleur="Ivoire" onclick="oiSelectCouleur('bi','Ivoire',this)"><span class="oi-couleur-swatch" style="background:#F8F3ED; border:1px solid rgba(44,44,42,0.2);"></span>Ivoire</button>
+                        <button type="button" class="oi-couleur-btn" data-grp="bi" data-couleur="Aubergine" onclick="oiSelectCouleur('bi','Aubergine',this)"><span class="oi-couleur-swatch" style="background:#5C2D6E;"></span>Aubergine</button>
+                        <button type="button" class="oi-couleur-btn" data-grp="bi" data-couleur="Marine" onclick="oiSelectCouleur('bi','Marine',this)"><span class="oi-couleur-swatch" style="background:#1B3A5C;"></span>Marine</button>
+                    </div>
+                    <span class="oi-field-error" id="err-bi-couleur">Veuillez s&eacute;lectionner une couleur.</span>
+                </div>
+                <!-- Coordonnées -->
+                <div class="oi-section">
+                    <div class="oi-section-title">Vos coordonn&eacute;es</div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="bi-prenom">Pr&eacute;nom</label><input type="text" id="bi-prenom" class="oi-field-input" placeholder="Marie"><span class="oi-field-error" id="err-bi-prenom">Champ requis.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="bi-nom">Nom</label><input type="text" id="bi-nom" class="oi-field-input" placeholder="Dupont"><span class="oi-field-error" id="err-bi-nom">Champ requis.</span></div>
+                    </div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="bi-email">Email</label><input type="email" id="bi-email" class="oi-field-input" placeholder="marie@email.com"><span class="oi-field-error" id="err-bi-email">Email invalide.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="bi-telephone">T&eacute;l&eacute;phone <span class="opt">(WhatsApp)</span></label><input type="tel" id="bi-telephone" class="oi-field-input" placeholder="+261 34 00 000 00"><span class="oi-field-error" id="err-bi-telephone">Champ requis.</span></div>
+                    </div>
+                </div>
+                <!-- Adresse -->
+                <div class="oi-section">
+                    <div class="oi-section-title">Adresse de livraison</div>
+                    <div class="oi-field-row full"><div class="oi-field-group"><label class="oi-field-label" for="bi-pays">Pays</label><select id="bi-pays" class="oi-field-select"><optgroup label="Madagascar"><option value="Madagascar" selected>Madagascar — Livraison gratuite</option></optgroup><optgroup label="Europe"><option value="France">France</option><option value="Belgique">Belgique</option><option value="Suisse">Suisse</option><option value="Luxembourg">Luxembourg</option><option value="Allemagne">Allemagne</option><option value="Autres pays Europe">Autres pays Europe</option></optgroup><optgroup label="Autres pays"><option value="Autres">Autres pays (international)</option></optgroup></select></div></div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="bi-ville">Ville</label><input type="text" id="bi-ville" class="oi-field-input" placeholder="Antananarivo"><span class="oi-field-error" id="err-bi-ville">Champ requis.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="bi-adresse">Adresse</label><input type="text" id="bi-adresse" class="oi-field-input" placeholder="Rue, num&eacute;ro..."><span class="oi-field-error" id="err-bi-adresse">Champ requis.</span></div>
+                    </div>
+                    <div class="oi-field-row full"><div class="oi-field-group"><label class="oi-field-label" for="bi-instructions">Instructions <span class="opt">(optionnel)</span></label><textarea id="bi-instructions" class="oi-field-textarea" placeholder="Rep&egrave;re, &eacute;tage..."></textarea></div></div>
+                </div>
+                <button class="oi-submit-btn" id="submit-bi" onclick="oiSubmit('bi','sur_mesure_ensemble','11.99','57552')">Confirmer ma commande &rarr;</button>
+                <div id="confirm-bi" class="oi-confirm-block" style="display:none; margin-top:1.5rem;">
+                    <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--charcoal); margin-bottom:0.6rem;">Merci !</div>
+                    <p style="font-family:'Jost',sans-serif; font-size:0.85rem; color:rgba(44,44,42,0.65); line-height:1.8;">Votre commande sur mesure a &eacute;t&eacute; transmise.<br>Confirmation par email sous peu.</p>
+                </div>
+            </div><!-- /bra-panel-bespoke -->
+
+            <!-- Parcours Taille Standard -->
+            <div class="order-form-panel" id="bra-panel-std">
+                <!-- Tailles -->
+                <div class="oi-section">
+                    <div class="oi-section-title">Votre taille Sport Bra</div>
+                    <div class="oi-size-pills">
+                        <button type="button" class="oi-size-pill" data-grp="bs-bra" data-size="S" onclick="oiSelectSize('bs-bra','S',this)">S</button>
+                        <button type="button" class="oi-size-pill" data-grp="bs-bra" data-size="M" onclick="oiSelectSize('bs-bra','M',this)">M</button>
+                        <button type="button" class="oi-size-pill" data-grp="bs-bra" data-size="L" onclick="oiSelectSize('bs-bra','L',this)">L</button>
+                        <button type="button" class="oi-size-pill" data-grp="bs-bra" data-size="XL" onclick="oiSelectSize('bs-bra','XL',this)">XL</button>
+                    </div>
+                    <span class="oi-field-error" id="err-bs-bra-size">Veuillez s&eacute;lectionner une taille Sport Bra.</span>
+                </div>
+                <div class="oi-section">
+                    <div class="oi-section-title">Votre taille Slip</div>
+                    <div class="oi-size-pills">
+                        <button type="button" class="oi-size-pill" data-grp="bs-slip" data-size="S" onclick="oiSelectSize('bs-slip','S',this)">S</button>
+                        <button type="button" class="oi-size-pill" data-grp="bs-slip" data-size="M" onclick="oiSelectSize('bs-slip','M',this)">M</button>
+                        <button type="button" class="oi-size-pill" data-grp="bs-slip" data-size="L" onclick="oiSelectSize('bs-slip','L',this)">L</button>
+                        <button type="button" class="oi-size-pill" data-grp="bs-slip" data-size="XL" onclick="oiSelectSize('bs-slip','XL',this)">XL</button>
+                    </div>
+                    <span class="oi-field-error" id="err-bs-slip-size">Veuillez s&eacute;lectionner une taille Slip.</span>
+                </div>
+                <!-- Modèles -->
+                <div class="oi-section">
+                    <div class="oi-section-title">Mod&egrave;le de slip</div>
+                    <div class="oi-model-grid">
+                        <label class="oi-model-check"><input type="checkbox" name="bs-model" value="Full Brief"><span>Full Brief</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="bs-model" value="Mid Brief"><span>Mid Brief</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="bs-model" value="Cheeky"><span>Cheeky</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="bs-model" value="Thong"><span>Thong</span></label>
+                    </div>
+                    <span class="oi-field-error" id="err-bs-models">Veuillez s&eacute;lectionner au moins un mod&egrave;le.</span>
+                </div>
+                <!-- Couleur -->
+                <div class="oi-section">
+                    <div class="oi-section-title">Couleur</div>
+                    <div class="oi-couleur-row">
+                        <button type="button" class="oi-couleur-btn" data-grp="bs" data-couleur="Ivoire" onclick="oiSelectCouleur('bs','Ivoire',this)"><span class="oi-couleur-swatch" style="background:#F8F3ED; border:1px solid rgba(44,44,42,0.2);"></span>Ivoire</button>
+                        <button type="button" class="oi-couleur-btn" data-grp="bs" data-couleur="Aubergine" onclick="oiSelectCouleur('bs','Aubergine',this)"><span class="oi-couleur-swatch" style="background:#5C2D6E;"></span>Aubergine</button>
+                        <button type="button" class="oi-couleur-btn" data-grp="bs" data-couleur="Marine" onclick="oiSelectCouleur('bs','Marine',this)"><span class="oi-couleur-swatch" style="background:#1B3A5C;"></span>Marine</button>
+                    </div>
+                    <span class="oi-field-error" id="err-bs-couleur">Veuillez s&eacute;lectionner une couleur.</span>
+                </div>
+                <!-- Coordonnées -->
+                <div class="oi-section">
+                    <div class="oi-section-title">Vos coordonn&eacute;es</div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="bs-prenom">Pr&eacute;nom</label><input type="text" id="bs-prenom" class="oi-field-input" placeholder="Marie"><span class="oi-field-error" id="err-bs-prenom">Champ requis.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="bs-nom">Nom</label><input type="text" id="bs-nom" class="oi-field-input" placeholder="Dupont"><span class="oi-field-error" id="err-bs-nom">Champ requis.</span></div>
+                    </div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="bs-email">Email</label><input type="email" id="bs-email" class="oi-field-input" placeholder="marie@email.com"><span class="oi-field-error" id="err-bs-email">Email invalide.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="bs-telephone">T&eacute;l&eacute;phone <span class="opt">(WhatsApp)</span></label><input type="tel" id="bs-telephone" class="oi-field-input" placeholder="+261 34 00 000 00"><span class="oi-field-error" id="err-bs-telephone">Champ requis.</span></div>
+                    </div>
+                </div>
+                <!-- Adresse -->
+                <div class="oi-section">
+                    <div class="oi-section-title">Adresse de livraison</div>
+                    <div class="oi-field-row full"><div class="oi-field-group"><label class="oi-field-label" for="bs-pays">Pays</label><select id="bs-pays" class="oi-field-select"><optgroup label="Madagascar"><option value="Madagascar" selected>Madagascar — Livraison gratuite</option></optgroup><optgroup label="Europe"><option value="France">France</option><option value="Belgique">Belgique</option><option value="Suisse">Suisse</option><option value="Luxembourg">Luxembourg</option><option value="Allemagne">Allemagne</option><option value="Autres pays Europe">Autres pays Europe</option></optgroup><optgroup label="Autres pays"><option value="Autres">Autres pays (international)</option></optgroup></select></div></div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="bs-ville">Ville</label><input type="text" id="bs-ville" class="oi-field-input" placeholder="Antananarivo"><span class="oi-field-error" id="err-bs-ville">Champ requis.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="bs-adresse">Adresse</label><input type="text" id="bs-adresse" class="oi-field-input" placeholder="Rue, num&eacute;ro..."><span class="oi-field-error" id="err-bs-adresse">Champ requis.</span></div>
+                    </div>
+                    <div class="oi-field-row full"><div class="oi-field-group"><label class="oi-field-label" for="bs-instructions">Instructions <span class="opt">(optionnel)</span></label><textarea id="bs-instructions" class="oi-field-textarea" placeholder="Rep&egrave;re, &eacute;tage..."></textarea></div></div>
+                </div>
+                <button class="oi-submit-btn" id="submit-bs" onclick="oiSubmitStd('bs','standard_ensemble','11.99','57552')">Confirmer ma commande &rarr;</button>
+                <div id="confirm-bs" class="oi-confirm-block" style="display:none; margin-top:1.5rem;">
+                    <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--charcoal); margin-bottom:0.6rem;">Merci !</div>
+                    <p style="font-family:'Jost',sans-serif; font-size:0.85rem; color:rgba(44,44,42,0.65); line-height:1.8;">Votre commande a &eacute;t&eacute; transmise.<br>Confirmation par email sous peu.</p>
+                </div>
+            </div><!-- /bra-panel-std -->
+
+        </div>
+    </div><!-- /order-bra -->
+
+
+    <!-- ============================================================
+         SECTION COMMANDE INLINE — Slip
+    ============================================================ -->
+    <div class="order-inline-section" id="order-slip">
+        <div class="order-inline-inner">
+
+            <div class="order-inline-header">
+                <div class="order-inline-eyebrow">Collection Signature</div>
+                <div class="order-inline-title">Commander mon Slip</div>
+            </div>
+
+            <!-- Step 0 -->
+            <div class="step0-grid">
+                <div class="step0-card" id="slip-card-bespoke" onclick="selectSlipPath('bespoke')">
+                    <div class="step0-card-icon" style="color:var(--gold);">&#10022;</div>
+                    <div class="step0-card-title">Sur mesure</div>
+                    <div class="step0-card-sub">Vos mesures exactes &middot; 5&ndash;7 jours ouvr&eacute;s</div>
+                </div>
+                <div class="step0-card" id="slip-card-std" onclick="selectSlipPath('std')">
+                    <div class="step0-card-icon" style="color:#2D6A3F;">&#10003;</div>
+                    <div class="step0-card-title">Taille standard</div>
+                    <div class="step0-card-sub">En stock &middot; Exp&eacute;di&eacute; sous 2&ndash;3 jours</div>
+                </div>
+            </div>
+
+            <!-- Parcours Sur Mesure Slip -->
+            <div class="order-form-panel" id="slip-panel-bespoke">
+                <a href="assets/downloads/metre-ruban-serenity.pdf" download target="_blank" class="tape-dl">
+                    <svg class="tape-dl-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="1" y="7.5" width="22" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><line x1="5" y1="7.5" x2="5" y2="16.5" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="7.5" x2="9" y2="12" stroke="currentColor" stroke-width="1.2"/><line x1="13" y1="7.5" x2="13" y2="16.5" stroke="currentColor" stroke-width="1.5"/><line x1="17" y1="7.5" x2="17" y2="12" stroke="currentColor" stroke-width="1.2"/></svg>
+                    <div><span class="tape-dl-label">Pas de m&egrave;tre ruban&nbsp;?</span><span class="tape-dl-sub">T&eacute;l&eacute;charger &amp; imprimer le n&ocirc;tre &darr;</span></div>
+                </a>
+                <div class="oi-section">
+                    <div class="oi-section-title">Vos mesures (cm)</div>
+                    <div class="oi-measure-field">
+                        <div class="oi-measure-label-row"><span class="oi-measure-label">Hanches</span><div class="tooltip-wrap"><div class="tooltip-icon">i</div><div class="tooltip-text">Contour le plus large</div></div></div>
+                        <div class="oi-measure-input-row"><input type="number" class="oi-measure-input" id="si-hanches" placeholder="ex. 96" min="40" max="200"><span class="oi-measure-unit">cm</span></div>
+                        <div class="oi-measure-error" id="err-si-hanches">Valeur invalide</div>
+                    </div>
+                    <div class="oi-measure-field">
+                        <div class="oi-measure-label-row"><span class="oi-measure-label">Taille</span><div class="tooltip-wrap"><div class="tooltip-icon">i</div><div class="tooltip-text">Contour le plus &eacute;troit</div></div></div>
+                        <div class="oi-measure-input-row"><input type="number" class="oi-measure-input" id="si-taille" placeholder="ex. 72" min="40" max="200"><span class="oi-measure-unit">cm</span></div>
+                        <div class="oi-measure-error" id="err-si-taille">Valeur invalide</div>
+                    </div>
+                    <div class="oi-measure-field">
+                        <div class="oi-measure-label-row"><span class="oi-measure-label">Cuisse</span><div class="tooltip-wrap"><div class="tooltip-icon">i</div><div class="tooltip-text">Contour &agrave; mi-cuisse</div></div></div>
+                        <div class="oi-measure-input-row"><input type="number" class="oi-measure-input" id="si-cuisse" placeholder="ex. 58" min="40" max="200"><span class="oi-measure-unit">cm</span></div>
+                        <div class="oi-measure-error" id="err-si-cuisse">Valeur invalide</div>
+                    </div>
+                    <p style="margin-top:0.8rem;"><a href="measurement.html" style="font-family:'Jost',sans-serif; font-size:0.72rem; font-style:italic; color:rgba(44,44,42,0.38); text-decoration:none;" target="_blank">Besoin d&rsquo;aide pour vous mesurer&nbsp;? &rarr;</a></p>
+                </div>
+                <div class="oi-section">
+                    <div class="oi-section-title">Mod&egrave;le</div>
+                    <div class="oi-model-grid">
+                        <label class="oi-model-check"><input type="checkbox" name="si-model" value="Full Brief"><span>Full Brief</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="si-model" value="Mid Brief"><span>Mid Brief</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="si-model" value="Cheeky"><span>Cheeky</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="si-model" value="Thong"><span>Thong</span></label>
+                    </div>
+                    <span class="oi-field-error" id="err-si-models">Veuillez s&eacute;lectionner au moins un mod&egrave;le.</span>
+                </div>
+                <div class="oi-section">
+                    <div class="oi-section-title">Couleur</div>
+                    <div class="oi-couleur-row">
+                        <button type="button" class="oi-couleur-btn" data-grp="si" data-couleur="Ivoire" onclick="oiSelectCouleur('si','Ivoire',this)"><span class="oi-couleur-swatch" style="background:#F8F3ED; border:1px solid rgba(44,44,42,0.2);"></span>Ivoire</button>
+                        <button type="button" class="oi-couleur-btn" data-grp="si" data-couleur="Aubergine" onclick="oiSelectCouleur('si','Aubergine',this)"><span class="oi-couleur-swatch" style="background:#5C2D6E;"></span>Aubergine</button>
+                        <button type="button" class="oi-couleur-btn" data-grp="si" data-couleur="Marine" onclick="oiSelectCouleur('si','Marine',this)"><span class="oi-couleur-swatch" style="background:#1B3A5C;"></span>Marine</button>
+                    </div>
+                    <span class="oi-field-error" id="err-si-couleur">Veuillez s&eacute;lectionner une couleur.</span>
+                </div>
+                <div class="oi-section">
+                    <div class="oi-section-title">Vos coordonn&eacute;es</div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="si-prenom">Pr&eacute;nom</label><input type="text" id="si-prenom" class="oi-field-input" placeholder="Marie"><span class="oi-field-error" id="err-si-prenom">Champ requis.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="si-nom">Nom</label><input type="text" id="si-nom" class="oi-field-input" placeholder="Dupont"><span class="oi-field-error" id="err-si-nom">Champ requis.</span></div>
+                    </div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="si-email">Email</label><input type="email" id="si-email" class="oi-field-input" placeholder="marie@email.com"><span class="oi-field-error" id="err-si-email">Email invalide.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="si-telephone">T&eacute;l&eacute;phone <span class="opt">(WhatsApp)</span></label><input type="tel" id="si-telephone" class="oi-field-input" placeholder="+261 34 00 000 00"><span class="oi-field-error" id="err-si-telephone">Champ requis.</span></div>
+                    </div>
+                </div>
+                <div class="oi-section">
+                    <div class="oi-section-title">Adresse de livraison</div>
+                    <div class="oi-field-row full"><div class="oi-field-group"><label class="oi-field-label" for="si-pays">Pays</label><select id="si-pays" class="oi-field-select"><optgroup label="Madagascar"><option value="Madagascar" selected>Madagascar — Livraison gratuite</option></optgroup><optgroup label="Europe"><option value="France">France</option><option value="Belgique">Belgique</option><option value="Suisse">Suisse</option><option value="Luxembourg">Luxembourg</option><option value="Allemagne">Allemagne</option><option value="Autres pays Europe">Autres pays Europe</option></optgroup><optgroup label="Autres pays"><option value="Autres">Autres pays (international)</option></optgroup></select></div></div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="si-ville">Ville</label><input type="text" id="si-ville" class="oi-field-input" placeholder="Antananarivo"><span class="oi-field-error" id="err-si-ville">Champ requis.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="si-adresse">Adresse</label><input type="text" id="si-adresse" class="oi-field-input" placeholder="Rue, num&eacute;ro..."><span class="oi-field-error" id="err-si-adresse">Champ requis.</span></div>
+                    </div>
+                    <div class="oi-field-row full"><div class="oi-field-group"><label class="oi-field-label" for="si-instructions">Instructions <span class="opt">(optionnel)</span></label><textarea id="si-instructions" class="oi-field-textarea" placeholder="Rep&egrave;re, &eacute;tage..."></textarea></div></div>
+                </div>
+                <button class="oi-submit-btn" id="submit-si" onclick="oiSubmit('si','sur_mesure_slip','29.95','143760')">Confirmer ma commande &rarr;</button>
+                <div id="confirm-si" class="oi-confirm-block" style="display:none; margin-top:1.5rem;">
+                    <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--charcoal); margin-bottom:0.6rem;">Merci !</div>
+                    <p style="font-family:'Jost',sans-serif; font-size:0.85rem; color:rgba(44,44,42,0.65); line-height:1.8;">Votre commande a &eacute;t&eacute; transmise.<br>Confirmation par email sous peu.</p>
+                </div>
+            </div><!-- /slip-panel-bespoke -->
+
+            <!-- Parcours Taille Standard Slip -->
+            <div class="order-form-panel" id="slip-panel-std">
+                <div class="oi-section">
+                    <div class="oi-section-title">Votre taille</div>
+                    <div class="oi-size-pills">
+                        <button type="button" class="oi-size-pill" data-grp="ss" data-size="S" onclick="oiSelectSize('ss','S',this)">S</button>
+                        <button type="button" class="oi-size-pill" data-grp="ss" data-size="M" onclick="oiSelectSize('ss','M',this)">M</button>
+                        <button type="button" class="oi-size-pill" data-grp="ss" data-size="L" onclick="oiSelectSize('ss','L',this)">L</button>
+                        <button type="button" class="oi-size-pill" data-grp="ss" data-size="XL" onclick="oiSelectSize('ss','XL',this)">XL</button>
+                    </div>
+                    <span class="oi-field-error" id="err-ss-size">Veuillez s&eacute;lectionner une taille.</span>
+                </div>
+                <div class="oi-section">
+                    <div class="oi-section-title">Mod&egrave;le(s)</div>
+                    <div class="oi-model-grid">
+                        <label class="oi-model-check"><input type="checkbox" name="ss-model" value="Full Brief"><span>Full Brief</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="ss-model" value="Mid Brief"><span>Mid Brief</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="ss-model" value="Cheeky"><span>Cheeky</span></label>
+                        <label class="oi-model-check"><input type="checkbox" name="ss-model" value="Thong"><span>Thong</span></label>
+                    </div>
+                    <span class="oi-field-error" id="err-ss-models">Veuillez s&eacute;lectionner au moins un mod&egrave;le.</span>
+                </div>
+                <div class="oi-section">
+                    <div class="oi-section-title">Couleur</div>
+                    <div class="oi-couleur-row">
+                        <button type="button" class="oi-couleur-btn" data-grp="ss" data-couleur="Ivoire" onclick="oiSelectCouleur('ss','Ivoire',this)"><span class="oi-couleur-swatch" style="background:#F8F3ED; border:1px solid rgba(44,44,42,0.2);"></span>Ivoire</button>
+                        <button type="button" class="oi-couleur-btn" data-grp="ss" data-couleur="Aubergine" onclick="oiSelectCouleur('ss','Aubergine',this)"><span class="oi-couleur-swatch" style="background:#5C2D6E;"></span>Aubergine</button>
+                        <button type="button" class="oi-couleur-btn" data-grp="ss" data-couleur="Marine" onclick="oiSelectCouleur('ss','Marine',this)"><span class="oi-couleur-swatch" style="background:#1B3A5C;"></span>Marine</button>
+                    </div>
+                    <span class="oi-field-error" id="err-ss-couleur">Veuillez s&eacute;lectionner une couleur.</span>
+                </div>
+                <div class="oi-section">
+                    <div class="oi-section-title">Vos coordonn&eacute;es</div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="ss-prenom">Pr&eacute;nom</label><input type="text" id="ss-prenom" class="oi-field-input" placeholder="Marie"><span class="oi-field-error" id="err-ss-prenom">Champ requis.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="ss-nom">Nom</label><input type="text" id="ss-nom" class="oi-field-input" placeholder="Dupont"><span class="oi-field-error" id="err-ss-nom">Champ requis.</span></div>
+                    </div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="ss-email">Email</label><input type="email" id="ss-email" class="oi-field-input" placeholder="marie@email.com"><span class="oi-field-error" id="err-ss-email">Email invalide.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="ss-telephone">T&eacute;l&eacute;phone <span class="opt">(WhatsApp)</span></label><input type="tel" id="ss-telephone" class="oi-field-input" placeholder="+261 34 00 000 00"><span class="oi-field-error" id="err-ss-telephone">Champ requis.</span></div>
+                    </div>
+                </div>
+                <div class="oi-section">
+                    <div class="oi-section-title">Adresse de livraison</div>
+                    <div class="oi-field-row full"><div class="oi-field-group"><label class="oi-field-label" for="ss-pays">Pays</label><select id="ss-pays" class="oi-field-select"><optgroup label="Madagascar"><option value="Madagascar" selected>Madagascar — Livraison gratuite</option></optgroup><optgroup label="Europe"><option value="France">France</option><option value="Belgique">Belgique</option><option value="Suisse">Suisse</option><option value="Luxembourg">Luxembourg</option><option value="Allemagne">Allemagne</option><option value="Autres pays Europe">Autres pays Europe</option></optgroup><optgroup label="Autres pays"><option value="Autres">Autres pays (international)</option></optgroup></select></div></div>
+                    <div class="oi-field-row">
+                        <div class="oi-field-group"><label class="oi-field-label" for="ss-ville">Ville</label><input type="text" id="ss-ville" class="oi-field-input" placeholder="Antananarivo"><span class="oi-field-error" id="err-ss-ville">Champ requis.</span></div>
+                        <div class="oi-field-group"><label class="oi-field-label" for="ss-adresse">Adresse</label><input type="text" id="ss-adresse" class="oi-field-input" placeholder="Rue, num&eacute;ro..."><span class="oi-field-error" id="err-ss-adresse">Champ requis.</span></div>
+                    </div>
+                    <div class="oi-field-row full"><div class="oi-field-group"><label class="oi-field-label" for="ss-instructions">Instructions <span class="opt">(optionnel)</span></label><textarea id="ss-instructions" class="oi-field-textarea" placeholder="Rep&egrave;re, &eacute;tage..."></textarea></div></div>
+                </div>
+                <button class="oi-submit-btn" id="submit-ss" onclick="oiSubmitStd('ss','standard_slip','29.95','143760')">Confirmer ma commande &rarr;</button>
+                <div id="confirm-ss" class="oi-confirm-block" style="display:none; margin-top:1.5rem;">
+                    <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--charcoal); margin-bottom:0.6rem;">Merci !</div>
+                    <p style="font-family:'Jost',sans-serif; font-size:0.85rem; color:rgba(44,44,42,0.65); line-height:1.8;">Votre commande a &eacute;t&eacute; transmise.<br>Confirmation par email sous peu.</p>
+                </div>
+            </div><!-- /slip-panel-std -->
+
+        </div>
+    </div><!-- /order-slip -->
+
+
+    <!-- Bouton Tarifs -->
+    <div class="tarifs-cta">
+        <div class="tarifs-cta-label">Transparence des prix</div>
+        <div class="tarifs-cta-title">Lingerie sur mesure &agrave; prix juste</div>
+        <div class="tarifs-cta-sub">D&eacute;couvrez nos tarifs &agrave; l&rsquo;unit&eacute; et nos abonnements</div>
+        <a href="pricing.html" class="tarifs-btn">D&eacute;couvrir nos tarifs</a>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Serenity by Saule</h4>
+                <p>Lingerie sur-mesure haut de gamme.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="#produits">Nos cr&eacute;ations</a>
+                <a href="order.html">Sur mesure</a>
+                <a href="shop.html">Votre commande</a>
+                <a href="measurement.html">Mes mesures</a>
+                <a href="pricing.html">Nos tarifs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:info@serenity-lingerie.com">info@serenity-lingerie.com</a>
+                <a href="privacy.html">Politique de confidentialit&eacute;</a>
+                <a href="admin-login.html" style="font-size:0.68rem;opacity:0.5;">Admin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Serenity by Saule. Tous droits r&eacute;serv&eacute;s.</div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        /* ================================================
+           CAROUSEL ENGINE — Serenity by Saule
+        ================================================ */
+
+        var state = {
+            bra:  { current: 0 },
+            slip: { current: 0, variant: 'full-brief' }
+        };
+
+        function getSlides(carId) {
+            if (carId === 'slip') {
+                return [...document.querySelectorAll(
+                    '#slip-carousel .carousel-slide[data-variant="' + state.slip.variant + '"]'
+                )];
+            }
+            return [...document.querySelectorAll('#' + carId + '-carousel .carousel-slide')];
+        }
+
+        function getDots(carId) {
+            return [...document.querySelectorAll('#' + carId + '-dots .car-dot')];
+        }
+
+        function goTo(carId, index) {
+            var slides = getSlides(carId);
+            var dots   = getDots(carId);
+            var total  = slides.length;
+            index = ((index % total) + total) % total;
+
+            if (carId === 'slip') {
+                document.querySelectorAll('#slip-carousel .carousel-slide')
+                    .forEach(function(s) { s.classList.remove('is-active'); });
+            } else {
+                slides.forEach(function(s) { s.classList.remove('is-active'); });
+            }
+            dots.forEach(function(d) { d.classList.remove('is-active'); });
+            slides[index].classList.add('is-active');
+            if (dots[index]) dots[index].classList.add('is-active');
+            state[carId].current = index;
+        }
+
+        document.querySelectorAll('.car-arrow').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var carId = btn.dataset.car;
+                var dir   = btn.classList.contains('car-arrow--next') ? 1 : -1;
+                goTo(carId, state[carId].current + dir);
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('car-dot')) return;
+            var carId = e.target.dataset.car;
+            var idx   = parseInt(e.target.dataset.idx, 10);
+            if (carId && !isNaN(idx)) goTo(carId, idx);
+        });
+
+        /* ---- VARIANT SWITCHER ---- */
+        var variantData = {
+            'full-brief': {
+                tag:  'Full Brief',
+                desc: 'Coupe haute et enveloppante. Confort maximal, maintien parfait toute la journ\u00e9e. La coupe id\u00e9ale pour le quotidien \u2014 couverture totale, sensation de s\u00e9curit\u00e9 absolue.'
+            },
+            'mid-brief': {
+                tag:  'Mid Brief',
+                desc: 'La coupe \u00e9quilibr\u00e9e \u2014 ni trop haute, ni trop basse. Silhouette naturelle et libert\u00e9 de mouvement assur\u00e9e. Pour celles qui cherchent le juste milieu entre confort et l\u00e9g\u00e8ret\u00e9.'
+            },
+            'cheeky': {
+                tag:  'Cheeky',
+                desc: 'Une coupe courte et s\u00e9duisante qui r\u00e9v\u00e8le l\u00e9g\u00e8rement les courbes. Moderne, minimaliste, irr\u00e9sistible. Parfaite pour les journ\u00e9es o\u00f9 vous voulez vous sentir aussi belle que libre.'
+            },
+            'thong': {
+                tag:  'Thong',
+                desc: 'Invisible sous les v\u00eatements, imperceptible sur la peau. La finesse au service du confort absolu. Z\u00e9ro marque, z\u00e9ro contrainte \u2014 pour une libert\u00e9 totale dans chaque tenue.'
+            }
+        };
+
+        document.querySelectorAll('.var-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var variant = btn.dataset.variant;
+                document.querySelectorAll('.var-btn')
+                    .forEach(function(b) { b.classList.remove('is-active'); });
+                btn.classList.add('is-active');
+                state.slip.variant = variant;
+                state.slip.current = 0;
+                document.querySelectorAll('#slip-carousel .carousel-slide')
+                    .forEach(function(s) { s.classList.remove('is-active'); });
+                rebuildDots(variant);
+                goTo('slip', 0);
+                var data = variantData[variant];
+                document.getElementById('slip-variant-tag').textContent  = data.tag;
+                document.getElementById('slip-variant-text').textContent = data.desc;
+            });
+        });
+
+        function rebuildDots(variant) {
+            var count = document.querySelectorAll(
+                '#slip-carousel .carousel-slide[data-variant="' + variant + '"]'
+            ).length;
+            var container = document.getElementById('slip-dots');
+            container.innerHTML = '';
+            for (var i = 0; i < count; i++) {
+                var dot = document.createElement('button');
+                dot.className   = 'car-dot' + (i === 0 ? ' is-active' : '');
+                dot.dataset.car = 'slip';
+                dot.dataset.idx = i;
+                container.appendChild(dot);
+            }
+        }
+
+        /* ---- SIZE PILLS — Taille standard (par produit) ---- */
+        var selectedBraSize  = null;
+        var selectedSlipSize = null;
+
+        /* ---- INLINE ORDER SECTIONS ---- */
+        var GAS_URL = 'https://script.google.com/macros/s/AKfycbyfqfv4b-FsfRZC-aRZ8vOk_TjmaD30V9_8kqq8N0qH-Q_P1J6f-a3CJMg-X6HLzjkj/exec';
+        var oiCouleurs = {};
+        var oiSizes    = {};
+
+        function toggleOrderSection(product) {
+            var section = document.getElementById('order-' + product);
+            var isOpen  = section.classList.contains('is-open');
+            document.querySelectorAll('.order-inline-section').forEach(function(s) { s.classList.remove('is-open'); });
+            if (!isOpen) {
+                section.classList.add('is-open');
+                setTimeout(function() { section.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 80);
+            }
+        }
+
+        function selectBraPath(path) {
+            document.getElementById('bra-card-bespoke').className = 'step0-card' + (path === 'bespoke' ? ' is-active-bespoke' : '');
+            document.getElementById('bra-card-std').className     = 'step0-card' + (path === 'std'     ? ' is-active-std'     : '');
+            document.getElementById('bra-panel-bespoke').className = 'order-form-panel' + (path === 'bespoke' ? ' is-visible' : '');
+            document.getElementById('bra-panel-std').className     = 'order-form-panel' + (path === 'std'     ? ' is-visible' : '');
+        }
+
+        function selectSlipPath(path) {
+            document.getElementById('slip-card-bespoke').className = 'step0-card' + (path === 'bespoke' ? ' is-active-bespoke' : '');
+            document.getElementById('slip-card-std').className     = 'step0-card' + (path === 'std'     ? ' is-active-std'     : '');
+            document.getElementById('slip-panel-bespoke').className = 'order-form-panel' + (path === 'bespoke' ? ' is-visible' : '');
+            document.getElementById('slip-panel-std').className     = 'order-form-panel' + (path === 'std'     ? ' is-visible' : '');
+        }
+
+        function oiSelectCouleur(grp, couleur, btn) {
+            oiCouleurs[grp] = couleur;
+            document.querySelectorAll('.oi-couleur-btn[data-grp="' + grp + '"]').forEach(function(b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+            var err = document.getElementById('err-' + grp + '-couleur');
+            if (err) err.classList.remove('is-visible');
+        }
+
+        function oiSelectSize(grp, size, btn) {
+            oiSizes[grp] = size;
+            document.querySelectorAll('.oi-size-pill[data-grp="' + grp + '"]').forEach(function(b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+            var err = document.getElementById('err-' + grp + '-size');
+            if (err) err.classList.remove('is-visible');
+        }
+
+        function oiVal(id) {
+            var el = document.getElementById(id);
+            return el ? el.value.trim() : '';
+        }
+
+        function oiErr(id, show) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            if (show) el.classList.add('is-visible');
+            else      el.classList.remove('is-visible');
+        }
+
+        function oiValidateMeasure(id, min, max) {
+            var v = parseFloat(oiVal(id));
+            var ok = !isNaN(v) && v >= min && v <= max;
+            oiErr('err-' + id, !ok);
+            return ok;
+        }
+
+        function oiValidateCoords(grp) {
+            var ok = true;
+            var prenom = oiVal(grp + '-prenom');
+            oiErr('err-' + grp + '-prenom', !prenom); if (!prenom) ok = false;
+            var nom = oiVal(grp + '-nom');
+            oiErr('err-' + grp + '-nom', !nom); if (!nom) ok = false;
+            var email = oiVal(grp + '-email');
+            var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            oiErr('err-' + grp + '-email', !emailOk); if (!emailOk) ok = false;
+            var tel = oiVal(grp + '-telephone');
+            oiErr('err-' + grp + '-telephone', !tel); if (!tel) ok = false;
+            var ville = oiVal(grp + '-ville');
+            oiErr('err-' + grp + '-ville', !ville); if (!ville) ok = false;
+            var adresse = oiVal(grp + '-adresse');
+            oiErr('err-' + grp + '-adresse', !adresse); if (!adresse) ok = false;
+            return ok;
+        }
+
+        function showPaiement(confEl, pays) {
+            if (confEl.querySelector('.pmt-block')) return;
+            var isMada = (pays === 'Madagascar');
+            var h = '<div class="pmt-block"><div class="pmt-title">Comment r&eacute;gler&nbsp;?</div>';
+            h += '<p class="pmt-desc">Envoyez votre paiement par MVola au destinataire ci-dessous&nbsp;:</p>';
+            h += '<div class="pmt-operator"><span class="pmt-op-tag" style="background:#0066B3">MVola</span><span class="pmt-op-num">+261 34 09 831 74 &mdash; Harilala Mamy Tiana Razanalivaoarijaona</span></div>';
+                        h += '</div><a href="https://serenity-management.netlify.app/" target="_blank" rel="noopener" class="pmt-track-btn">Suivre ma commande &rarr;</a>';
+            confEl.insertAdjacentHTML('beforeend', h);
+        }
+
+        function oiSendToGAS(payload, confirmId, submitId, pays) {
+            var btn = document.getElementById(submitId);
+            if (btn) { btn.disabled = true; btn.textContent = 'Envoi en cours\u2026'; }
+            fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) })
+                .then(function() {
+                    var panel = btn ? btn.closest('.order-form-panel') : null;
+                    if (panel) {
+                        panel.querySelectorAll('.oi-section, .oi-coords-section, .oi-submit-btn').forEach(function(el) { el.style.display = 'none'; });
+                    }
+                    var confirm = document.getElementById(confirmId);
+                    if (confirm) { confirm.style.display = 'block'; showPaiement(confirm, pays); }
+                })
+                .catch(function() {
+                    if (btn) { btn.disabled = false; btn.textContent = 'Confirmer ma commande \u2192'; }
+                    alert('Une erreur est survenue. Veuillez r\u00e9essayer.');
+                });
+        }
+
+        function oiSubmit(grp, type, eur, ar) {
+            var ok = true;
+            var isBra = (grp === 'bi');
+
+            if (isBra) {
+                if (!oiValidateMeasure(grp + '-overbust', 40, 200)) ok = false;
+                if (!oiValidateMeasure(grp + '-bust',     40, 200)) ok = false;
+                if (!oiValidateMeasure(grp + '-underbust',40, 200)) ok = false;
+            }
+            if (!oiValidateMeasure(grp + '-hanches', 40, 200)) ok = false;
+            if (!oiValidateMeasure(grp + '-taille',  40, 200)) ok = false;
+            if (!oiValidateMeasure(grp + '-cuisse',  40, 200)) ok = false;
+
+            var models = Array.from(document.querySelectorAll('input[name="' + grp + '-model"]:checked')).map(function(c) { return c.value; });
+            oiErr('err-' + grp + '-models', models.length === 0);
+            if (models.length === 0) ok = false;
+
+            if (!oiCouleurs[grp]) { oiErr('err-' + grp + '-couleur', true); ok = false; }
+            else                  { oiErr('err-' + grp + '-couleur', false); }
+
+            if (!oiValidateCoords(grp)) ok = false;
+
+            if (!ok) return;
+
+            var payload = {
+                type: type,
+                tour_hanches:  oiVal(grp + '-hanches'),
+                tour_taille:   oiVal(grp + '-taille'),
+                tour_cuisse:   oiVal(grp + '-cuisse'),
+                modeles:       models.join(', '),
+                couleur:       oiCouleurs[grp],
+                prenom:        oiVal(grp + '-prenom'),
+                nom:           oiVal(grp + '-nom'),
+                email:         oiVal(grp + '-email'),
+                telephone:     oiVal(grp + '-telephone'),
+                pays:          oiVal(grp + '-pays'),
+                ville:         oiVal(grp + '-ville'),
+                adresse:       oiVal(grp + '-adresse'),
+                instructions:  oiVal(grp + '-instructions'),
+                montant_eur:   eur,
+                montant_ar:    ar
+            };
+            if (isBra) {
+                payload.tour_overbust      = oiVal(grp + '-overbust');
+                payload.tour_poitrine      = oiVal(grp + '-bust');
+                payload.tour_sous_poitrine = oiVal(grp + '-underbust');
+            }
+            oiSendToGAS(payload, 'confirm-' + grp, 'submit-' + grp, payload.pays);
+        }
+
+        function oiSubmitStd(grp, type, eur, ar) {
+            var ok = true;
+            var isBra = (grp === 'bs');
+
+            if (isBra) {
+                if (!oiSizes['bs-bra'])  { oiErr('err-bs-bra-size', true);  ok = false; }
+                else                     { oiErr('err-bs-bra-size', false); }
+                if (!oiSizes['bs-slip']) { oiErr('err-bs-slip-size', true); ok = false; }
+                else                     { oiErr('err-bs-slip-size', false); }
+            } else {
+                if (!oiSizes[grp]) { oiErr('err-' + grp + '-size', true); ok = false; }
+                else               { oiErr('err-' + grp + '-size', false); }
+            }
+
+            var models = Array.from(document.querySelectorAll('input[name="' + grp + '-model"]:checked')).map(function(c) { return c.value; });
+            oiErr('err-' + grp + '-models', models.length === 0);
+            if (models.length === 0) ok = false;
+
+            if (!oiCouleurs[grp]) { oiErr('err-' + grp + '-couleur', true); ok = false; }
+            else                  { oiErr('err-' + grp + '-couleur', false); }
+
+            if (!oiValidateCoords(grp)) ok = false;
+
+            if (!ok) return;
+
+            var payload = {
+                type:        type,
+                taille_slip: isBra ? (oiSizes['bs-slip'] || '') : (oiSizes[grp] || ''),
+                modeles:     models.join(', '),
+                couleur:     oiCouleurs[grp],
+                prenom:      oiVal(grp + '-prenom'),
+                nom:         oiVal(grp + '-nom'),
+                email:       oiVal(grp + '-email'),
+                telephone:   oiVal(grp + '-telephone'),
+                pays:        oiVal(grp + '-pays'),
+                ville:       oiVal(grp + '-ville'),
+                adresse:     oiVal(grp + '-adresse'),
+                instructions:oiVal(grp + '-instructions'),
+                montant_eur: eur,
+                montant_ar:  ar
+            };
+            if (isBra) {
+                payload.taille_sport_bra = oiSizes['bs-bra'] || '';
+            }
+            oiSendToGAS(payload, 'confirm-' + grp, 'submit-' + grp, payload.pays);
+        }
+
+        /* ---- MEASURE GUIDE IMAGES ---- */
+        (function() {
+            var IMGS = {
+                overbust: 'assets/images/mesures/overbust.jpg',
+                bust:     'assets/images/mesures/bust.jpg',
+                underbust:'assets/images/mesures/underbust.jpg',
+                hanches:  'assets/images/mesures/hanches.jpg',
+                taille:   'assets/images/mesures/taille.jpg',
+                cuisse:   'assets/images/mesures/cuisse.jpg'
+            };
+            document.querySelectorAll('.oi-measure-input').forEach(function(input) {
+                var parts = input.id.split('-');
+                var key   = parts[parts.length - 1];
+                if (!IMGS[key]) return;
+                var field = input.closest('.oi-measure-field');
+                if (!field || field.querySelector('.oi-measure-img')) return;
+                var wrap = document.createElement('div');
+                wrap.className = 'oi-measure-content';
+                while (field.firstChild) wrap.appendChild(field.firstChild);
+                var img = document.createElement('img');
+                img.src = IMGS[key]; img.alt = key; img.className = 'oi-measure-img';
+                field.appendChild(img);
+                field.appendChild(wrap);
+            });
+        })();
+    </script>
+
+</body>
+</html>

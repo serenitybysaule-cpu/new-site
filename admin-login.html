@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Serenity by Saule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --rose: #D4537E; --rose-light: #FBEAF0; --text-primary: #1a1a1a; --text-secondary: #6b6b6b; --border: rgba(0,0,0,0.10); --cream: #FAF8F5; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Jost', sans-serif; font-weight: 300; background: var(--cream); color: var(--text-primary); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .card { background: #fff; border: 0.5px solid var(--border); padding: 3rem 2.5rem; max-width: 380px; width: 90%; }
+    .card h1 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 400; font-style: italic; margin-bottom: 0.3rem; }
+    .card p.sub { font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 2rem; letter-spacing: 0.03em; }
+    .field { margin-bottom: 1.2rem; }
+    .field label { display: block; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.4rem; }
+    .field input { width: 100%; padding: 0.7rem 0.9rem; border: 0.5px solid var(--border); background: #fafafa; font-family: 'Jost', sans-serif; font-size: 0.85rem; outline: none; transition: border-color 0.2s; }
+    .field input:focus { border-color: var(--rose); }
+    .btn { width: 100%; padding: 0.8rem; background: var(--rose); color: #fff; border: none; font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; margin-top: 0.5rem; transition: opacity 0.2s; }
+    .btn:hover { opacity: 0.88; }
+    .error { color: #c0392b; font-size: 0.78rem; margin-top: 1rem; text-align: center; display: none; }
+    .back { text-align: center; margin-top: 1.2rem; font-size: 0.72rem; }
+    .back a { color: var(--rose); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Administration</h1>
+    <p class="sub">Serenity by Saule — accès réservé</p>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="admin@serenity.com">
+    </div>
+    <div class="field">
+      <label>Mot de passe</label>
+      <input type="password" id="password" placeholder="••••••••">
+    </div>
+    <button class="btn" onclick="connexion()">Accéder</button>
+    <p class="error" id="err"></p>
+    <p class="back"><a href="index.html">← Retour au site</a></p>
+  </div>
+
+  <script src="collab-config.js"></script>
+  <script>
+    if (localStorage.getItem('admin_token')) location.href = 'admin.html';
+
+    async function connexion() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const err = document.getElementById('err');
+      err.style.display = 'none';
+      try {
+        const res = await fetch(API_BASE + '/api/auth/admin-connexion', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Erreur.');
+        localStorage.setItem('admin_token', data.token);
+        location.href = 'admin.html';
+      } catch (e) {
+        err.textContent = e.message;
+        err.style.display = 'block';
+      }
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Enter') connexion(); });
+  </script>
+</body>
+</html>

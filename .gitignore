@@ -1,0 +1,17 @@
+# Dépendances Node.js
+node_modules/
+
+# Variables d'environnement (contient le JWT_SECRET)
+.env
+
+# Base de données SQLite (données réelles)
+server/*.db
+server/*.db-shm
+server/*.db-wal
+
+# Fichiers système macOS
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*

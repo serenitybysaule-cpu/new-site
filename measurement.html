@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide des mesures | Serenity by Saule</title>
+    <meta name="description" content="Prenez vos mesures et passez votre commande sur mesure Serenity by Saule directement en ligne.">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '953611460562954');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=953611460562954&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        :root {
+            --cream:      #FAF7F4;
+            --cream-alt:  #F2ECE7;
+            --rose:       #C9A99A;
+            --rose-light: #EEE0DA;
+            --gold:       #B8935A;
+            --charcoal:   #2C2C2A;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+        }
+
+        /* ---- NAVBAR ---- */
+        .navbar {
+            position: fixed;
+            background-color: rgba(250, 247, 244, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 169, 154, 0.2);
+            padding: 1.1rem 3rem;
+        }
+        .logo {
+            color: var(--charcoal);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+        .nav-links a {
+            background-color: transparent;
+            color: var(--charcoal);
+            border: 1px solid transparent;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.13em;
+            padding: 0.4rem 0.75rem;
+            border-radius: 0;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a.nav-cta-secondary {
+            border: 1px solid rgba(44, 44, 42, 0.3);
+            padding: 0.45rem 1.1rem;
+        }
+        .nav-links a.nav-cta-secondary:hover { color: var(--gold); border-color: var(--gold); }
+
+        /* ---- BANNIERE ---- */
+        .delivery-banner {
+            background-color: var(--cream-alt);
+            border-bottom: 1px solid rgba(201, 169, 154, 0.25);
+            text-align: center;
+            padding: 0.55rem 1rem;
+            position: fixed;
+            top: 61px;
+            width: 100%;
+            z-index: 99;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            opacity: 0.75;
+        }
+
+        /* ---- LAYOUT SPLIT ---- */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+            padding-top: calc(61px + 34px);
+        }
+
+        /* ---- PANNEAU GAUCHE : Guide ---- */
+        .guide-panel {
+            background-color: var(--charcoal);
+            color: var(--cream);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2.5rem;
+            position: sticky;
+            top: calc(61px + 34px);
+            height: calc(100vh - 61px - 34px);
+        }
+        .guide-panel-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: rgba(250,247,244,0.9);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .guide-panel-sub {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(201,169,154,0.7);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .guide-video-wrap {
+            width: 100%;
+            max-width: 440px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 1.8rem;
+        }
+        .guide-video-wrap video {
+            width: 100%;
+            display: block;
+        }
+        .guide-pdf-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(201,169,154,0.8);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(201,169,154,0.3);
+            padding-bottom: 0.2rem;
+            transition: color 0.2s ease;
+        }
+        .guide-pdf-link:hover { color: var(--rose); }
+        .guide-home-link {
+            margin-top: 1.5rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            color: rgba(250,247,244,0.35);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+        }
+        .guide-home-link:hover { color: rgba(250,247,244,0.7); }
+
+        /* ---- PANNEAU DROIT : Formulaire ---- */
+        .form-panel {
+            background-color: var(--cream);
+            padding: 4rem 3rem;
+            overflow-y: auto;
+        }
+
+        .form-panel-header {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(201,169,154,0.2);
+            padding-bottom: 1.5rem;
+        }
+        .form-panel-eyebrow {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        .form-panel-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 0.3rem;
+        }
+        .form-panel-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: rgba(44,44,42,0.45);
+        }
+
+        /* ---- PRODUCT TABS ---- */
+        .product-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .product-tab {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.55rem 1.2rem;
+            border: 1px solid rgba(44,44,42,0.22);
+            background: transparent;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .product-tab:hover { border-color: var(--rose); color: var(--rose); }
+        .product-tab.is-active {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+        }
+
+        /* ---- SECTION MESURES ---- */
+        .meas-section { margin-bottom: 2.2rem; }
+        .meas-section-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(44,44,42,0.4);
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(201,169,154,0.15);
+        }
+        .measure-field { margin-bottom: 1.2rem; display: flex; gap: 0.85rem; align-items: flex-start; }
+        .measure-img { width: 68px; height: 68px; object-fit: cover; border-radius: 6px; flex-shrink: 0; border: 1px solid rgba(184,147,90,0.22); }
+        .measure-content { flex: 1; min-width: 0; }
+        .tape-dl { display: flex; align-items: center; gap: 0.85rem; background: rgba(184,147,90,0.07); border: 1px solid rgba(184,147,90,0.3); border-radius: 7px; padding: 0.85rem 1rem; margin-bottom: 1.4rem; text-decoration: none; }
+        .tape-dl-icon { flex-shrink: 0; color: var(--gold); }
+        .tape-dl-label { font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 500; color: var(--charcoal); display: block; }
+        .tape-dl-sub { font-family: 'Jost', sans-serif; font-size: 0.7rem; color: var(--gold); display: block; margin-top: 0.1rem; }
+        .measure-label-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+        .measure-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+        .tooltip-wrap {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+        .tooltip-icon {
+            width: 15px; height: 15px;
+            border-radius: 50%;
+            border: 1px solid rgba(184,147,90,0.5);
+            color: var(--gold);
+            font-size: 0.58rem;
+            font-family: 'Jost', sans-serif;
+            display: flex; align-items: center; justify-content: center;
+            cursor: help; flex-shrink: 0;
+        }
+        .tooltip-text {
+            position: absolute;
+            left: calc(100% + 8px);
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--charcoal);
+            color: var(--cream);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 300;
+            line-height: 1.5;
+            padding: 0.45rem 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            z-index: 10;
+        }
+        .tooltip-wrap:hover .tooltip-text { opacity: 1; }
+        .measure-input-row { display: flex; align-items: center; gap: 0.5rem; }
+        .measure-input {
+            width: 110px;
+            padding: 0.65rem 0.9rem;
+            border: 1px solid rgba(201,169,154,0.5);
+            background: #fff;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.88rem;
+            color: var(--charcoal);
+            transition: border-color 0.2s ease;
+            outline: none;
+            -moz-appearance: textfield;
+        }
+        .measure-input::-webkit-outer-spin-button,
+        .measure-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+        .measure-input:focus { border-color: var(--gold); }
+        .measure-input.is-error { border-color: #C0392B; }
+        .measure-unit { font-family: 'Jost', sans-serif; font-size: 0.75rem; color: rgba(44,44,42,0.4); }
+        .measure-error {
+            display: none;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            color: #C0392B;
+            margin-top: 0.25rem;
+            font-style: italic;
+        }
+        .measure-error.is-visible { display: block; }
+
+        /* ---- MODELES ---- */
+        .model-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin: 0.6rem 0 0.4rem;
+        }
+        .model-check { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
+        .model-check input[type="checkbox"] {
+            width: 14px; height: 14px;
+            accent-color: var(--charcoal);
+            cursor: pointer; flex-shrink: 0;
+        }
+        .model-check span { font-family: 'Jost', sans-serif; font-size: 0.82rem; color: rgba(44,44,42,0.75); }
+
+        /* ---- COULEUR ---- */
+        .couleur-row {
+            display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.55rem;
+        }
+        .couleur-btn {
+            display: flex; align-items: center; gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(201,169,154,0.4);
+            background: transparent; cursor: pointer;
+            transition: border-color 0.2s ease;
+            font-family: 'Jost', sans-serif; font-size: 0.78rem; color: var(--charcoal);
+        }
+        .couleur-btn.is-active { border-color: var(--charcoal); box-shadow: inset 0 0 0 1px var(--charcoal); }
+        .couleur-swatch { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; }
+
+        /* ---- CHAMPS FORMULAIRE ---- */
+        .form-section { margin-bottom: 2rem; }
+        .form-section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(201,169,154,0.15);
+        }
+        .field-row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.8rem;
+        }
+        .field-row.full { grid-template-columns: 1fr; }
+        .field-group { display: flex; flex-direction: column; gap: 0.28rem; }
+        .field-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem; letter-spacing: 0.05em; font-weight: 500; color: var(--charcoal);
+        }
+        .field-label .opt { font-weight: 300; color: rgba(44,44,42,0.38); font-size: 0.66rem; }
+        .field-input, .field-select, .field-textarea {
+            font-family: 'Jost', sans-serif; font-size: 0.88rem; color: var(--charcoal);
+            padding: 0.7rem 0.9rem;
+            border: 1px solid rgba(201,169,154,0.5);
+            background: #fff; outline: none;
+            transition: border-color 0.2s ease;
+            width: 100%; box-sizing: border-box;
+        }
+        .field-input:focus, .field-select:focus, .field-textarea:focus { border-color: var(--gold); }
+        .field-input.is-error, .field-select.is-error { border-color: #C0392B; }
+        .field-textarea { resize: vertical; min-height: 64px; }
+        .field-select {
+            -webkit-appearance: none; appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%232C2C2A' opacity='.35'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 0.9rem center;
+            padding-right: 2.2rem; cursor: pointer;
+        }
+        .field-error-sm {
+            display: none; font-family: 'Jost', sans-serif; font-size: 0.7rem;
+            color: #C0392B; font-style: italic; margin-top: 0.15rem;
+        }
+        .field-error-sm.is-visible { display: block; }
+
+        /* ---- BOUTON SUBMIT ---- */
+
+        /* ---- BOUTON PRÊT À COMMANDER ---- */
+        .ready-to-order-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 1.1rem 2rem;
+            margin-top: 2rem;
+            background: var(--charcoal);
+            color: var(--cream);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.25s;
+        }
+        .ready-to-order-btn:hover { background: #8B5E52; }
+
+        .submit-btn {
+            display: block; width: 100%; text-align: center;
+            padding: 1.1rem 2rem;
+            background: var(--charcoal); color: var(--cream);
+            font-family: 'Jost', sans-serif; font-size: 0.78rem;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            border: none; cursor: pointer;
+            transition: background 0.3s ease; margin-top: 1rem;
+        }
+        .submit-btn:hover { background: var(--gold); }
+        .submit-btn:disabled { opacity: 0.45; cursor: not-allowed; background: var(--charcoal); }
+
+        /* ---- CONFIRMATION ---- */
+        .confirm-block {
+            text-align: center; padding: 3.5rem 2rem;
+            border: 1px solid rgba(184,147,90,0.25);
+            background: rgba(184,147,90,0.04); margin-top: 2rem;
+        }
+
+        /* ---- PAIEMENT MOBILE MONEY ---- */
+        .pmt-block { background: white; border: 1px solid rgba(184,147,90,0.28); border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.4rem auto 0; text-align: left; max-width: 380px; }
+        .pmt-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.5rem; }
+        .pmt-desc { font-family: 'Jost', sans-serif; font-size: 0.76rem; color: rgba(44,44,42,0.55); margin-bottom: 0.75rem; line-height: 1.6; }
+        .pmt-operator { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.45rem; padding: 0.45rem 0.65rem; background: var(--cream-alt); border-radius: 5px; }
+        .pmt-op-tag { font-family: 'Jost', sans-serif; font-size: 0.62rem; font-weight: 600; color: white; padding: 0.15rem 0.45rem; border-radius: 3px; letter-spacing: 0.02em; white-space: nowrap; }
+        .pmt-op-num { font-family: 'Jost', sans-serif; font-size: 0.79rem; color: var(--charcoal); font-weight: 500; }
+        .pmt-note { font-family: 'Jost', sans-serif; font-size: 0.69rem; color: rgba(44,44,42,0.42); font-style: italic; margin-top: 0.5rem; }
+        .pmt-eu-btns { display: flex; gap: 0.75rem; margin-top: 0.4rem; flex-wrap: wrap; }
+        .pmt-eu-btn { font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; color: var(--cream); background: var(--charcoal); padding: 0.6rem 1.1rem; border-radius: 4px; text-decoration: none; flex: 1; text-align: center; }
+        .pmt-track-btn { display: inline-block; margin-top: 1.1rem; font-family: 'Jost', sans-serif; font-size: 0.71rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,147,90,0.45); padding-bottom: 0.15rem; }
+
+        /* ---- FOOTER ---- */
+        .footer { background-color: var(--charcoal); }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 900px) {
+            .split-layout { grid-template-columns: 1fr; }
+            .guide-panel {
+                position: relative; height: auto; min-height: 360px;
+                top: 0;
+            }
+            .form-panel { padding: 2.5rem 1.5rem; }
+        }
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem 1.2rem; }
+            .delivery-banner { top: 58px; font-size: 0.6rem; }
+            .split-layout { padding-top: calc(58px + 30px); }
+            .field-row { grid-template-columns: 1fr; }
+            .model-grid { grid-template-columns: 1fr; }
+            .tooltip-text { left: auto; right: 0; top: calc(100% + 6px); transform: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Serenity</a>
+        <ul class="nav-links">
+            <li><a href="index.html#produits">Nos cr&eacute;ations</a></li>
+            <li><a href="order.html" class="nav-cta-secondary">Sur mesure</a></li>
+            <li><a href="shop.html">Votre commande</a></li>
+            <li><a href="measurement.html" class="active">Mes mesures</a></li>
+            <li><a href="pricing.html">Nos tarifs</a></li>
+            <li><a href="collab-login.html">Espace Collab</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">&#9776;</div>
+    </nav>
+
+    <!-- Banniere -->
+    <div class="delivery-banner">
+        &#10022;&nbsp; Livraison gratuite Madagascar &nbsp;&bull;&nbsp; Offerte d&egrave;s 29&euro; en Europe &nbsp;&#10022;
+    </div>
+
+    <div class="split-layout">
+
+        <!-- ===== GAUCHE : Guide vidéo ===== -->
+        <div class="guide-panel">
+            <div class="guide-panel-title">Guide Prise de Mesure</div>
+            <div class="guide-panel-sub">Regardez avant de remplir</div>
+
+            <div class="guide-video-wrap">
+                <video controls>
+                    <source src="assets/videos/guide-mesure.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture vid&eacute;o.
+                </video>
+            </div>
+
+            <a href="assets/downloads/metre-ruban-serenity.pdf" download class="guide-pdf-link">
+                &#8595;&nbsp; T&eacute;l&eacute;charger le guide PDF
+            </a>
+
+            <a href="index.html" class="guide-home-link">Retour &agrave; l&rsquo;accueil</a>
+        </div>
+
+        <!-- ===== DROITE : Formulaire natif ===== -->
+        <div class="form-panel" id="main-form-panel">
+
+            <div class="form-panel-header">
+                <div class="form-panel-eyebrow">Collection Signature &mdash; Sur mesure</div>
+                <h1 class="form-panel-title">Guide des mesures</h1>
+                <p class="form-panel-sub">Prenez vos mesures avec ce guide, puis passez votre commande sur mesure.</p>
+            </div>
+
+            <a href="assets/downloads/metre-ruban-serenity.pdf" download target="_blank" class="tape-dl">
+                <svg class="tape-dl-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="1" y="7.5" width="22" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><line x1="5" y1="7.5" x2="5" y2="16.5" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="7.5" x2="9" y2="12" stroke="currentColor" stroke-width="1.2"/><line x1="13" y1="7.5" x2="13" y2="16.5" stroke="currentColor" stroke-width="1.5"/><line x1="17" y1="7.5" x2="17" y2="12" stroke="currentColor" stroke-width="1.2"/></svg>
+                <div><span class="tape-dl-label">Pas de m&egrave;tre ruban&nbsp;?</span><span class="tape-dl-sub">T&eacute;l&eacute;charger &amp; imprimer le n&ocirc;tre &darr;</span></div>
+            </a>
+
+            <!-- Sélecteur produit -->
+            <div style="margin-bottom: 2rem;">
+                <div style="font-family:'Jost',sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(44,44,42,0.4); margin-bottom:0.7rem;">Pour quel produit&nbsp;?</div>
+                <div class="product-tabs">
+                    <button class="product-tab is-active" onclick="switchProduct('ensemble', this)">Sport Bra &amp; Slip</button>
+                    <button class="product-tab" onclick="switchProduct('slip', this)">Slip seul</button>
+                </div>
+            </div>
+
+            <!-- ===== FORMULAIRE ENSEMBLE ===== -->
+            <div id="form-ensemble">
+
+                <!-- Mesures Sport Bra -->
+                <div class="meas-section">
+                    <div class="meas-section-label">Mesures Sport Bra (en cm)</div>
+
+                    <div class="measure-field">
+                        <div class="measure-label-row">
+                            <span class="measure-label">Overbust</span>
+                            <div class="tooltip-wrap">
+                                <div class="tooltip-icon">i</div>
+                                <div class="tooltip-text">Tour de poitrine au-dessus des seins</div>
+                            </div>
+                        </div>
+                        <div class="measure-input-row">
+                            <input type="number" class="measure-input" id="e-overbust" placeholder="ex. 82" min="40" max="200">
+                            <span class="measure-unit">cm</span>
+                        </div>
+                        <div class="measure-error" id="err-e-overbust">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+
+                    <div class="measure-field">
+                        <div class="measure-label-row">
+                            <span class="measure-label">Bust</span>
+                            <div class="tooltip-wrap">
+                                <div class="tooltip-icon">i</div>
+                                <div class="tooltip-text">Tour de poitrine au niveau des seins</div>
+                            </div>
+                        </div>
+                        <div class="measure-input-row">
+                            <input type="number" class="measure-input" id="e-bust" placeholder="ex. 88" min="40" max="200">
+                            <span class="measure-unit">cm</span>
+                        </div>
+                        <div class="measure-error" id="err-e-bust">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+
+                    <div class="measure-field">
+                        <div class="measure-label-row">
+                            <span class="measure-label">Underbust</span>
+                            <div class="tooltip-wrap">
+                                <div class="tooltip-icon">i</div>
+                                <div class="tooltip-text">Tour de poitrine sous les seins</div>
+                            </div>
+                        </div>
+                        <div class="measure-input-row">
+                            <input type="number" class="measure-input" id="e-underbust" placeholder="ex. 74" min="40" max="200">
+                            <span class="measure-unit">cm</span>
+                        </div>
+                        <div class="measure-error" id="err-e-underbust">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+                </div>
+
+                <!-- Mesures Slip -->
+                <div class="meas-section">
+                    <div class="meas-section-label">Mesures Slip (en cm)</div>
+
+                    <div class="measure-field">
+                        <div class="measure-label-row">
+                            <span class="measure-label">Hanches</span>
+                            <div class="tooltip-wrap">
+                                <div class="tooltip-icon">i</div>
+                                <div class="tooltip-text">Contour le plus large</div>
+                            </div>
+                        </div>
+                        <div class="measure-input-row">
+                            <input type="number" class="measure-input" id="e-hanches" placeholder="ex. 96" min="40" max="200">
+                            <span class="measure-unit">cm</span>
+                        </div>
+                        <div class="measure-error" id="err-e-hanches">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+
+                    <div class="measure-field">
+                        <div class="measure-label-row">
+                            <span class="measure-label">Taille</span>
+                            <div class="tooltip-wrap">
+                                <div class="tooltip-icon">i</div>
+                                <div class="tooltip-text">Contour le plus &eacute;troit</div>
+                            </div>
+                        </div>
+                        <div class="measure-input-row">
+                            <input type="number" class="measure-input" id="e-taille" placeholder="ex. 72" min="40" max="200">
+                            <span class="measure-unit">cm</span>
+                        </div>
+                        <div class="measure-error" id="err-e-taille">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+
+                    <div class="measure-field">
+                        <div class="measure-label-row">
+                            <span class="measure-label">Cuisse</span>
+                            <div class="tooltip-wrap">
+                                <div class="tooltip-icon">i</div>
+                                <div class="tooltip-text">Contour &agrave; mi-cuisse</div>
+                            </div>
+                        </div>
+                        <div class="measure-input-row">
+                            <input type="number" class="measure-input" id="e-cuisse" placeholder="ex. 58" min="40" max="200">
+                            <span class="measure-unit">cm</span>
+                        </div>
+                        <div class="measure-error" id="err-e-cuisse">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+                </div>
+
+                <a href="shop.html" class="ready-to-order-btn">
+                    Je suis pr&ecirc;t(e) &agrave; commander &rarr;
+                </a>
+
+
+            </div><!-- /form-ensemble -->
+
+
+            <!-- ===== FORMULAIRE SLIP SEUL ===== -->
+            <div id="form-slip" style="display:none;">
+
+                <!-- Mesures Slip -->
+                <div class="meas-section">
+                    <div class="meas-section-label">Mesures (en cm)</div>
+
+                    <div class="measure-field">
+                        <div class="measure-label-row">
+                            <span class="measure-label">Hanches</span>
+                            <div class="tooltip-wrap">
+                                <div class="tooltip-icon">i</div>
+                                <div class="tooltip-text">Contour le plus large</div>
+                            </div>
+                        </div>
+                        <div class="measure-input-row">
+                            <input type="number" class="measure-input" id="s-hanches" placeholder="ex. 96" min="40" max="200">
+                            <span class="measure-unit">cm</span>
+                        </div>
+                        <div class="measure-error" id="err-s-hanches">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+
+                    <div class="measure-field">
+                        <div class="measure-label-row">
+                            <span class="measure-label">Taille</span>
+                            <div class="tooltip-wrap">
+                                <div class="tooltip-icon">i</div>
+                                <div class="tooltip-text">Contour le plus &eacute;troit</div>
+                            </div>
+                        </div>
+                        <div class="measure-input-row">
+                            <input type="number" class="measure-input" id="s-taille" placeholder="ex. 72" min="40" max="200">
+                            <span class="measure-unit">cm</span>
+                        </div>
+                        <div class="measure-error" id="err-s-taille">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+
+                    <div class="measure-field">
+                        <div class="measure-label-row">
+                            <span class="measure-label">Cuisse</span>
+                            <div class="tooltip-wrap">
+                                <div class="tooltip-icon">i</div>
+                                <div class="tooltip-text">Contour &agrave; mi-cuisse</div>
+                            </div>
+                        </div>
+                        <div class="measure-input-row">
+                            <input type="number" class="measure-input" id="s-cuisse" placeholder="ex. 58" min="40" max="200">
+                            <span class="measure-unit">cm</span>
+                        </div>
+                        <div class="measure-error" id="err-s-cuisse">Valeur invalide (40&ndash;200 cm)</div>
+                    </div>
+                </div>
+
+                <a href="shop.html" class="ready-to-order-btn">
+                    Je suis pr&ecirc;t(e) &agrave; commander &rarr;
+                </a>
+
+
+            </div><!-- /form-slip -->
+
+        </div><!-- /form-panel -->
+
+    </div><!-- /split-layout -->
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Serenity by Saule</h4>
+                <p>Lingerie sur-mesure haut de gamme.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="index.html#produits">Nos cr&eacute;ations</a>
+                <a href="order.html">Sur mesure</a>
+                <a href="shop.html">Votre commande</a>
+                <a href="measurement.html">Mes mesures</a>
+                <a href="pricing.html">Nos tarifs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:info@serenity-lingerie.com">info@serenity-lingerie.com</a>
+                <a href="privacy.html">Politique de confidentialit&eacute;</a>
+                <a href="admin-login.html" style="font-size:0.68rem;opacity:0.5;">Admin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Serenity by Saule. Tous droits r&eacute;serv&eacute;s.</div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        /* Remplacer par l'URL de votre script Google Apps Script déployé */
+        var GAS_URL = 'https://script.google.com/macros/s/AKfycbyfqfv4b-FsfRZC-aRZ8vOk_TjmaD30V9_8kqq8N0qH-Q_P1J6f-a3CJMg-X6HLzjkj/exec';
+
+        function showPaiement(confEl, pays) {
+            if (confEl.querySelector('.pmt-block')) return;
+            var h = '<div class="pmt-block">';
+            h += '<div class="pmt-title">Comment r\u00e9gler\u00a0?</div>';
+            h += '<p class="pmt-desc">Envoyez votre paiement par MVola au destinataire ci-dessous\u00a0:</p>';
+            h += '<div class="pmt-operator"><span class="pmt-op-tag" style="background:#0066B3">MVola</span><span class="pmt-op-num">+261 34 09 831 74 &mdash; Harilala Mamy Tiana Razanalivaoarijaona</span></div>';
+            h += '<p class="pmt-note">Envoyez ensuite la capture de votre paiement via WhatsApp.</p>';
+            h += '</div><a href="https://serenity-management.netlify.app/" target="_blank" rel="noopener" class="pmt-track-btn">Suivre ma commande &rarr;</a>';
+            confEl.insertAdjacentHTML('beforeend', h);
+        }
+
+        var couleurs = { e: null, s: null };
+
+        document.addEventListener('DOMContentLoaded', function() { initQtyFor('e'); initQtyFor('s'); });
+
+        /* -- Sélecteur produit -- */
+        function switchProduct(product, btn) {
+            document.querySelectorAll('.product-tab').forEach(function(b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+            document.getElementById('form-ensemble').style.display = product === 'ensemble' ? 'block' : 'none';
+            document.getElementById('form-slip').style.display     = product === 'slip'     ? 'block' : 'none';
+        }
+
+        /* -- Couleur -- */
+        function selectCouleur(product, couleur, btn) {
+            couleurs[product] = couleur;
+            document.querySelectorAll('.couleur-btn[data-product="' + product + '"]').forEach(function(b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+            document.getElementById('err-' + product + '-couleur').classList.remove('is-visible');
+        }
+
+        /* -- Validation & soumission -- */
+        function submitMeasure(product) {
+            var p = product === 'ensemble' ? 'e' : 's';
+            var valid = true;
+
+            /* Mesures */
+            var mFields = product === 'ensemble'
+                ? ['e-overbust','e-bust','e-underbust','e-hanches','e-taille','e-cuisse']
+                : ['s-hanches','s-taille','s-cuisse'];
+
+            mFields.forEach(function(id) {
+                var input = document.getElementById(id);
+                var error = document.getElementById('err-' + id);
+                var val   = parseFloat(input.value);
+                input.classList.remove('is-error');
+                error.classList.remove('is-visible');
+                if (isNaN(val) || val < 40 || val > 200) {
+                    input.classList.add('is-error');
+                    error.classList.add('is-visible');
+                    valid = false;
+                }
+            });
+
+            /* Per-unit validation */
+            var sels  = unitSelectionsMap[p] || [];
+            var unitsOk = sels.length > 0 && sels.every(function(s) { return s.model && s.couleur; });
+            if (!unitsOk) {
+                var errU = document.getElementById('err-' + p + '-units');
+                if (errU) errU.classList.add('is-visible');
+                valid = false;
+            }
+            var models = []; // kept for compat
+
+            /* Coordonnées & adresse */
+            [p+'-prenom',p+'-nom',p+'-email',p+'-telephone',p+'-ville',p+'-adresse'].forEach(function(id) {
+                var el  = document.getElementById(id);
+                var err = document.getElementById('err-' + id);
+                if (!el.value.trim()) {
+                    el.classList.add('is-error');
+                    if (err) err.classList.add('is-visible');
+                    valid = false;
+                } else {
+                    el.classList.remove('is-error');
+                    if (err) err.classList.remove('is-visible');
+                }
+            });
+
+            var emailEl = document.getElementById(p + '-email');
+            if (emailEl.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+                emailEl.classList.add('is-error');
+                document.getElementById('err-' + p + '-email').classList.add('is-visible');
+                valid = false;
+            }
+
+            if (!valid) {
+                var firstErr = document.querySelector('.measure-input.is-error, .field-input.is-error');
+                if (firstErr) { firstErr.scrollIntoView({ behavior:'smooth', block:'center' }); firstErr.focus(); }
+                return;
+            }
+
+            var btn = document.getElementById('submit-' + product);
+            btn.disabled = true;
+            btn.textContent = 'Envoi en cours…';
+
+            var qty     = parseInt((document.getElementById(p + '-qty-count') || {textContent:'1'}).textContent) || 1;
+            var selects = unitSelectionsMap[p] || [];
+            var unitDetails = selects.map(function(s, i) {
+                return 'P' + (i + 1) + ': ' + (s.model || '-') + ' / ' + (s.couleur || '-');
+            }).join(' | ');
+            var pays  = document.getElementById(p + '-pays').value;
+            var total = calcOrderTotal(p, qty);
+            var payload = {
+                type:         product === 'ensemble' ? 'sur_mesure_ensemble' : 'sur_mesure_slip',
+                prenom:       document.getElementById(p + '-prenom').value.trim(),
+                nom:          document.getElementById(p + '-nom').value.trim(),
+                email:        document.getElementById(p + '-email').value.trim(),
+                telephone:    document.getElementById(p + '-telephone').value.trim(),
+                overbust:     product === 'ensemble' ? document.getElementById('e-overbust').value  : '',
+                bust:         product === 'ensemble' ? document.getElementById('e-bust').value      : '',
+                underbust:    product === 'ensemble' ? document.getElementById('e-underbust').value : '',
+                hanches:      product === 'ensemble' ? document.getElementById('e-hanches').value   : document.getElementById('s-hanches').value,
+                taille_bas:   product === 'ensemble' ? document.getElementById('e-taille').value    : document.getElementById('s-taille').value,
+                cuisse:       product === 'ensemble' ? document.getElementById('e-cuisse').value    : document.getElementById('s-cuisse').value,
+                quantite:     qty,
+                modeles:      unitDetails,
+                couleur:      selects.map(function(s) { return s.couleur || ''; }).join(', '),
+                pays:         pays,
+                ville:        document.getElementById(p + '-ville').value.trim(),
+                adresse:      document.getElementById(p + '-adresse').value.trim(),
+                instructions: document.getElementById(p + '-instructions').value.trim(),
+                montant_eur:  total.toFixed(2),
+                montant_ar:   Math.round(total * 4800).toString(),
+                livraison_eur: calcOrderShipping(p, qty, pays).toFixed(2)
+            };
+
+            fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) })
+            .then(function(r) { return r.json(); })
+            .then(function(res) {
+                if (res.success) {
+                    document.getElementById('form-' + (product === 'ensemble' ? 'ensemble' : 'slip')).style.display = 'none';
+                    document.querySelector('.product-tabs').style.display = 'none';
+                    document.querySelector('.form-panel-header').style.display = 'none';
+                    var conf = document.getElementById('confirm-' + product);
+                    conf.style.display = 'block';
+                    showPaiement(conf, document.getElementById(p + '-pays').value);
+                    conf.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    btn.disabled = false;
+                    btn.textContent = 'Confirmer ma commande →';
+                    alert('Une erreur s\'est produite. Veuillez réessayer.');
+                }
+            })
+            .catch(function() {
+                btn.disabled = false;
+                btn.textContent = 'Confirmer ma commande →';
+                alert('Erreur réseau. Veuillez réessayer.');
+            });
+        }
+
+        /* -- Effacer erreurs à la saisie -- */
+        document.querySelectorAll('.measure-input').forEach(function(input) {
+            input.addEventListener('input', function() {
+                this.classList.remove('is-error');
+                var err = document.getElementById('err-' + this.id);
+                if (err) err.classList.remove('is-visible');
+            });
+        });
+        document.querySelectorAll('.field-input').forEach(function(el) {
+            el.addEventListener('input', function() {
+                this.classList.remove('is-error');
+                var err = document.getElementById('err-' + this.id);
+                if (err) err.classList.remove('is-visible');
+            });
+        });
+
+        /* ---- MEASURE GUIDE IMAGES ---- */
+        (function() {
+            var IMGS = {
+                overbust: 'assets/images/mesures/overbust.jpg',
+                bust:     'assets/images/mesures/bust.jpg',
+                underbust:'assets/images/mesures/underbust.jpg',
+                hanches:  'assets/images/mesures/hanches.jpg',
+                taille:   'assets/images/mesures/taille.jpg',
+                cuisse:   'assets/images/mesures/cuisse.jpg'
+            };
+            document.querySelectorAll('.measure-input').forEach(function(input) {
+                var parts = input.id.split('-');
+                var key   = parts[parts.length - 1];
+                if (!IMGS[key]) return;
+                var field = input.closest('.measure-field');
+                if (!field || field.querySelector('.measure-img')) return;
+                var wrap = document.createElement('div');
+                wrap.className = 'measure-content';
+                while (field.firstChild) wrap.appendChild(field.firstChild);
+                var img = document.createElement('img');
+                img.src = IMGS[key]; img.alt = key; img.className = 'measure-img';
+                field.appendChild(img);
+                field.appendChild(wrap);
+            });
+        })();
+
+        /* ---- Quantité & per-unit ---- */
+        var unitSelectionsMap = {};
+        var COLORS_LIST = [
+            { name: 'Ivoire',    bg: '#F8F3ED', border: '1px solid rgba(44,44,42,0.2)' },
+            { name: 'Aubergine', bg: '#5C2D6E', border: '' },
+            { name: 'Marine',    bg: '#1B3A5C', border: '' }
+        ];
+        var MODELS_LIST = ['Full Brief', 'Mid Brief', 'Cheeky', 'Thong'];
+
+        function changeQtyFor(product, delta) {
+            var el = document.getElementById(product + '-qty-count');
+            if (!el) return;
+            var qty = Math.max(1, Math.min(10, (parseInt(el.textContent) || 1) + delta));
+            el.textContent = qty;
+            if (!unitSelectionsMap[product]) unitSelectionsMap[product] = [];
+            while (unitSelectionsMap[product].length < qty) unitSelectionsMap[product].push({ model: null, couleur: null });
+            while (unitSelectionsMap[product].length > qty) unitSelectionsMap[product].pop();
+            renderUnitsFor(product);
+        }
+
+        function renderUnitsFor(product) {
+            var container = document.getElementById(product + '-units-container');
+            if (!container) return;
+            var sels = unitSelectionsMap[product] || [];
+            var html = '';
+            for (var i = 0; i < sels.length; i++) {
+                var sel = sels[i];
+                html += '<div class="unit-row"><div class="unit-num">Pièce ' + (i + 1) + '</div>';
+                html += '<span class="unit-field-label">Modèle</span><div class="unit-pills">';
+                MODELS_LIST.forEach(function(m) {
+                    var a = sel.model === m ? ' is-active' : '';
+                    html += '<button type="button" class="unit-pill' + a + '" onclick="selectUnitModelFor(\'' + product + '\',' + i + ',\'' + m + '\',this)">' + m + '</button>';
+                });
+                html += '</div><span class="unit-field-label">Couleur</span><div class="unit-pills">';
+                COLORS_LIST.forEach(function(col) {
+                    var a   = sel.couleur === col.name ? ' is-active' : '';
+                    var dot = 'background:' + col.bg + (col.border ? ';border:' + col.border : '') + ';';
+                    html += '<button type="button" class="unit-color-pill' + a + '" onclick="selectUnitCouleurFor(\'' + product + '\',' + i + ',\'' + col.name + '\',this)">';
+                    html += '<span class="unit-color-dot" style="' + dot + '"></span>' + col.name + '</button>';
+                });
+                html += '</div></div>';
+            }
+            container.innerHTML = html;
+        }
+
+        function selectUnitModelFor(product, idx, model, btn) {
+            if (!unitSelectionsMap[product]) return;
+            unitSelectionsMap[product][idx].model = model;
+            btn.closest('.unit-row').querySelectorAll('.unit-pill').forEach(function(b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+            var err = document.getElementById('err-' + product + '-units');
+            if (err) err.classList.remove('is-visible');
+        }
+
+        function selectUnitCouleurFor(product, idx, couleur, btn) {
+            if (!unitSelectionsMap[product]) return;
+            unitSelectionsMap[product][idx].couleur = couleur;
+            btn.closest('.unit-row').querySelectorAll('.unit-color-pill').forEach(function(b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+            var err = document.getElementById('err-' + product + '-units');
+            if (err) err.classList.remove('is-visible');
+        }
+
+        function initQtyFor(product) {
+            unitSelectionsMap[product] = [{ model: null, couleur: null }];
+            renderUnitsFor(product);
+        }
+
+        function calcOrderTotal(product, qty) {
+            var prices = { bra: 11.99, e: 11.99, slip: 5.99, s: 5.99 };
+            return qty * (prices[product] || 5.99);
+        }
+        function calcOrderShipping(product, qty, pays) {
+            if (pays === 'Madagascar') return 0;
+            return calcOrderTotal(product, qty) >= 29 ? 0 : 5.99;
+        }
+    </script>
+
+</body>
+</html>

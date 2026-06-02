@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Admin — Serenity by Saule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --rose: #D4537E; --rose-light: #FBEAF0; --text-primary: #1a1a1a; --text-secondary: #6b6b6b; --border: rgba(0,0,0,0.10); --cream: #FAF8F5; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Jost', sans-serif; font-weight: 300; background: var(--cream); color: var(--text-primary); min-height: 100vh; }
+
+    /* Header */
+    .topbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #fff; border-bottom: 0.5px solid var(--border); }
+    .topbar .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; }
+    .topbar .logout-btn { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rose); cursor: pointer; background: none; border: none; font-family: 'Jost', sans-serif; }
+
+    /* Onglets */
+    .tabs { display: flex; gap: 0; background: #fff; border-bottom: 0.5px solid var(--border); padding: 0 2rem; }
+    .tab { padding: 0.9rem 1.5rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border-bottom: 2px solid transparent; color: var(--text-secondary); transition: all 0.2s; }
+    .tab.active { color: var(--rose); border-bottom-color: var(--rose); }
+
+    /* Contenu */
+    .content { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* Bouton principal */
+    .btn-rose { background: var(--rose); color: #fff; border: none; padding: 0.6rem 1.4rem; font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s; }
+    .btn-rose:hover { opacity: 0.85; }
+    .btn-outline { background: #fff; color: var(--text-primary); border: 0.5px solid var(--border); padding: 0.5rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.06em; cursor: pointer; transition: all 0.2s; }
+    .btn-outline:hover { border-color: var(--rose); color: var(--rose); }
+    .btn-danger { background: #fff; color: #c0392b; border: 0.5px solid #c0392b; padding: 0.5rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.7rem; cursor: pointer; }
+    .btn-success { background: #eaf5ef; color: #2d6a4f; border: 0.5px solid #a3d5b5; padding: 0.5rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.7rem; cursor: pointer; }
+
+    .panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .panel-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; font-style: italic; }
+
+    /* Table */
+    .table-wrap { background: #fff; border: 0.5px solid var(--border); overflow-x: auto; margin-bottom: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    thead th { padding: 0.7rem 1rem; text-align: left; font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); border-bottom: 0.5px solid var(--border); font-weight: 400; }
+    tbody td { padding: 0.7rem 1rem; border-bottom: 0.5px solid var(--border); }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: #fafafa; }
+    .empty { text-align: center; padding: 2rem; color: var(--text-secondary); font-style: italic; font-size: 0.82rem; }
+
+    .badge { display: inline-block; padding: 0.2rem 0.65rem; font-size: 0.67rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .badge-actif { background: #eaf5ef; color: #2d6a4f; }
+    .badge-suspendu { background: #fde8e8; color: #c0392b; }
+    .badge-attente { background: #f1f1f1; color: #888; }
+    .badge-confirmee { background: #eaf5ef; color: #2d6a4f; }
+    .badge-payee { background: var(--rose-light); color: var(--rose); }
+
+    /* Modal */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 100; align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: #fff; padding: 2rem; max-width: 480px; width: 90%; max-height: 90vh; overflow-y: auto; border: 0.5px solid var(--border); }
+    .modal h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; margin-bottom: 1.5rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); margin-bottom: 0.35rem; }
+    .field input, .field select { width: 100%; padding: 0.65rem 0.9rem; border: 0.5px solid var(--border); background: #fafafa; font-family: 'Jost', sans-serif; font-size: 0.85rem; outline: none; }
+    .field input:focus, .field select:focus { border-color: var(--rose); }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 0.8rem; margin-top: 1.5rem; }
+    .btn-cancel { background: none; border: 0.5px solid var(--border); padding: 0.6rem 1.2rem; font-family: 'Jost', sans-serif; font-size: 0.72rem; cursor: pointer; }
+    .err { color: #c0392b; font-size: 0.78rem; margin-top: 0.5rem; display: none; }
+    .ok { color: #2d6a4f; font-size: 0.78rem; margin-top: 0.5rem; display: none; }
+
+    @media (max-width: 640px) { .topbar { padding: 0.8rem 1rem; } .content { padding: 1rem; } .tab { padding: 0.7rem 0.8rem; font-size: 0.65rem; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span class="logo">Serenity — Admin</span>
+    <button class="logout-btn" onclick="logout()">Déconnexion</button>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('inscriptions')">Inscriptions <span id="badge-inscriptions"></span></div>
+    <div class="tab" onclick="showTab('collabs')">Collaborateurs</div>
+    <div class="tab" onclick="showTab('commandes')">Commandes <span id="badge-count"></span></div>
+    <div class="tab" onclick="showTab('paiements')">Paiements</div>
+  </div>
+
+  <div class="content">
+
+    <!-- ═══════════════════ ONGLET 0 : Inscriptions en attente ═══════════════════ -->
+    <div class="panel active" id="panel-inscriptions">
+      <div class="panel-header">
+        <h2>Demandes d'inscription</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Prénom / Nom</th>
+              <th>Email</th>
+              <th>Téléphone</th>
+              <th>Instagram</th>
+              <th>Message</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-inscriptions">
+            <tr><td colspan="7" class="empty">Chargement...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ ONGLET 1 : Collaborateurs ═══════════════════ -->
+    <div class="panel active" id="panel-collabs">
+      <div class="panel-header">
+        <h2>Collaborateurs</h2>
+        <button class="btn-rose" onclick="openModalCollab()">+ Nouveau collaborateur</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Prénom / Nom</th>
+              <th>Email</th>
+              <th>Code promo</th>
+              <th>Commission</th>
+              <th>Réduction client</th>
+              <th>Statut</th>
+              <th>En attente</th>
+              <th>Confirmés</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-collabs">
+            <tr><td colspan="9" class="empty">Chargement...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ ONGLET 2 : Commandes en attente ═══════════════════ -->
+    <div class="panel" id="panel-commandes">
+      <div class="panel-header">
+        <h2>Commandes en attente de confirmation</h2>
+        <button class="btn-rose" onclick="openModalCommande()">+ Enregistrer une commande</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Collaborateur</th>
+              <th>Code</th>
+              <th>Client</th>
+              <th>Produit</th>
+              <th>Prix payé</th>
+              <th>Commission</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-commandes">
+            <tr><td colspan="8" class="empty">Chargement...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ ONGLET 3 : Paiements ═══════════════════ -->
+    <div class="panel" id="panel-paiements">
+      <div class="panel-header">
+        <h2>Collaborateurs à payer</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Prénom / Nom</th>
+              <th>Code promo</th>
+              <th>Gains confirmés</th>
+              <th>Gains payés (total)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-paiements">
+            <tr><td colspan="5" class="empty">Chargement...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════ MODAL : Activer une inscription ═══════════════════ -->
+  <div class="modal-overlay" id="modal-activer">
+    <div class="modal">
+      <h3>Activer le compte</h3>
+      <input type="hidden" id="act-id">
+      <div class="field"><label>Collaboratrice</label><input id="act-nom" readonly style="background:#f5f5f5;"></div>
+      <div class="field">
+        <label>Code promo * <small style="text-transform:none;letter-spacing:0">(ex: MARIE15)</small></label>
+        <input id="act-code" placeholder="MARIE15" style="text-transform:uppercase" oninput="this.value=this.value.toUpperCase()">
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label>Commission collab *</label>
+          <select id="act-taux">
+            <option value="0.10">10 %</option>
+            <option value="0.15" selected>15 %</option>
+            <option value="0.20">20 %</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Réduction client *</label>
+          <select id="act-reduc">
+            <option value="0.05">5 %</option>
+            <option value="0.08" selected>8 %</option>
+            <option value="0.10">10 %</option>
+          </select>
+        </div>
+      </div>
+      <p class="err" id="err-activer"></p>
+      <p class="ok" id="ok-activer"></p>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('modal-activer')">Annuler</button>
+        <button class="btn-rose" onclick="activerInscription()">✅ Activer le compte</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ MODAL : Nouveau collaborateur ═══════════════════ -->
+  <div class="modal-overlay" id="modal-collab">
+    <div class="modal">
+      <h3>Nouveau collaborateur</h3>
+      <div class="grid2">
+        <div class="field"><label>Prénom *</label><input id="c-prenom" placeholder="Marie"></div>
+        <div class="field"><label>Nom *</label><input id="c-nom" placeholder="Dupont"></div>
+      </div>
+      <div class="field"><label>Email *</label><input type="email" id="c-email" placeholder="marie@email.com"></div>
+      <div class="field"><label>Mot de passe temporaire *</label><input type="password" id="c-password" placeholder="min 8 caractères"></div>
+      <div class="field">
+        <label>Code promo * <small style="text-transform:none;letter-spacing:0">(ex: MARIE15)</small></label>
+        <input id="c-code" placeholder="MARIE15" style="text-transform:uppercase" oninput="this.value=this.value.toUpperCase()">
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label>Commission collab *</label>
+          <select id="c-taux">
+            <option value="0.10">10 %</option>
+            <option value="0.15" selected>15 %</option>
+            <option value="0.20">20 %</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Réduction client *</label>
+          <select id="c-reduc">
+            <option value="0.05">5 %</option>
+            <option value="0.08" selected>8 %</option>
+            <option value="0.10">10 %</option>
+          </select>
+        </div>
+      </div>
+      <p class="err" id="err-collab"></p>
+      <p class="ok" id="ok-collab"></p>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('modal-collab')">Annuler</button>
+        <button class="btn-rose" onclick="creerCollab()">Créer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ MODAL : Enregistrer une commande ═══════════════════ -->
+  <div class="modal-overlay" id="modal-commande">
+    <div class="modal">
+      <h3>Enregistrer une commande</h3>
+      <div class="grid2">
+        <div class="field"><label>Code promo *</label><input id="cmd-code" placeholder="MARIE15" style="text-transform:uppercase" oninput="this.value=this.value.toUpperCase()"></div>
+        <div class="field"><label>Réf. commande *</label><input id="cmd-ref" placeholder="CMD-007"></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label>Prénom client</label><input id="cmd-prenom" placeholder="Alice"></div>
+        <div class="field"><label>Email client</label><input type="email" id="cmd-email" placeholder="alice@email.com"></div>
+      </div>
+      <div class="field">
+        <label>Produit *</label>
+        <select id="cmd-produit">
+          <option value="Pack 5 Slips Standard">Pack 5 Slips Standard — 29,95 €</option>
+          <option value="Sport Bra &amp; Slip Standard">Sport Bra &amp; Slip Standard — 11,99 €</option>
+          <option value="Pack 5 Slips Sur Mesure">Pack 5 Slips Sur Mesure — 29,95 €</option>
+          <option value="Sport Bra &amp; Slip Sur Mesure">Sport Bra &amp; Slip Sur Mesure — 11,99 €</option>
+          <option value="Autre">Autre (saisir prix manuellement)</option>
+        </select>
+      </div>
+      <div class="field"><label>Prix catalogue (€) *</label><input type="number" id="cmd-prix" placeholder="29.95" step="0.01" min="0"></div>
+      <div id="cmd-preview" style="background:var(--rose-light);padding:0.8rem 1rem;font-size:0.8rem;margin-bottom:0.5rem;display:none;"></div>
+      <p class="err" id="err-cmd"></p>
+      <p class="ok" id="ok-cmd"></p>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('modal-commande')">Annuler</button>
+        <button class="btn-rose" onclick="enregistrerCommande()">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ MODAL : Paiement ═══════════════════ -->
+  <div class="modal-overlay" id="modal-paiement">
+    <div class="modal">
+      <h3>Marquer un paiement</h3>
+      <input type="hidden" id="pay-collab-id">
+      <div class="field"><label>Collaboratrice</label><input id="pay-nom" readonly style="background:#f5f5f5;"></div>
+      <div class="field"><label>Montant (€) *</label><input type="number" id="pay-montant" step="0.01" min="0"></div>
+      <div class="field">
+        <label>Méthode</label>
+        <select id="pay-methode">
+          <option value="Mobile Money">Mobile Money (MVola)</option>
+          <option value="Virement">Virement bancaire</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
+      <div class="field"><label>Référence transaction</label><input id="pay-ref" placeholder="optionnel"></div>
+      <div class="field"><label>Note</label><input id="pay-note" placeholder="optionnel"></div>
+      <p class="err" id="err-pay"></p>
+      <p class="ok" id="ok-pay"></p>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('modal-paiement')">Annuler</button>
+        <button class="btn-rose" onclick="enregistrerPaiement()">Confirmer le paiement</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="collab-config.js"></script>
+  <script>
+    const token = localStorage.getItem('admin_token');
+    if (!token) location.href = 'admin-login.html';
+
+    const H = { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' };
+
+    // ── Onglets ──
+    function showTab(name) {
+      document.querySelectorAll('.tab').forEach((t, i) => {
+        const panels = ['inscriptions', 'collabs', 'commandes', 'paiements'];
+        t.classList.toggle('active', panels[i] === name);
+        document.getElementById('panel-' + panels[i]).classList.toggle('active', panels[i] === name);
+      });
+      if (name === 'inscriptions') loadInscriptions();
+      if (name === 'collabs')      loadCollabs();
+      if (name === 'commandes')    loadCommandes();
+      if (name === 'paiements')    loadPaiements();
+    }
+
+    // ── Inscriptions ──
+    async function loadInscriptions() {
+      const rows = await apiFetch('/api/admin/inscriptions-en-attente');
+      const badge = document.getElementById('badge-inscriptions');
+      badge.textContent = rows.length ? `(${rows.length})` : '';
+      const tbody = document.getElementById('tbody-inscriptions');
+      if (!rows.length) {
+        tbody.innerHTML = '<tr><td colspan="7" class="empty">Aucune inscription en attente.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = rows.map(r => `
+        <tr>
+          <td><strong>${r.prenom} ${r.nom}</strong></td>
+          <td style="font-size:0.78rem">${r.email}</td>
+          <td style="font-size:0.78rem">${r.telephone || '—'}</td>
+          <td style="font-size:0.78rem">${r.instagram || '—'}</td>
+          <td style="font-size:0.75rem;color:var(--text-secondary);max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${(r.message_inscription||'').replace(/"/g,'&quot;')}">${r.message_inscription || '—'}</td>
+          <td style="font-size:0.75rem">${fmtDate(r.date_creation)}</td>
+          <td style="white-space:nowrap">
+            <button class="btn-success" onclick="openModalActiver(${r.id},'${r.prenom} ${r.nom}')">✅ Activer</button>
+            &nbsp;
+            <button class="btn-danger" onclick="refuserInscription(${r.id})">✗ Refuser</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function openModalActiver(id, nom) {
+      document.getElementById('act-id').value = id;
+      document.getElementById('act-nom').value = nom;
+      // Suggestion automatique du code : PRENOM + taux
+      const prenom = nom.split(' ')[0].toUpperCase().replace(/[^A-Z]/g,'').slice(0,8);
+      document.getElementById('act-code').value = prenom + '15';
+      document.getElementById('err-activer').style.display = 'none';
+      document.getElementById('ok-activer').style.display = 'none';
+      openModal('modal-activer');
+    }
+
+    async function activerInscription() {
+      const err = document.getElementById('err-activer');
+      const ok  = document.getElementById('ok-activer');
+      err.style.display = ok.style.display = 'none';
+      const body = {
+        code_promo:      document.getElementById('act-code').value.trim(),
+        taux_commission: document.getElementById('act-taux').value,
+        reduction_client:document.getElementById('act-reduc').value,
+      };
+      if (!body.code_promo) { err.textContent = 'Le code promo est requis.'; err.style.display = 'block'; return; }
+      try {
+        const id = document.getElementById('act-id').value;
+        const res = await fetch(API_BASE + `/api/admin/activer-inscription/${id}`, { method: 'POST', headers: H, body: JSON.stringify(body) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error);
+        ok.textContent = 'Compte activé ! La collaboratrice peut maintenant se connecter.';
+        ok.style.display = 'block';
+        loadInscriptions();
+        setTimeout(() => closeModal('modal-activer'), 2000);
+      } catch(e) { err.textContent = e.message; err.style.display = 'block'; }
+    }
+
+    async function refuserInscription(id) {
+      if (!confirm('Refuser et supprimer cette inscription ?')) return;
+      await fetch(API_BASE + `/api/admin/inscriptions/${id}`, { method: 'DELETE', headers: H });
+      loadInscriptions();
+    }
+
+    // ── Collaborateurs ──
+    async function loadCollabs() {
+      const rows = await apiFetch('/api/admin/collaborateurs');
+      const tbody = document.getElementById('tbody-collabs');
+      if (!rows.length) { tbody.innerHTML = '<tr><td colspan="9" class="empty">Aucun collaborateur.</td></tr>'; return; }
+      tbody.innerHTML = rows.map(c => `
+        <tr>
+          <td>${c.prenom} ${c.nom}</td>
+          <td style="font-size:0.78rem;color:var(--text-secondary)">${c.email}</td>
+          <td><strong>${c.code_promo}</strong></td>
+          <td>${pct(c.taux_commission)}</td>
+          <td>${pct(c.reduction_client)}</td>
+          <td>${c.statut === 'actif' ? '<span class="badge badge-actif">Actif</span>' : '<span class="badge badge-suspendu">Suspendu</span>'}</td>
+          <td>${fmt(c.gains_en_attente)}</td>
+          <td>${fmt(c.gains_confirmes)}</td>
+          <td>
+            <button class="btn-outline" onclick="toggleStatut(${c.id},'${c.statut === 'actif' ? 'suspendu' : 'actif'}')">
+              ${c.statut === 'actif' ? 'Suspendre' : 'Réactiver'}
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function creerCollab() {
+      const err = document.getElementById('err-collab');
+      const ok = document.getElementById('ok-collab');
+      err.style.display = ok.style.display = 'none';
+      const body = {
+        prenom: document.getElementById('c-prenom').value.trim(),
+        nom: document.getElementById('c-nom').value.trim(),
+        email: document.getElementById('c-email').value.trim(),
+        password: document.getElementById('c-password').value,
+        code_promo: document.getElementById('c-code').value.trim(),
+        taux_commission: document.getElementById('c-taux').value,
+        reduction_client: document.getElementById('c-reduc').value,
+      };
+      if (!body.prenom || !body.nom || !body.email || !body.password || !body.code_promo) {
+        err.textContent = 'Veuillez remplir tous les champs obligatoires.'; err.style.display = 'block'; return;
+      }
+      if (body.password.length < 8) { err.textContent = 'Mot de passe trop court (min 8 caractères).'; err.style.display = 'block'; return; }
+      try {
+        const res = await fetch(API_BASE + '/api/admin/collaborateurs', { method: 'POST', headers: H, body: JSON.stringify(body) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error);
+        ok.textContent = 'Collaborateur créé avec succès !'; ok.style.display = 'block';
+        ['c-prenom','c-nom','c-email','c-password','c-code'].forEach(id => document.getElementById(id).value = '');
+        loadCollabs();
+      } catch (e) { err.textContent = e.message; err.style.display = 'block'; }
+    }
+
+    async function toggleStatut(id, newStatut) {
+      await fetch(API_BASE + `/api/admin/collaborateurs/${id}/statut`, { method: 'PATCH', headers: H, body: JSON.stringify({ statut: newStatut }) });
+      loadCollabs();
+    }
+
+    // ── Commandes ──
+    async function loadCommandes() {
+      const rows = await apiFetch('/api/admin/commandes-en-attente');
+      const badge = document.getElementById('badge-count');
+      badge.textContent = rows.length ? `(${rows.length})` : '';
+      const tbody = document.getElementById('tbody-commandes');
+      if (!rows.length) { tbody.innerHTML = '<tr><td colspan="8" class="empty">Aucune commande en attente.</td></tr>'; return; }
+      tbody.innerHTML = rows.map(r => `
+        <tr>
+          <td>${fmtDate(r.date_utilisation)}</td>
+          <td>${r.collab_prenom} ${r.collab_nom}</td>
+          <td><strong>${r.code_promo}</strong></td>
+          <td>${r.client_prenom || ''} ${r.client_email ? '<br><small style="color:var(--text-secondary)">'+r.client_email+'</small>' : ''}</td>
+          <td>${r.produit}</td>
+          <td>${fmt(r.prix_paye)}</td>
+          <td><strong>${fmt(r.montant_commission)}</strong></td>
+          <td style="white-space:nowrap">
+            <button class="btn-success" onclick="confirmerCommande(${r.id})">✅ Confirmer</button>
+            &nbsp;
+            <button class="btn-danger" onclick="rejeterCommande(${r.id})">✗ Rejeter</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function openModalCommande() {
+      document.getElementById('err-cmd').style.display = 'none';
+      document.getElementById('ok-cmd').style.display = 'none';
+      openModal('modal-commande');
+      // Auto-fill prix from produit
+      document.getElementById('cmd-produit').addEventListener('change', autoFillPrix);
+      autoFillPrix();
+    }
+
+    const PRIX_PRODUITS = {
+      'Pack 5 Slips Standard': 29.95,
+      'Sport Bra & Slip Standard': 11.99,
+      'Pack 5 Slips Sur Mesure': 29.95,
+      'Sport Bra & Slip Sur Mesure': 11.99,
+    };
+
+    function autoFillPrix() {
+      const produit = document.getElementById('cmd-produit').value;
+      const prix = PRIX_PRODUITS[produit];
+      if (prix) document.getElementById('cmd-prix').value = prix.toFixed(2);
+    }
+
+    async function enregistrerCommande() {
+      const err = document.getElementById('err-cmd');
+      const ok = document.getElementById('ok-cmd');
+      err.style.display = ok.style.display = 'none';
+      const body = {
+        code_promo: document.getElementById('cmd-code').value.trim(),
+        commande_ref: document.getElementById('cmd-ref').value.trim(),
+        client_prenom: document.getElementById('cmd-prenom').value.trim(),
+        client_email: document.getElementById('cmd-email').value.trim(),
+        produit: document.getElementById('cmd-produit').value,
+        prix_catalogue: parseFloat(document.getElementById('cmd-prix').value),
+      };
+      if (!body.code_promo || !body.commande_ref || !body.prix_catalogue) {
+        err.textContent = 'Code, référence et prix sont requis.'; err.style.display = 'block'; return;
+      }
+      try {
+        const res = await fetch(API_BASE + '/api/admin/commandes', { method: 'POST', headers: H, body: JSON.stringify(body) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error);
+        ok.textContent = `Commission de ${fmt(data.montant_commission)} enregistrée.`; ok.style.display = 'block';
+        loadCommandes();
+      } catch (e) { err.textContent = e.message; err.style.display = 'block'; }
+    }
+
+    async function confirmerCommande(id) {
+      if (!confirm('Confirmer cette commission ?')) return;
+      await fetch(API_BASE + `/api/admin/commandes/${id}/confirmer`, { method: 'PATCH', headers: H });
+      loadCommandes();
+    }
+
+    async function rejeterCommande(id) {
+      if (!confirm('Rejeter et supprimer cette commande ?')) return;
+      await fetch(API_BASE + `/api/admin/commandes/${id}/rejeter`, { method: 'PATCH', headers: H });
+      loadCommandes();
+    }
+
+    // ── Paiements ──
+    async function loadPaiements() {
+      const rows = await apiFetch('/api/admin/collaborateurs-a-payer');
+      const tbody = document.getElementById('tbody-paiements');
+      if (!rows.length) { tbody.innerHTML = '<tr><td colspan="5" class="empty">Aucune collaboratrice à payer pour le moment.</td></tr>'; return; }
+      tbody.innerHTML = rows.map(c => `
+        <tr>
+          <td>${c.prenom} ${c.nom}</td>
+          <td>${c.code_promo}</td>
+          <td><strong style="color:var(--rose)">${fmt(c.gains_confirmes)}</strong></td>
+          <td>${fmt(c.gains_payes)}</td>
+          <td><button class="btn-rose" onclick="openModalPaiement(${c.id},'${c.prenom} ${c.nom}',${c.gains_confirmes})">Marquer comme payé</button></td>
+        </tr>
+      `).join('');
+    }
+
+    function openModalPaiement(id, nom, montant) {
+      document.getElementById('pay-collab-id').value = id;
+      document.getElementById('pay-nom').value = nom;
+      document.getElementById('pay-montant').value = parseFloat(montant).toFixed(2);
+      document.getElementById('err-pay').style.display = 'none';
+      document.getElementById('ok-pay').style.display = 'none';
+      openModal('modal-paiement');
+    }
+
+    async function enregistrerPaiement() {
+      const err = document.getElementById('err-pay');
+      const ok = document.getElementById('ok-pay');
+      err.style.display = ok.style.display = 'none';
+      const body = {
+        collab_id: parseInt(document.getElementById('pay-collab-id').value),
+        montant: parseFloat(document.getElementById('pay-montant').value),
+        methode: document.getElementById('pay-methode').value,
+        reference: document.getElementById('pay-ref').value.trim(),
+        note: document.getElementById('pay-note').value.trim(),
+      };
+      try {
+        const res = await fetch(API_BASE + '/api/admin/paiements', { method: 'POST', headers: H, body: JSON.stringify(body) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error);
+        ok.textContent = 'Paiement enregistré avec succès.'; ok.style.display = 'block';
+        loadPaiements();
+        setTimeout(() => closeModal('modal-paiement'), 1500);
+      } catch (e) { err.textContent = e.message; err.style.display = 'block'; }
+    }
+
+    // ── Helpers ──
+    async function apiFetch(url) {
+      const res = await fetch(url, { headers: H });
+      if (res.status === 401) { logout(); return []; }
+      return res.json();
+    }
+
+    function openModal(id) { document.getElementById(id).classList.add('open'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+    function fmt(v) { return parseFloat(v || 0).toFixed(2) + ' €'; }
+    function pct(v) { return Math.round(parseFloat(v || 0) * 100) + ' %'; }
+    function fmtDate(iso) {
+      if (!iso) return '—';
+      return new Date(iso).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    }
+
+    function logout() {
+      localStorage.removeItem('admin_token');
+      location.href = 'admin-login.html';
+    }
+
+    // Fermer modal en cliquant sur l'overlay
+    document.querySelectorAll('.modal-overlay').forEach(el => {
+      el.addEventListener('click', e => { if (e.target === el) el.classList.remove('open'); });
+    });
+
+    // Charger l'onglet initial
+    loadInscriptions();
+  </script>
+</body>
+</html>

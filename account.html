@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Compte | Serenity by Saule</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            min-height: 60vh;
+        }
+
+        .sidebar {
+            background-color: var(--color-white);
+            padding: 2rem;
+            border-right: 1px solid var(--color-nude-light);
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 0.5rem;
+            color: var(--color-grey);
+        }
+
+        .sidebar-menu a.active {
+            color: var(--color-black);
+            font-weight: 700;
+            border-left: 2px solid var(--color-nude);
+            padding-left: 0.5rem;
+        }
+
+        .content-panel {
+            padding: 2rem;
+        }
+
+        .card {
+            background-color: var(--color-white);
+            padding: 1.5rem;
+            border: 1px solid var(--color-nude-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background-color: var(--color-champagne);
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--color-nude-light);
+            }
+        }
+    </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '953611460562954');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=953611460562954&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Serenity</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="brand.html">La Marque</a></li>
+            <li><a href="product.html">Le Produit</a></li>
+            <li><a href="gallery.html">Galerie</a></li>
+            <li><a href="measurement.html" class="cta-link">Sur Mesure</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">☰</div>
+    </nav>
+
+    <div class="container" style="padding-top: 15vh;">
+        <div class="dashboard-grid">
+            <aside class="sidebar">
+                <h3 style="margin-bottom: 2rem;">Mon Espace</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active">Tableau de Bord</a></li>
+                    <li><a href="#">Mes Commandes</a></li>
+                    <li><a href="#">Mes Mesures</a></li>
+                    <li><a href="#" style="color: red; opacity: 0.7;">Déconnexion</a></li>
+                </ul>
+            </aside>
+
+            <main class="content-panel">
+                <h2 id="welcomeMsg">Bonjour,</h2>
+
+                <div class="card">
+                    <h3>Mesures Actuelles</h3>
+                    <div id="measuresContent">
+                        <p>Aucune mesure enregistrée.</p>
+                        <a href="measurement.html" class="btn btn-secondary"
+                            style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.8rem;">Ajouter mes mesures</a>
+                    </div>
+                </div>
+
+                <h3>Commandes Récentes</h3>
+                <div id="ordersList">
+                    <!-- Liste commandes dynamique -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Affichage dynamique
+        const userData = JSON.parse(localStorage.getItem('serenity_user_measures'));
+        const orders = JSON.parse(localStorage.getItem('serenity_orders') || '[]');
+
+        if (userData) {
+            document.getElementById('welcomeMsg').textContent = `Bonjour, ${userData.name.split(' ')[0]}`;
+            document.getElementById('measuresContent').innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;">
+                    <div><strong>Taille</strong><br>${userData.waist} cm</div>
+                    <div><strong>Hanches</strong><br>${userData.hips} cm</div>
+                    <div><strong>Cuisse</strong><br>${userData.thigh} cm</div>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: gray;">Dernière mise à jour : Aujourd'hui</p>
+            `;
+        }
+
+        const ordersContainer = document.getElementById('ordersList');
+        if (orders.length > 0) {
+            ordersContainer.innerHTML = orders.map(order => `
+                <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <strong>${order.item}</strong><br>
+                        <small>${order.date}</small>
+                    </div>
+                    <span class="status-badge">${order.status}</span>
+                </div>
+            `).join('');
+        } else {
+            ordersContainer.innerHTML = '<p>Vous n\'avez pas encore passé de commande.</p>';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Tarifs | Serenity by Saule</title>
+    <meta name="description" content="Tarifs Serenity by Saule : Sport Bra &amp; Pack Slips sur mesure. Abonnements trimestriel et semestriel avec livraison offerte.">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '953611460562954');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=953611460562954&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* ================================================
+           PRICING PAGE — Serenity by Saule
+        ================================================ */
+
+        :root {
+            --cream:      #FAF7F4;
+            --cream-alt:  #F2ECE7;
+            --rose:       #C9A99A;
+            --rose-light: #EEE0DA;
+            --gold:       #B8935A;
+            --charcoal:   #2C2C2A;
+            --grey-text:  rgba(44, 44, 42, 0.45);
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+        }
+
+        /* ---- NAVBAR ---- */
+        .navbar {
+            position: fixed;
+            background-color: rgba(250, 247, 244, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 169, 154, 0.2);
+            padding: 1.1rem 3rem;
+        }
+
+        .logo {
+            color: var(--charcoal);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+
+        .nav-links a {
+            background-color: transparent;
+            color: var(--charcoal);
+            border: 1px solid transparent;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.13em;
+            padding: 0.4rem 0.75rem;
+            border-radius: 0;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: transparent;
+            color: var(--gold);
+            border-color: transparent;
+        }
+
+        .nav-links a.nav-cta-primary {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+            padding: 0.45rem 1.1rem;
+        }
+
+        .nav-links a.nav-cta-primary:hover {
+            background: var(--gold);
+            color: var(--cream);
+            border-color: var(--gold);
+        }
+
+        .nav-links a.nav-cta-secondary {
+            border: 1px solid rgba(44, 44, 42, 0.3);
+            color: var(--charcoal);
+            padding: 0.45rem 1.1rem;
+        }
+
+        .nav-links a.nav-cta-secondary:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        /* ---- BANNIERE ---- */
+        .delivery-banner {
+            background-color: var(--cream-alt);
+            border-bottom: 1px solid rgba(201, 169, 154, 0.25);
+            text-align: center;
+            padding: 0.55rem 1rem;
+            position: fixed;
+            top: 61px;
+            width: 100%;
+            z-index: 99;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            opacity: 0.75;
+        }
+
+        /* ---- PAGE HEADER ---- */
+        .pricing-header {
+            padding-top: calc(61px + 34px + 4.5rem);
+            padding-bottom: 3.5rem;
+            text-align: center;
+            background-color: var(--cream);
+        }
+
+        .pricing-eyebrow {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+        }
+
+        .pricing-header-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            letter-spacing: 0.02em;
+            line-height: 1;
+            margin-bottom: 0.8rem;
+        }
+
+        .pricing-header-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--grey-text);
+        }
+
+        /* ---- LAYOUT GENERAL ---- */
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        .pricing-section {
+            padding: 5rem 0;
+        }
+
+        .pricing-section--alt {
+            background-color: var(--cream-alt);
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-eyebrow {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.7rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--grey-text);
+        }
+
+        /* ---- SEPARATEUR ---- */
+        .pricing-sep {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin: 0 0 3.5rem;
+        }
+
+        .pricing-sep-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(201, 169, 154, 0.3);
+        }
+
+        .pricing-sep-orn {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            color: var(--gold);
+            opacity: 0.5;
+        }
+
+        /* ================================================
+           SECTION 1 — TARIFS A L'UNITE
+        ================================================ */
+
+        .unit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .unit-card {
+            background: #fff;
+            border: 1px solid rgba(201, 169, 154, 0.3);
+            padding: 2.5rem 2.2rem;
+            position: relative;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .unit-card:hover {
+            box-shadow: 0 12px 40px rgba(44, 44, 42, 0.06);
+            border-color: rgba(184, 147, 90, 0.35);
+        }
+
+        .unit-badge {
+            display: inline-block;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.28rem 0.75rem;
+            border: 1px solid rgba(184, 147, 90, 0.35);
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+        }
+
+        .unit-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 0.2rem;
+            line-height: 1.1;
+        }
+
+        .unit-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--grey-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .unit-desc {
+            font-size: 0.84rem;
+            line-height: 1.75;
+            color: rgba(44, 44, 42, 0.65);
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.8rem;
+            border-bottom: 1px solid rgba(201, 169, 154, 0.2);
+        }
+
+        /* Prix */
+        .price-block {
+            margin-bottom: 1.8rem;
+        }
+
+        .price-old {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: rgba(44, 44, 42, 0.35);
+            text-decoration: line-through;
+            margin-bottom: 0.2rem;
+        }
+
+        .price-current {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.6rem;
+            font-weight: 500;
+            color: var(--gold);
+            line-height: 1;
+            letter-spacing: -0.01em;
+        }
+
+        .price-current sup {
+            font-size: 1.1rem;
+            vertical-align: super;
+            font-weight: 400;
+        }
+
+        .price-ar {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 300;
+            color: rgba(44, 44, 42, 0.4);
+            margin-top: 0.3rem;
+            letter-spacing: 0.04em;
+        }
+
+        .price-note {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            color: rgba(44, 44, 42, 0.4);
+            margin-top: 0.4rem;
+            font-style: italic;
+        }
+
+        /* Prix pack total */
+        .price-pack-total {
+            background: rgba(201, 169, 154, 0.07);
+            border: 1px solid rgba(201, 169, 154, 0.2);
+            padding: 1rem 1.2rem;
+            margin: 1rem 0 1.8rem;
+        }
+
+        .price-pack-total-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--grey-text);
+            margin-bottom: 0.3rem;
+        }
+
+        .price-pack-total-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.8rem;
+        }
+
+        .price-pack-old {
+            font-size: 0.9rem;
+            color: rgba(44, 44, 42, 0.3);
+            text-decoration: line-through;
+        }
+
+        .price-pack-new {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 500;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .price-pack-ar {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 300;
+            color: rgba(44, 44, 42, 0.38);
+            margin-top: 0.2rem;
+        }
+
+        /* Bouton */
+        .unit-btn {
+            display: block;
+            text-align: center;
+            padding: 0.95rem 1.5rem;
+            background: var(--charcoal);
+            color: var(--cream);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .unit-btn:hover {
+            background: var(--gold);
+            color: var(--cream);
+        }
+
+        /* ================================================
+           SECTION 2 — ABONNEMENT
+        ================================================ */
+
+        .sub-intro {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 3rem;
+        }
+
+        .sub-intro-text {
+            font-size: 0.88rem;
+            line-height: 1.9;
+            color: rgba(44, 44, 42, 0.72);
+            margin-bottom: 1.5rem;
+        }
+
+        .sub-perks {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .sub-perk {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.82rem;
+            color: var(--charcoal);
+            line-height: 1.8;
+        }
+
+        /* Grille abonnement */
+        .sub-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .sub-card {
+            background: #fff;
+            border: 1px solid rgba(201, 169, 154, 0.3);
+            padding: 2.5rem 2.2rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .sub-card:hover {
+            box-shadow: 0 12px 40px rgba(44, 44, 42, 0.06);
+        }
+
+        /* Carte trimestrielle mise en avant */
+        .sub-card--featured {
+            border: 2px solid var(--gold);
+            background: #FFFDF9;
+        }
+
+        .sub-card-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: #fff;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.3rem 1.1rem;
+            white-space: nowrap;
+        }
+
+        .sub-period {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.4rem;
+        }
+
+        .sub-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 0.3rem;
+        }
+
+        .sub-discount-tag {
+            display: inline-block;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: rgba(184, 147, 90, 0.1);
+            color: var(--gold);
+            padding: 0.25rem 0.7rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sub-items {
+            flex: 1;
+            margin-bottom: 1.8rem;
+        }
+
+        .sub-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(201, 169, 154, 0.2);
+        }
+
+        .sub-item:first-child {
+            border-top: 1px solid rgba(201, 169, 154, 0.2);
+        }
+
+        .sub-item-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--grey-text);
+            margin-bottom: 0.4rem;
+        }
+
+        .sub-item-prices {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+        }
+
+        .sub-item-old {
+            font-size: 0.85rem;
+            color: rgba(44, 44, 42, 0.3);
+            text-decoration: line-through;
+        }
+
+        .sub-item-new {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .sub-item-ar {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            color: rgba(44, 44, 42, 0.38);
+            margin-top: 0.15rem;
+        }
+
+        .sub-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.8rem;
+        }
+
+        .sub-features li {
+            font-size: 0.82rem;
+            color: rgba(44, 44, 42, 0.65);
+            padding: 0.35rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .sub-features li::before {
+            content: "&#10003;";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .sub-btn {
+            display: block;
+            text-align: center;
+            padding: 0.95rem 1.5rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sub-btn--primary {
+            background: var(--charcoal);
+            color: var(--cream);
+            border: 1px solid var(--charcoal);
+        }
+
+        .sub-btn--primary:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: #fff;
+        }
+
+        .sub-btn--secondary {
+            background: transparent;
+            color: var(--charcoal);
+            border: 1px solid rgba(44, 44, 42, 0.3);
+        }
+
+        .sub-btn--secondary:hover {
+            background: var(--charcoal);
+            color: var(--cream);
+            border-color: var(--charcoal);
+        }
+
+        /* ================================================
+           SECTION 3 — LIVRAISON
+        ================================================ */
+
+        .delivery-block {
+            text-align: center;
+            padding: 3rem 2.5rem;
+            border: 1px solid rgba(201, 169, 154, 0.3);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .delivery-ornament {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            opacity: 0.5;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .delivery-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 0.6rem;
+        }
+
+        .delivery-text {
+            font-size: 0.86rem;
+            line-height: 1.8;
+            color: rgba(44, 44, 42, 0.6);
+        }
+
+        /* ---- FOOTER ---- */
+        .footer {
+            background-color: var(--charcoal);
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 1.2rem;
+            }
+
+            .delivery-banner {
+                top: 58px;
+                font-size: 0.6rem;
+                letter-spacing: 0.12em;
+                padding: 0.5rem 0.8rem;
+            }
+
+            .pricing-header {
+                padding-top: calc(58px + 30px + 3rem);
+                padding-bottom: 2.5rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .pricing-header-title {
+                font-size: 2.1rem;
+            }
+
+            .pricing-container {
+                padding: 0 1.3rem;
+            }
+
+            .unit-grid,
+            .sub-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-section {
+                padding: 3rem 0;
+            }
+
+            .sub-card--featured {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Serenity</a>
+        <ul class="nav-links">
+            <li><a href="index.html#produits">Nos cr&eacute;ations</a></li>
+            <li><a href="order.html" class="nav-cta-secondary">Sur mesure</a></li>
+            <li><a href="shop.html">Votre commande</a></li>
+            <li><a href="measurement.html">Mes mesures</a></li>
+            <li><a href="pricing.html" class="active">Nos tarifs</a></li>
+            <li><a href="collab-login.html">Espace Collab</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">&#9776;</div>
+    </nav>
+
+    <!-- Banniere livraison -->
+    <div class="delivery-banner">
+        &#10022;&nbsp; Livraison gratuite Madagascar &nbsp;&bull;&nbsp; Offerte d&egrave;s 29&euro; en Europe &nbsp;&#10022;
+    </div>
+
+    <!-- Page Header -->
+    <div class="pricing-header">
+        <div class="pricing-eyebrow">Transparence des prix</div>
+        <div class="pricing-header-title">Nos Tarifs</div>
+        <div class="pricing-header-sub">Lingerie sur mesure &agrave; prix juste</div>
+    </div>
+
+
+    <!-- ============================================================
+         SECTION 1 — TARIFS A L'UNITE
+    ============================================================ -->
+    <section class="pricing-section" id="tarifs-unite">
+        <div class="pricing-container">
+
+            <div class="section-heading">
+                <div class="section-eyebrow">Pi&egrave;ces &agrave; la carte</div>
+                <div class="section-title">Tarifs &agrave; l&rsquo;unit&eacute;</div>
+                <div class="section-sub">Chaque pi&egrave;ce con&ccedil;ue sur mesure, rien que pour vous</div>
+            </div>
+
+            <div class="unit-grid">
+
+                <!-- PRODUIT 1 : Sport Bra -->
+                <div class="unit-card">
+                    <div class="unit-badge">Sur mesure &middot; Pi&egrave;ce unique</div>
+                    <div class="unit-title">Sport Bra</div>
+                    <div class="unit-subtitle">Serenity by Saule</div>
+                    <p class="unit-desc">Con&ccedil;u &agrave; partir de vos mesures exactes. Coton jersey premium, st&eacute;rilis&eacute; UV, livr&eacute; rien que pour vous.</p>
+
+                    <div class="price-block">
+                        <div class="price-old">19,99 &euro; &mdash; 95 952 Ar</div>
+                        <div class="price-current"><sup>&euro;</sup>11<span style="font-size:1.6rem">,99</span></div>
+                        <div class="price-ar">57 552 Ar</div>
+                    </div>
+
+                    <a href="order.html" class="unit-btn">Commander</a>
+                </div>
+
+                <!-- PRODUIT 2 : Pack Slips -->
+                <div class="unit-card">
+                    <div class="unit-badge">Pack de 5 &middot; Variantes mixables</div>
+                    <div class="unit-title">Pack Lingerie</div>
+                    <div class="unit-subtitle">5 pi&egrave;ces au choix &mdash; Mixez les mod&egrave;les</div>
+                    <p class="unit-desc">Full Brief, Mid Brief, Cheeky, Thong &mdash; composez votre pack librement. Chaque slip sur mesure, en coton jersey, st&eacute;rilis&eacute; UV.</p>
+
+                    <div class="price-block">
+                        <div class="price-old">7,99 &euro; / pi&egrave;ce</div>
+                        <div class="price-current"><sup>&euro;</sup>5<span style="font-size:1.6rem">,99</span> <span style="font-size:1rem; color: var(--grey-text); font-family:'Jost',sans-serif; font-weight:300;">/ pi&egrave;ce</span></div>
+                        <div class="price-ar">28 752 Ar / pi&egrave;ce</div>
+                        <div class="price-note">Vendu uniquement par pack de 5 pi&egrave;ces</div>
+                    </div>
+
+                    <div class="price-pack-total">
+                        <div class="price-pack-total-label">Total pack 5 pi&egrave;ces</div>
+                        <div class="price-pack-total-row">
+                            <span class="price-pack-old">~~39,99 &euro;~~</span>
+                            <span class="price-pack-new">29,95 &euro;</span>
+                        </div>
+                        <div class="price-pack-ar">143 760 Ar</div>
+                    </div>
+
+                    <a href="order.html" class="unit-btn">Commander le pack</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 2 — ABONNEMENT SERENITY
+    ============================================================ -->
+    <section class="pricing-section pricing-section--alt" id="abonnement">
+        <div class="pricing-container">
+
+            <div class="section-heading">
+                <div class="section-eyebrow">Automatique &amp; sans effort</div>
+                <div class="section-title">Abonnement Serenity</div>
+                <div class="section-sub">Recevez votre lingerie automatiquement</div>
+            </div>
+
+            <div class="sub-intro">
+                <p class="sub-intro-text">Prenez vos mesures une seule fois. Ensuite, recevez votre pack &agrave; chaque p&eacute;riode sans rien faire.</p>
+                <div class="sub-perks">
+                    <div class="sub-perk">&#10003;&nbsp; Livraison gratuite &amp; prioritaire</div>
+                    <div class="sub-perk">&#10003;&nbsp; &minus;20% tous les 3 mois &middot; &minus;15% tous les 6 mois</div>
+                    <div class="sub-perk">&#10003;&nbsp; Aucun contrat &middot; Annulation &agrave; tout moment</div>
+                    <div class="sub-perk">&#10003;&nbsp; Lingerie st&eacute;rilis&eacute;e UV, livr&eacute;e pure rien que pour vous</div>
+                </div>
+                <p style="margin-top:1.2rem; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--grey-text);">Simple, pratique, &eacute;conomique. Votre confort sans effort.</p>
+            </div>
+
+            <div class="sub-grid">
+
+                <!-- TRIMESTRIEL (mis en avant) -->
+                <div class="sub-card sub-card--featured">
+                    <div class="sub-card-badge">Le plus populaire</div>
+
+                    <div class="sub-period">Trimestriel</div>
+                    <div class="sub-title">Tous les 3 mois</div>
+                    <div class="sub-discount-tag">&minus;20% sur chaque commande</div>
+
+                    <div class="sub-items">
+                        <!-- Sport Bra -->
+                        <div class="sub-item">
+                            <div class="sub-item-label">Sport Bra</div>
+                            <div class="sub-item-prices">
+                                <span class="sub-item-old">11,99 &euro;</span>
+                                <span class="sub-item-new">9,59 &euro;</span>
+                            </div>
+                            <div class="sub-item-ar">46 032 Ar</div>
+                        </div>
+                        <!-- Pack 5 slips -->
+                        <div class="sub-item">
+                            <div class="sub-item-label">Pack 5 slips</div>
+                            <div class="sub-item-prices">
+                                <span class="sub-item-old">29,95 &euro;</span>
+                                <span class="sub-item-new">23,96 &euro;</span>
+                            </div>
+                            <div class="sub-item-ar">114 960 Ar</div>
+                        </div>
+                    </div>
+
+                    <ul class="sub-features">
+                        <li>Livraison gratuite &amp; prioritaire</li>
+                        <li>Mesures prises une seule fois</li>
+                        <li>Annulation &agrave; tout moment</li>
+                        <li>Pi&egrave;ces st&eacute;rilis&eacute;es UV &agrave; chaque envoi</li>
+                    </ul>
+
+                    <a href="order.html" class="sub-btn sub-btn--primary">S&rsquo;abonner</a>
+                </div>
+
+                <!-- SEMESTRIEL -->
+                <div class="sub-card">
+                    <div class="sub-period">Semestriel</div>
+                    <div class="sub-title">Tous les 6 mois</div>
+                    <div class="sub-discount-tag">&minus;15% sur chaque commande</div>
+
+                    <div class="sub-items">
+                        <!-- Sport Bra -->
+                        <div class="sub-item">
+                            <div class="sub-item-label">Sport Bra</div>
+                            <div class="sub-item-prices">
+                                <span class="sub-item-old">11,99 &euro;</span>
+                                <span class="sub-item-new">10,19 &euro;</span>
+                            </div>
+                            <div class="sub-item-ar">48 912 Ar</div>
+                        </div>
+                        <!-- Pack 5 slips -->
+                        <div class="sub-item">
+                            <div class="sub-item-label">Pack 5 slips</div>
+                            <div class="sub-item-prices">
+                                <span class="sub-item-old">29,95 &euro;</span>
+                                <span class="sub-item-new">25,46 &euro;</span>
+                            </div>
+                            <div class="sub-item-ar">122 208 Ar</div>
+                        </div>
+                    </div>
+
+                    <ul class="sub-features">
+                        <li>Livraison gratuite &amp; prioritaire</li>
+                        <li>Mesures prises une seule fois</li>
+                        <li>Annulation &agrave; tout moment</li>
+                        <li>Pi&egrave;ces st&eacute;rilis&eacute;es UV &agrave; chaque envoi</li>
+                    </ul>
+
+                    <a href="order.html" class="sub-btn sub-btn--secondary">S&rsquo;abonner</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 3 — LIVRAISON
+    ============================================================ -->
+    <section class="pricing-section" id="livraison">
+        <div class="pricing-container">
+            <div class="delivery-block">
+                <div class="delivery-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+                <div class="delivery-title">Livraison gratuite Madagascar &nbsp;&mdash;&nbsp; Offerte d&egrave;s 29&euro; en Europe</div>
+                <p class="delivery-text">Livraison toujours offerte &agrave; Madagascar.<br>Pour l&rsquo;Europe&nbsp;: offerte d&egrave;s 29&euro; d&rsquo;achat, sinon 5,99&euro;.<br>Exp&eacute;dition sous 5 &agrave; 7 jours ouvrés &mdash; chaque colis pr&eacute;par&eacute; avec soin depuis Madagascar.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Serenity by Saule</h4>
+                <p>Lingerie sur-mesure haut de gamme.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="index.html#produits">Nos cr&eacute;ations</a>
+                <a href="order.html">Sur mesure</a>
+                <a href="shop.html">Votre commande</a>
+                <a href="measurement.html">Mes mesures</a>
+                <a href="pricing.html">Nos tarifs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:info@serenity-lingerie.com">info@serenity-lingerie.com</a>
+                <a href="privacy.html">Politique de confidentialit&eacute;</a>
+                <a href="admin-login.html" style="font-size:0.68rem;opacity:0.5;">Admin</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Serenity by Saule. Tous droits r&eacute;serv&eacute;s.</div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
