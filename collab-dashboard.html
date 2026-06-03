@@ -105,11 +105,11 @@
       </div>
       <div class="metric-card">
         <div class="label">Gains en attente</div>
-        <div class="value rose" id="m-attente">— €</div>
+        <div class="value rose" id="m-attente">— Ar</div>
       </div>
       <div class="metric-card">
         <div class="label">Gains confirmés</div>
-        <div class="value rose" id="m-confirmes">— €</div>
+        <div class="value rose" id="m-confirmes">— Ar</div>
       </div>
     </div>
 
@@ -200,8 +200,8 @@
     function renderMetrics(s) {
       document.getElementById('m-total').textContent    = s.utilisations_total;
       document.getElementById('m-mois').textContent     = s.utilisations_mois;
-      document.getElementById('m-attente').textContent  = fmt(s.gains_en_attente);
-      document.getElementById('m-confirmes').textContent = fmt(s.gains_confirmes);
+      document.getElementById('m-attente').textContent  = fmtAr(s.gains_en_attente);
+      document.getElementById('m-confirmes').textContent = fmtAr(s.gains_confirmes);
     }
 
     function renderTable(rows) {
@@ -215,8 +215,8 @@
           <td>${fmtDate(r.date_utilisation)}</td>
           <td>${r.commande_ref}</td>
           <td>${r.produit}</td>
-          <td>${fmt(r.prix_paye)}</td>
-          <td>${fmt(r.montant_commission)}</td>
+          <td>${fmtAr(r.prix_paye)}</td>
+          <td>${fmtAr(r.montant_commission)}</td>
           <td>${badge(r.statut)}</td>
         </tr>
       `).join('');
@@ -229,7 +229,9 @@
       return s;
     }
 
+    const EUR_TO_AR = 4800;
     function fmt(v) { return parseFloat(v || 0).toFixed(2) + ' €'; }
+    function fmtAr(v) { return Math.round(parseFloat(v || 0) * EUR_TO_AR).toLocaleString('fr-FR') + ' Ar'; }
 
     function fmtDate(iso) {
       if (!iso) return '—';
