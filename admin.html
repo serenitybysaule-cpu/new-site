@@ -307,6 +307,29 @@
     </div>
   </div>
 
+  <!-- ═══════════════════ MODAL : Modifier les infos collaborateur ═══════════════════ -->
+  <div class="modal-overlay" id="modal-info">
+    <div class="modal">
+      <h3>Modifier les informations</h3>
+      <input type="hidden" id="info-id">
+      <div class="grid2">
+        <div class="field"><label>Prénom *</label><input id="info-prenom" placeholder="Marie"></div>
+        <div class="field"><label>Nom *</label><input id="info-nom" placeholder="Dupont"></div>
+      </div>
+      <div class="field"><label>Email *</label><input type="email" id="info-email" placeholder="marie@email.com"></div>
+      <div class="field">
+        <label>Code promo * <small style="text-transform:none;letter-spacing:0">(ex: MARIE15)</small></label>
+        <input id="info-code" placeholder="MARIE15" style="text-transform:uppercase" oninput="this.value=this.value.toUpperCase()">
+      </div>
+      <p class="err" id="err-info"></p>
+      <p class="ok" id="ok-info"></p>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('modal-info')">Annuler</button>
+        <button class="btn-rose" onclick="sauvegarderInfo()">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══════════════════ MODAL : Enregistrer une commande ═══════════════════ -->
   <div class="modal-overlay" id="modal-commande">
     <div class="modal">
@@ -467,13 +490,18 @@
           <td>${c.statut === 'actif' ? '<span class="badge badge-actif">Actif</span>' : '<span class="badge badge-suspendu">Suspendu</span>'}</td>
           <td>${fmt(c.gains_en_attente)}</td>
           <td>${fmt(c.gains_confirmes)}</td>
-          <td style="white-space:nowrap">
+          <td style="white-space:nowrap;display:flex;flex-wrap:wrap;gap:0.4rem;align-items:center">
             <button class="btn-outline" onclick="toggleStatut(${c.id},'${c.statut === 'actif' ? 'suspendu' : 'actif'}')">
               ${c.statut === 'actif' ? 'Suspendre' : 'Réactiver'}
             </button>
-            &nbsp;
             <button class="btn-outline" onclick="openModifierTaux(${c.id},'${c.prenom} ${c.nom}',${c.taux_commission},${c.reduction_client})">
-              Modifier taux
+              Taux
+            </button>
+            <button class="btn-outline" onclick="openModifierInfo(${c.id},'${c.prenom}','${c.nom}','${c.email}','${c.code_promo}')">
+              Modifier
+            </button>
+            <button class="btn-danger" onclick="supprimerCollab(${c.id},'${c.prenom} ${c.nom}')">
+              Supprimer
             </button>
           </td>
         </tr>
@@ -543,6 +571,49 @@
         loadCollabs();
         setTimeout(() => closeModal('modal-taux'), 1200);
       } catch (e) { err.textContent = e.message; err.style.display = 'block'; }
+    }
+
+    function openModifierInfo(id, prenom, nom, email, code_promo) {
+      document.getElementById('info-id').value = id;
+      document.getElementById('info-prenom').value = prenom;
+      document.getElementById('info-nom').value = nom;
+      document.getElementById('info-email').value = email;
+      document.getElementById('info-code').value = code_promo;
+      document.getElementById('err-info').style.display = 'none';
+      document.getElementById('ok-info').style.display = 'none';
+      openModal('modal-info');
+    }
+
+    async function sauvegarderInfo() {
+      const id = document.getElementById('info-id').value;
+      const err = document.getElementById('err-info');
+      const ok = document.getElementById('ok-info');
+      err.style.display = ok.style.display = 'none';
+      const body = {
+        prenom:     document.getElementById('info-prenom').value.trim(),
+        nom:        document.getElementById('info-nom').value.trim(),
+        email:      document.getElementById('info-email').value.trim(),
+        code_promo: document.getElementById('info-code').value.trim(),
+      };
+      if (!body.prenom || !body.nom || !body.email || !body.code_promo) {
+        err.textContent = 'Tous les champs sont requis.'; err.style.display = 'block'; return;
+      }
+      try {
+        const res = await fetch(API_BASE + `/api/admin/collaborateurs/${id}/info`, { method: 'PATCH', headers: H, body: JSON.stringify(body) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error);
+        ok.textContent = 'Informations mises à jour !'; ok.style.display = 'block';
+        loadCollabs();
+        setTimeout(() => closeModal('modal-info'), 1200);
+      } catch (e) { err.textContent = e.message; err.style.display = 'block'; }
+    }
+
+    async function supprimerCollab(id, nom) {
+      if (!confirm(`Supprimer définitivement ${nom} ?\nToutes ses commandes et paiements seront aussi supprimés.`)) return;
+      const res = await fetch(API_BASE + `/api/admin/collaborateurs/${id}`, { method: 'DELETE', headers: H });
+      const data = await res.json();
+      if (!res.ok) { alert(data.error); return; }
+      loadCollabs();
     }
 
     // ── Commandes ──

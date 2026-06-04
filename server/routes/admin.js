@@ -113,6 +113,35 @@ router.patch('/collaborateurs/:id/taux', authAdmin, (req, res) => {
   res.json({ message: 'Taux mis à jour.' });
 });
 
+// PATCH /api/admin/collaborateurs/:id/info — modifier prenom, nom, email, code_promo
+router.patch('/collaborateurs/:id/info', authAdmin, (req, res) => {
+  const { prenom, nom, email, code_promo } = req.body;
+  if (!prenom || !nom || !email || !code_promo)
+    return res.status(400).json({ error: 'Champs requis manquants.' });
+
+  const collab = db.prepare('SELECT id FROM collaborateurs WHERE id = ?').get(req.params.id);
+  if (!collab) return res.status(404).json({ error: 'Collaborateur introuvable.' });
+
+  const conflict = db.prepare('SELECT id FROM collaborateurs WHERE (email = ? OR code_promo = ?) AND id != ?')
+    .get(email.toLowerCase().trim(), code_promo.toUpperCase().trim(), req.params.id);
+  if (conflict) return res.status(409).json({ error: 'Email ou code promo déjà utilisé par un autre collaborateur.' });
+
+  db.prepare('UPDATE collaborateurs SET prenom = ?, nom = ?, email = ?, code_promo = ? WHERE id = ?')
+    .run(prenom.trim(), nom.trim(), email.toLowerCase().trim(), code_promo.toUpperCase().trim(), req.params.id);
+  res.json({ message: 'Informations mises à jour.' });
+});
+
+// DELETE /api/admin/collaborateurs/:id
+router.delete('/collaborateurs/:id', authAdmin, (req, res) => {
+  const collab = db.prepare('SELECT id FROM collaborateurs WHERE id = ?').get(req.params.id);
+  if (!collab) return res.status(404).json({ error: 'Collaborateur introuvable.' });
+
+  db.prepare('DELETE FROM utilisations_code WHERE collab_id = ?').run(req.params.id);
+  db.prepare('DELETE FROM paiements_collab WHERE collab_id = ?').run(req.params.id);
+  db.prepare('DELETE FROM collaborateurs WHERE id = ?').run(req.params.id);
+  res.json({ message: 'Collaborateur supprimé.' });
+});
+
 // ── Commandes ───────────────────────────────────────────────────────────────
 
 // GET /api/admin/commandes-en-attente
