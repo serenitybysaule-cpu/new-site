@@ -9,7 +9,7 @@
 
     <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
+    !function(f,b,e,v,n,t,s
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
@@ -1692,7 +1692,7 @@
             fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) })
             .then(function(r) { return r.json(); })
             .then(function(res) {
-                if (res.success) {
+                if (res.status === 'ok' || res.success) {
                     if (codePromoValide) {
                         fetch(API_BASE + '/api/public/commande', {
                             method: 'POST',
