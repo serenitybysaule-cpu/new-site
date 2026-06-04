@@ -1679,6 +1679,7 @@
                 montant_eur:      total.toFixed(2),
                 montant_ar:       Math.round(calcTotalAr()).toString(),
                 livraison_eur:    shipping.toFixed(2),
+                livraison_ar:     (shipping > 0 ? SHIPPING_AR : 0).toString(),
                 tour_overbust:    (currentProduct === 'surm_bra' ? (document.getElementById('surm-overbust').value || '') : ''),
                 tour_poitrine:    (currentProduct === 'surm_bra' ? (document.getElementById('surm-bust').value || '') : ''),
                 tour_sous_poitrine: (currentProduct === 'surm_bra' ? (document.getElementById('surm-underbust').value || '') : ''),
