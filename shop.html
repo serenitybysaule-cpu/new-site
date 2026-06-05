@@ -1692,11 +1692,7 @@
             fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) })
             .then(function(r) { return r.json(); })
             .then(function(res) {
-<<<<<<< HEAD
                 if (res.success || res.status === 'ok') {
-=======
-                if (res.status === 'ok' || res.success) {
->>>>>>> fb161d407fe02bb40ea8fe555833500ed5af8a89
                     if (codePromoValide) {
                         fetch(API_BASE + '/api/public/commande', {
                             method: 'POST',
