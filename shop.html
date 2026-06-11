@@ -931,6 +931,7 @@
             <li><a href="measurement.html">Mes mesures</a></li>
             <li><a href="pricing.html">Nos tarifs</a></li>
             <li><a href="collab-login.html">Espace Collab</a></li>
+            <li><a href="https://serenity-management.netlify.app/" class="nav-cta-primary" target="_blank">Suivre ma commande</a></li>
         </ul>
         <div class="mobile-menu-toggle">&#9776;</div>
     </nav>
@@ -998,8 +999,8 @@
                     <a href="index.html#produits" class="product-recap-modify">Modifier &rarr;</a>
                 </div>
                 <div>
-                    <div class="product-recap-price" id="recap-price">29,95 &euro;</div>
-                    <div class="product-recap-price-sub" id="recap-price-ar">143&nbsp;760 Ar</div>
+                    <div class="product-recap-price" id="recap-price">143&nbsp;760 Ar</div>
+                    <div class="product-recap-price-sub" id="recap-price-ar">29,95 &euro;</div>
                 </div>
             </div>
 
@@ -1357,7 +1358,7 @@
         /* ---- Initialisation ---- */
         (function init() {
             document.getElementById('recap-product-name').textContent = productNames[currentProduct] || 'Slip';
-            document.getElementById('qty-unit-label').textContent = unitPrice.eur.toFixed(2).replace('.', ',') + ' € / ' + unitLabel;
+            document.getElementById('qty-unit-label').textContent = Math.round(unitPrice.ar).toLocaleString('fr-FR') + ' Ar / ' + unitLabel;
 
             if (currentProduct === 'bra') {
                 document.getElementById('bra-size-block').style.display = 'block';
@@ -1413,11 +1414,11 @@
 
             // Mise à jour du prix affiché
             document.getElementById('recap-product-name').textContent   = productNames[type] || type;
-            var qtyLblS = unitPrice.eur.toFixed(2).replace('.', ',') + ' € / ' + unitLabel;
-            if (type === 'surm_slip') qtyLblS += '  ·  5,99 € / pièce';
+            var qtyLblS = Math.round(unitPrice.ar).toLocaleString('fr-FR') + ' Ar / ' + unitLabel;
+            if (type === 'surm_slip') qtyLblS += '  ·  28 752 Ar / pièce';
             document.getElementById('qty-unit-label').textContent        = qtyLblS;
-            document.getElementById('recap-price').textContent           = unitPrice.eur.toFixed(2).replace('.', ',') + ' €';
-            document.getElementById('recap-price-ar').textContent        = Math.round(unitPrice.ar).toLocaleString('fr-FR') + ' Ar';
+            document.getElementById('recap-price').textContent           = Math.round(unitPrice.ar).toLocaleString('fr-FR') + ' Ar';
+            document.getElementById('recap-price-ar').textContent        = unitPrice.eur.toFixed(2).replace('.', ',') + ' €';
 
             // Réinitialiser les sélections
             currentQty = 1;
@@ -1538,7 +1539,7 @@
             document.getElementById('rtable-size').textContent    = sizeDisplay;
             document.getElementById('rtable-qty').textContent     = currentQty;
             document.getElementById('rtable-models').textContent  = isReady ? modelsStr : '—';
-            document.getElementById('rtable-price').textContent   = isReady ? fmt(total)  : '—';
+            document.getElementById('rtable-price').textContent   = isReady ? fmtAr(totalAr)  : '—';
 
             var delivEl = document.getElementById('recap-delivery-value');
             if (isReady) {
@@ -1546,15 +1547,15 @@
                     delivEl.textContent = 'Offerte';
                     delivEl.style.color = 'var(--green)';
                 } else {
-                    delivEl.textContent = fmt(shipping) + ' — offerte dès 29€';
+                    delivEl.textContent = fmtAr(SHIPPING_AR) + ' — offerte dès 139 200 Ar';
                     delivEl.style.color = 'var(--charcoal)';
                 }
             } else { delivEl.textContent = '—'; delivEl.style.color = ''; }
 
-            document.getElementById('rtable-total').textContent    = isReady ? fmt(grand)   : '—';
-            document.getElementById('rtable-total-ar').textContent = isReady ? fmtAr(grandAr) : '';
-            document.getElementById('recap-price').textContent     = isReady ? fmt(total)   : '—';
-            document.getElementById('recap-price-ar').textContent  = isReady ? fmtAr(totalAr) : '';
+            document.getElementById('rtable-total').textContent    = isReady ? fmtAr(grandAr)   : '—';
+            document.getElementById('rtable-total-ar').textContent = isReady ? fmt(grand) : '';
+            document.getElementById('recap-price').textContent     = isReady ? fmtAr(totalAr)   : '—';
+            document.getElementById('recap-price-ar').textContent  = isReady ? fmt(total) : '';
             document.getElementById('recap-product-details').textContent = 'Taille : ' + sizeDisplay + ' · Qté : ' + currentQty;
 
             // Ligne de réduction code promo
