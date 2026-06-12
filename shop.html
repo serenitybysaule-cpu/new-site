@@ -1782,11 +1782,10 @@
         if (!promo) return;
         promo = promo.toUpperCase();
         var input = document.getElementById('code-promo');
-        if (input) {
-            input.value = promo;
-            input.dispatchEvent(new Event('input', { bubbles: true }));
-            input.dispatchEvent(new Event('change', { bubbles: true }));
-        }
+        if (!input) return;
+        input.value = promo;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        verifierCode();
     })();
     </script>
 
