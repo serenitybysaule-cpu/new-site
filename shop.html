@@ -1776,5 +1776,19 @@
         </div>
     </div>
 
+    <script>
+    (function() {
+        var promo = new URLSearchParams(window.location.search).get('promo');
+        if (!promo) return;
+        promo = promo.toUpperCase();
+        var input = document.getElementById('code-promo');
+        if (input) {
+            input.value = promo;
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+            input.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+    })();
+    </script>
+
 </body>
 </html>
