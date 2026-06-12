@@ -1040,6 +1040,28 @@
 
 
                     <!-- Mini images sur mesure -->
+                    <!-- Aperçu standard — Sport Bra -->
+                    <div class="surm-images" id="std-images-bra">
+                        <div class="surm-images-label">Aperçu</div>
+                        <div class="surm-images-row">
+                            <img src="assets/images/bra-creme.jpg"  class="surm-thumb" alt="Sport Bra &amp; Slip — Ivoire">
+                            <img src="assets/images/bra-prune.jpg"  class="surm-thumb" alt="Sport Bra &amp; Slip — Prune">
+                            <img src="assets/images/bra-marine.jpg" class="surm-thumb" alt="Sport Bra &amp; Slip — Marine">
+                        </div>
+                    </div>
+
+                    <!-- Aperçu standard — Pack 5 Slips -->
+                    <div class="surm-images" id="std-images-slip">
+                        <div class="surm-images-label">Aperçu — modèles disponibles</div>
+                        <div class="surm-images-row">
+                            <img src="assets/images/slip-fullbrief-creme.jpg"  class="surm-thumb" alt="Full Brief">
+                            <img src="assets/images/slip-midbrief-creme.jpg"   class="surm-thumb" alt="Mid Brief">
+                            <img src="assets/images/slip-cheeky-creme.jpg"     class="surm-thumb" alt="Cheeky">
+                            <img src="assets/images/slip-thong-creme.jpg"      class="surm-thumb" alt="Thong">
+                        </div>
+                    </div>
+
+                    <!-- Aperçu sur mesure — Sport Bra -->
                     <div class="surm-images" id="surm-images-bra">
                         <div class="surm-images-label">Aperçu</div>
                         <div class="surm-images-row">
@@ -1049,6 +1071,7 @@
                         </div>
                     </div>
 
+                    <!-- Aperçu sur mesure — Slip -->
                     <div class="surm-images" id="surm-images-slip">
                         <div class="surm-images-label">Aperçu — modèles disponibles</div>
                         <div class="surm-images-row">
@@ -1377,6 +1400,11 @@
             unitSelections = [{ model: null, couleur: null }];
             renderUnits();
             updateRecapTable();
+            // Afficher l'aperçu du produit par défaut
+            var imgStdBra  = document.getElementById('std-images-bra');
+            var imgStdSlip = document.getElementById('std-images-slip');
+            if (imgStdBra)  imgStdBra.classList.toggle('is-visible',  currentProduct === 'bra');
+            if (imgStdSlip) imgStdSlip.classList.toggle('is-visible', currentProduct === 'slip');
         })();
 
 
@@ -1400,10 +1428,14 @@
             document.getElementById('slip-size-block').style.display   = isS ? 'none' : '';
             document.getElementById('surm-block').style.display        = isS ? '' : 'none';
             document.getElementById('surm-bra-block').style.display    = (type === 'surm_bra') ? '' : 'none';
-            var imgBra  = document.getElementById('surm-images-bra');
-            var imgSlip = document.getElementById('surm-images-slip');
-            if (imgBra)  imgBra.classList.toggle('is-visible',  type === 'surm_bra');
-            if (imgSlip) imgSlip.classList.toggle('is-visible', type === 'surm_slip');
+            var imgBra      = document.getElementById('surm-images-bra');
+            var imgSlip     = document.getElementById('surm-images-slip');
+            var imgStdBra   = document.getElementById('std-images-bra');
+            var imgStdSlip  = document.getElementById('std-images-slip');
+            if (imgBra)     imgBra.classList.toggle('is-visible',     type === 'surm_bra');
+            if (imgSlip)    imgSlip.classList.toggle('is-visible',    type === 'surm_slip');
+            if (imgStdBra)  imgStdBra.classList.toggle('is-visible',  type === 'bra');
+            if (imgStdSlip) imgStdSlip.classList.toggle('is-visible', type === 'slip');
 
             if (!isS) {
                 document.getElementById('slip-size-label').textContent = (type === 'bra') ? 'Taille Slip' : 'Sélectionnez votre taille';
