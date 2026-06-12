@@ -19,6 +19,7 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '953611460562954');
     fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=953611460562954&ev=PageView&noscript=1"/></noscript>
@@ -1645,6 +1646,7 @@
 
         /* ---- Soumission ---- */
         function submitShop() {
+            fbq('track', 'InitiateCheckout');
             var valid = true;
             if (!isSurMesure()) {
                 if (currentProduct === 'bra' && !currentBraSize) { document.getElementById('err-bra-size').classList.add('is-visible'); valid = false; }
@@ -1740,6 +1742,7 @@
                             })
                         }).catch(function() {});
                     }
+                    fbq('track', 'Purchase', { value: parseFloat(calcTotal().toFixed(2)), currency: 'EUR' });
                     document.getElementById('shop-form').style.display = 'none';
                     document.querySelector('.product-recap').style.display = 'none';
                     document.querySelector('.prod-picker').style.display = 'none';
