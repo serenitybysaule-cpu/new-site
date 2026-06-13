@@ -602,6 +602,16 @@
             margin-top: 2rem;
         }
 
+        /* ---- PAIEMENT MOBILE ---- */
+        .pmt-block { background: white; border: 1px solid rgba(184,147,90,0.28); border-radius: 8px; padding: 1.2rem 1.4rem; margin: 1.4rem auto 0; text-align: left; max-width: 380px; }
+        .pmt-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.5rem; }
+        .pmt-desc { font-family: 'Jost', sans-serif; font-size: 0.76rem; color: rgba(44,44,42,0.55); margin-bottom: 0.75rem; line-height: 1.6; }
+        .pmt-operator { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.45rem; padding: 0.45rem 0.65rem; background: rgba(184,147,90,0.06); border-radius: 5px; }
+        .pmt-op-tag { font-family: 'Jost', sans-serif; font-size: 0.62rem; font-weight: 600; color: white; padding: 0.15rem 0.45rem; border-radius: 3px; letter-spacing: 0.02em; white-space: nowrap; }
+        .pmt-op-num { font-family: 'Jost', sans-serif; font-size: 0.79rem; color: var(--charcoal); font-weight: 500; }
+        .pmt-note { font-family: 'Jost', sans-serif; font-size: 0.69rem; color: rgba(44,44,42,0.42); font-style: italic; margin-top: 0.5rem; }
+        .pmt-track-btn { display: inline-block; margin-top: 1.1rem; font-family: 'Jost', sans-serif; font-size: 0.71rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,147,90,0.45); padding-bottom: 0.15rem; }
+
         /* ---- QUANTITÉ & PAR PIÈCE ---- */
         .qty-row { display: flex; align-items: center; gap: 0.8rem; margin-top: 0.7rem; }
         .qty-btn { width: 34px; height: 34px; border: 1px solid rgba(44,44,42,0.4); background: transparent; font-size: 1.1rem; cursor: pointer; border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--charcoal); transition: background 0.2s; }
@@ -1636,11 +1646,13 @@
         /* ---- Paiement ---- */
         function showPaiement(confEl, pays) {
             if (confEl.querySelector('.pmt-block')) return;
-                        var h = '<div class="pmt-block">';
+            var h = '<div class="pmt-block">';
             h += '<div class="pmt-title">Comment régler ?</div>';
-            h += '<div class="pmt-method"><div class="pmt-method-name" style="color:#0066B3;">MVola</div><div class="pmt-method-num">+261 34 09 831 74</div><div class="pmt-method-dest">Harilala Mamy Tiana Razanalivaoarijaona</div></div>';
-            h += '<p class="pmt-note">Envoyez le montant exact puis confirmez en nous envoyant une capture d’écran.</p></div>';
-            h += '<a class="pmt-track-btn" href="https://serenity-management.netlify.app/" target="_blank">Suivre ma commande →</a>';
+            h += '<p class="pmt-desc">Choisissez l\'un des moyens de paiement ci-dessous :</p>';
+            h += '<div class="pmt-operator"><span class="pmt-op-tag" style="background:#0066B3">MVola</span><span class="pmt-op-num">+261 34 09 831 74 — Harilala Mamy Tiana</span></div>';
+            h += '<div class="pmt-operator"><span class="pmt-op-tag" style="background:#FF6600">Orange Money</span><span class="pmt-op-num">032 40 514 61 — Harilala Mamy Tiana</span></div>';
+            h += '<p class="pmt-note">Envoyez le montant exact puis confirmez en nous envoyant une capture d’écran.</p>';
+            h += '</div><a class="pmt-track-btn" href="https://serenity-management.netlify.app/" target="_blank" rel="noopener">Suivre ma commande →</a>';
             confEl.insertAdjacentHTML('beforeend', h);
         }
 
